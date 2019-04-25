@@ -10,7 +10,7 @@ import re, csv
 
 
 # laod a starting template for .fet file readable by FET.
-templatePath = 'startingTemplate.fet'
+templatePath = 'basicTemplate.fet'
 basicTemplate = open(templatePath,"r").read()
 
 
@@ -51,10 +51,12 @@ slots = [
          '17:00',
          '17:30',
          '18:00',
-         '18:30'
+         '18:30',
+          '19:00',
+          '19:30'
          ]
 
-TThStartTimimgs = ['09:00','10:30', '14:00', '15:30', '17:00']
+TThStartTimimgs = ['09:00','10:30', '14:00', '15:30', '17:00', '18:30']
 
 
 
@@ -161,10 +163,21 @@ AroomSet = set('');
 BroomSet = set('');
 CDroomSet = set('');
 
+labRoomCons = ''
+
 tag = '<Rooms_List>\n'
 for room in roomsAndBuilding[1:]:   # [1:] is for ignoring the first row
     
     buildingSet.add(room[2])
+    if (room[2] == 'Lab'):
+        labRoomCons = labRoomCons + '<ConstraintActivityTagPreferredRoom>\n \
+	<Weight_Percentage>100</Weight_Percentage> \n \
+	<Activity_Tag>'+room[0]+'</Activity_Tag> \n \
+	<Room>'+room[0]+'</Room> \n \
+	<Active>true</Active> \n \
+	<Comments></Comments> \n \
+</ConstraintActivityTagPreferredRoom>\n'
+    
     
     if (room[0][0] == 'A'):
         AroomSet.add(room[0])
@@ -177,8 +190,7 @@ for room in roomsAndBuilding[1:]:   # [1:] is for ignoring the first row
 	<Name>'+room[0]+'</Name>\n \
 	<Building>'+room[2]+'</Building>\n \
 	<Capacity>'+room[1]+'</Capacity>\n \
-	<Comments></Comments>\n \
-</Room>\n '
+	<Comments></Comments>\n </Room>\n '
 tag = tag+ '</Rooms_List>\n'
 #update file
 formattedData = re.sub(
@@ -375,6 +387,10 @@ for room in allRoomSet:
 spaceCons = spaceCons + '<Active>true</Active> \n \
 	<Comments></Comments> \n \
 </ConstraintActivityTagPreferredRooms>\n'
+
+
+# add lab room constraints
+spaceCons = spaceCons + labRoomCons
 
 spaceCons = spaceCons + '</Space_Constraints_List>\n'
     

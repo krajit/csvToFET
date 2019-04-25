@@ -17,7 +17,7 @@
 </Days_List>
 
 <Hours_List>
-<Number_of_Hours>22</Number_of_Hours>
+<Number_of_Hours>24</Number_of_Hours>
 <Hour>
 	<Name>08:00</Name>
 </Hour>
@@ -83,6 +83,12 @@
 </Hour>
 <Hour>
 	<Name>18:30</Name>
+</Hour>
+<Hour>
+	<Name>19:00</Name>
+</Hour>
+<Hour>
+	<Name>19:30</Name>
 </Hour>
 </Hours_List>
 
@@ -954,6 +960,191 @@
 </Activity_Tag>
 <Activity_Tag>
 	<Name>MWF</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>Tute</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>B214</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>D113</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C201</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C308</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>D004</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>D117</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>B212</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>D112</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C017</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C009</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C114</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>D013</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C205</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C217</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C206</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>D215</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>D317</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C305</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>D313</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C105</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C303</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>A101</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>B110</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>B003</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>A001</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>B004</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C112</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C117</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>B113</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C010</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>D018</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>B308</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>B312</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>A303</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>B316</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>C315</Name>
 	<Printable>true</Printable>
 	<Comments></Comments>
 </Activity_Tag>
@@ -1914,6 +2105,118 @@
 </Teacher>
 <Teacher>
 	<Name>Pradeep  Mehra[20500301]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>YOGESH YADAV[1710120094]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>ANANYA CHATTARAJ[1710120051]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Priya Mandal[1610120074]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Saheli Mitra[1510120113]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Anurag Pritam[1510120104]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Manuja Kothiyal[1610120064]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Sangita Bhowmick[1510120114]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>JOSHUA ASIRVATHAM[1710120064]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Dip Das[1610120055]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Samir Hazra[1510120051]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Udit  Satija[20500756]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>DHIRENDRA SAHOO[1710120099]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>RITIKA GUPTA[1710120083]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Sankar  Dhar[20500094]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Dwaipayan Chakraborty[1610120057]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Kamineni Nayayana[1510120028]</Name>
 	<Target_Number_of_Hours>0</Target_Number_of_Hours>
 	<Qualified_Subjects>
 	</Qualified_Subjects>
@@ -5648,15 +5951,2508 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </Activity>
+<Activity>
+	<Teacher>Sonal  Singhal[20500080]</Teacher>
+	<Subject>EED101</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>CSE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>275</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sonal  Singhal[20500080]</Teacher>
+	<Subject>EED101</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mech1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>276</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Madhur Deo Upadhyay[20500212]</Teacher>
+	<Subject>EED101</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>CSE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>277</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Madhur Deo Upadhyay[20500212]</Teacher>
+	<Subject>EED101</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mech1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>278</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Karnail Baldev Singh[20500469]</Teacher>
+	<Subject>CHD411</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>ChemEng3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>279</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Bimlesh  Lochab[20500076]</Teacher>
+	<Subject>CHY122</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Bio1</Students>
+	<Students>Chem1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>280</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Jagabandhu  Dixit[20500135]</Teacher>
+	<Subject>CED101</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>ChemEng1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>281</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Jagabandhu  Dixit[20500135]</Teacher>
+	<Subject>CED101</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Civil1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>282</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Bani  Kanta Sarma[20500278]</Teacher>
+	<Subject>CHY222</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Chem2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>283</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>ENG446</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>English4</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>284</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>ENG343</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>English3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>285</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>ENG445</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>English4</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>286</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>ENG444</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>English4</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>287</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>ENG344</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>English3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>288</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Karmeshu  .[20500800]</Teacher>
+	<Subject>CSD209</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>CSE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>289</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Karmeshu  .[20500800]</Teacher>
+	<Subject>CSD209</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>CSE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>290</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>ENG142</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>English1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>291</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>ENG143</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>English1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>292</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ajay  Dandekar[20500240]</Teacher>
+	<Subject>HIS304</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>History3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>293</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Devika  Bordia[20500658]</Teacher>
+	<Subject>SOC304</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Sociology3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>294</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Pradeep Krishnakumar Jeganathan[20500314]</Teacher>
+	<Subject>SOC402</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Sociology4</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>295</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Jaya  Menon[20500223]</Teacher>
+	<Subject>HIS104</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>History1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>296</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Jaya  Menon[20500223]</Teacher>
+	<Subject>HIS312</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>History3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>297</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>ECO101</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>298</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>ECO101</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>299</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Suchismita  Tarafdar[20500106]</Teacher>
+	<Subject>ECO102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>300</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Suchismita  Tarafdar[20500106]</Teacher>
+	<Subject>ECO102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>301</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Suchismita  Tarafdar[20500106]</Teacher>
+	<Subject>ECO102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>302</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Suchismita  Tarafdar[20500106]</Teacher>
+	<Subject>ECO102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>303</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Suchismita  Tarafdar[20500106]</Teacher>
+	<Subject>ECO102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>304</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Trishita Ray Barman[20500579]</Teacher>
+	<Subject>ECO302</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>305</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Trishita Ray Barman[20500579]</Teacher>
+	<Subject>ECO302</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>306</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Abhimanyu  Khan[20500783]</Teacher>
+	<Subject>ECO401</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>307</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Abhimanyu  Khan[20500783]</Teacher>
+	<Subject>ECO401</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco4</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>308</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Saptarshi Prosonno Ghosh[20500141]</Teacher>
+	<Subject>ECO301</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>309</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Saptarshi Prosonno Ghosh[20500141]</Teacher>
+	<Subject>ECO301</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>310</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Saptarshi Prosonno Ghosh[20500141]</Teacher>
+	<Subject>ECO221</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>311</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Saptarshi Prosonno Ghosh[20500141]</Teacher>
+	<Subject>ECO221</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>312</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Vaibhav  Shrivastava[20500030]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>CSE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>313</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>YOGESH YADAV[1710120094]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>ChemEng1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>314</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ANANYA CHATTARAJ[1710120051]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Civil1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>315</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Priya Mandal[1610120074]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mech1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>316</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Saheli Mitra[1510120113]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>CSE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>317</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Anurag Pritam[1510120104]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>CSE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>318</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Manuja Kothiyal[1610120064]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>EEE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>319</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sangita Bhowmick[1510120114]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>EEE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>320</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>JOSHUA ASIRVATHAM[1710120064]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>ECE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>321</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Dip Das[1610120055]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>ECE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>322</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Manuja Kothiyal[1610120064]</Teacher>
+	<Subject>PHY104</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Phy1</Students>
+	<Students>Chem1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>323</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Subhra  Sen Gupta[20500365]</Teacher>
+	<Subject>PHY202</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Phy2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>324</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Santosh  Kumar[20500193]</Teacher>
+	<Subject>PHY204</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Phy2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>325</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Syed Modammed Kamil[20500088]</Teacher>
+	<Subject>PHY302</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Phy3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>326</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Bijan Kumar Bagchi[20500510]</Teacher>
+	<Subject>PHY306</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Phy3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>327</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>ENG346</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>English3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>328</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Shahid  Jamal[20500122]</Teacher>
+	<Subject>COM198</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>329</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Harender  1[20500199]</Teacher>
+	<Subject>MED205</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mech2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>330</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Harender  1[20500199]</Teacher>
+	<Subject>MED205</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mech2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>331</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>J  Venkatramani[20500736]</Teacher>
+	<Subject>MED105</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mech1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>332</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>J  Venkatramani[20500736]</Teacher>
+	<Subject>MED105</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mech1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>333</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Samir Hazra[1510120051]</Teacher>
+	<Subject>MAT104</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Chem1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>334</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Samir Hazra[1510120051]</Teacher>
+	<Subject>MAT104</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>ChemEng1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>335</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Samir Hazra[1510120051]</Teacher>
+	<Subject>MAT104</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Civil1</Students>
+	<Students>CSE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>336</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Samir Hazra[1510120051]</Teacher>
+	<Subject>MAT104</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>EEE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>337</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Samir Hazra[1510120051]</Teacher>
+	<Subject>MAT104</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>ECE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>338</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Samir Hazra[1510120051]</Teacher>
+	<Subject>MAT104</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mech1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>339</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Charu  Sharma[20500010]</Teacher>
+	<Subject>MAT084</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Bio1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>340</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Amber  Habib[20500009]</Teacher>
+	<Subject>MAT102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Chem1</Students>
+	<Students>Eco1</Students>
+	<Students>Mat1</Students>
+	<Students>Phy1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>341</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Amber  Habib[20500009]</Teacher>
+	<Subject>MAT102</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Chem1</Students>
+	<Students>Eco1</Students>
+	<Students>Mat1</Students>
+	<Students>Phy1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>342</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Niteesh  Sahni[20500011]</Teacher>
+	<Subject>MAT110</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco2</Students>
+	<Students>Mat1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>343</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Pradip  Kumar[20500271]</Teacher>
+	<Subject>MAT132</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mat1</Students>
+	<Students>Mat2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>344</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sanjeev  Agrawal[20500033]</Teacher>
+	<Subject>MAT221</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mat2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>345</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Satyanarayana  Reddy[20500099]</Teacher>
+	<Subject>MAT241</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mat2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>346</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Satyanarayana  Reddy[20500099]</Teacher>
+	<Subject>MAT246</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mat2</Students>
+	<Students>Mat3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>347</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Lal Mohan Saha[20500014]</Teacher>
+	<Subject>MAT386</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mat2</Students>
+	<Students>Mat3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>348</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ajit  Kumar[20500008]</Teacher>
+	<Subject>MAT434</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mat3</Students>
+	<Students>Mat4</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>349</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Debashish   Bose[20500200]</Teacher>
+	<Subject>MAT522</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mat3</Students>
+	<Students>Mat4</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>350</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Shahid  Jamal[20500122]</Teacher>
+	<Subject>COM196</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>351</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ashwin  Ramanathan[20500228]</Teacher>
+	<Subject>COM192</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>352</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ajay  Dandekar[20500240]</Teacher>
+	<Subject>HIS103</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>History1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>353</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Atul  Mishra[20500723]</Teacher>
+	<Subject>INT103</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>IntRel1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>354</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Kaveri   Gill[20500669]</Teacher>
+	<Subject>INT104</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>IntRel1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>355</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Siddharth  Mallavarapu[20500876]</Teacher>
+	<Subject>INT105</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>IntRel1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>356</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Rajeswari Sarala Raina[20500660]</Teacher>
+	<Subject>INT145</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>UG1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>357</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>HIS313</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>History3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>358</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>ENG104</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>359</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ziaur  Rehman[20500013]</Teacher>
+	<Subject>ENG104</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>360</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Shekhar  Pratap Singh[20500427]</Teacher>
+	<Subject>INT142</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>361</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Shekhar  Pratap Singh[20500427]</Teacher>
+	<Subject>INT237</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>362</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sanjeev  Agrawal[20500033]</Teacher>
+	<Subject>MAT284</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Eco1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>363</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Priyanka  Grover[20500411]</Teacher>
+	<Subject>MAT101</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>364</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Suma  Ghosh[20500513]</Teacher>
+	<Subject>MAT283</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mat2</Students>
+	<Students>Mat3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>365</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Samit   Bhattacharyya[20500432]</Teacher>
+	<Subject>MAT388</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mat3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>366</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sudeepto  Bhattacharya[20500090]</Teacher>
+	<Subject>MAT442</Subject>
+	<Activity_Tag>Tute</Activity_Tag>
+	<Activity_Tag>roomAny</Activity_Tag>
+	<Students>Mat3</Students>
+	<Students>Mat4</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>367</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Karnail Baldev Singh[20500469]</Teacher>
+	<Subject>CHD324</Subject>
+	<Activity_Tag>B214</Activity_Tag>
+	<Students>ChemEng3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>368</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>V.M  Rajesh[20500329]</Teacher>
+	<Subject>CHD316</Subject>
+	<Activity_Tag>D113</Activity_Tag>
+	<Students>ChemEng3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>369</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Naveen Babu G[20500517]</Teacher>
+	<Subject>EED101</Subject>
+	<Activity_Tag>C201</Activity_Tag>
+	<Students>CSE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>370</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Prem Chand  Jain[20500148]</Teacher>
+	<Subject>EED101</Subject>
+	<Activity_Tag>C201</Activity_Tag>
+	<Students>Mech1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>371</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Prem Chand  Jain[20500148]</Teacher>
+	<Subject>EED101</Subject>
+	<Activity_Tag>C201</Activity_Tag>
+	<Students>CSE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>372</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Prem Chand  Jain[20500148]</Teacher>
+	<Subject>EED101</Subject>
+	<Activity_Tag>C201</Activity_Tag>
+	<Students>Mech1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>373</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Karnail Baldev Singh[20500469]</Teacher>
+	<Subject>CHD382</Subject>
+	<Activity_Tag>C308</Activity_Tag>
+	<Students>ChemEng3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>374</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Jai Prakash Gupta[20500662]</Teacher>
+	<Subject>CHD224</Subject>
+	<Activity_Tag>D004</Activity_Tag>
+	<Students>ChemEng2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>375</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Pratibha  Biswal[20500735]</Teacher>
+	<Subject>CHD228</Subject>
+	<Activity_Tag>D117</Activity_Tag>
+	<Students>ChemEng2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>376</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>V.M  Rajesh[20500329]</Teacher>
+	<Subject>CHD440</Subject>
+	<Activity_Tag>D113</Activity_Tag>
+	<Students>ChemEng4</Students>
+	<Duration>4</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>377</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Subhabrata  Sen[20500158]</Teacher>
+	<Teacher>Bimlesh  Lochab[20500076]</Teacher>
+	<Subject>CHY122</Subject>
+	<Activity_Tag>B214</Activity_Tag>
+	<Students>Bio1</Students>
+	<Students>Chem1</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>378</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Bani  Kanta Sarma[20500278]</Teacher>
+	<Subject>CHY222</Subject>
+	<Activity_Tag>B214</Activity_Tag>
+	<Students>Chem2</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>379</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Debdas  Ray[20500191]</Teacher>
+	<Subject>CHY242</Subject>
+	<Activity_Tag>B212</Activity_Tag>
+	<Students>Chem2</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>380</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>N.  Sukumar[20500050]</Teacher>
+	<Subject>CHY332</Subject>
+	<Activity_Tag>D112</Activity_Tag>
+	<Students>Chem3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>381</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sumedha  Moharana[20500215]</Teacher>
+	<Subject>CED205</Subject>
+	<Activity_Tag>C017</Activity_Tag>
+	<Students>Civil2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>382</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sumedha  Moharana[20500215]</Teacher>
+	<Subject>CED205</Subject>
+	<Activity_Tag>C017</Activity_Tag>
+	<Students>Civil2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>383</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Gopal Das Singhal[20500079]</Teacher>
+	<Subject>CED207</Subject>
+	<Activity_Tag>C009</Activity_Tag>
+	<Students>Civil2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>384</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Gopal Das Singhal[20500079]</Teacher>
+	<Subject>CED207</Subject>
+	<Activity_Tag>C009</Activity_Tag>
+	<Students>Civil2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>385</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sailesh Narayan Behera[20500422]</Teacher>
+	<Subject>CED308</Subject>
+	<Activity_Tag>C114</Activity_Tag>
+	<Students>Civil3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>386</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sailesh Narayan Behera[20500422]</Teacher>
+	<Subject>CED308</Subject>
+	<Activity_Tag>C114</Activity_Tag>
+	<Students>Civil3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>387</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Amit  Bakshi[20500252]</Teacher>
+	<Subject>EED203</Subject>
+	<Activity_Tag>D013</Activity_Tag>
+	<Students>ECE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>388</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Amit  Bakshi[20500252]</Teacher>
+	<Subject>EED203</Subject>
+	<Activity_Tag>D013</Activity_Tag>
+	<Students>ECE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>389</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Atul Vir Singh[20500082]</Teacher>
+	<Subject>EED204</Subject>
+	<Activity_Tag>C205</Activity_Tag>
+	<Students>EEE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>390</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Udit  Satija[20500756]</Teacher>
+	<Subject>EED204</Subject>
+	<Activity_Tag>C205</Activity_Tag>
+	<Students>ECE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>391</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Madhur Deo Upadhyay[20500212]</Teacher>
+	<Subject>EED204</Subject>
+	<Activity_Tag>C205</Activity_Tag>
+	<Students>EEE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>392</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Madhur Deo Upadhyay[20500212]</Teacher>
+	<Subject>EED204</Subject>
+	<Activity_Tag>C205</Activity_Tag>
+	<Students>ECE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>393</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Vijaykumar  Chakka[20500251]</Teacher>
+	<Subject>EED205</Subject>
+	<Activity_Tag>C217</Activity_Tag>
+	<Students>ECE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>394</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Vijaykumar  Chakka[20500251]</Teacher>
+	<Subject>EED205</Subject>
+	<Activity_Tag>C217</Activity_Tag>
+	<Students>ECE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>395</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Madhukar P Dave[20500761]</Teacher>
+	<Subject>EED207</Subject>
+	<Activity_Tag>D013</Activity_Tag>
+	<Students>EEE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>396</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Madhukar P Dave[20500761]</Teacher>
+	<Subject>EED207</Subject>
+	<Activity_Tag>D013</Activity_Tag>
+	<Students>EEE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>397</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Dinkar  Prasad[20500201]</Teacher>
+	<Subject>EED208</Subject>
+	<Activity_Tag>C206</Activity_Tag>
+	<Students>EEE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>398</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Dinkar  Prasad[20500201]</Teacher>
+	<Subject>EED208</Subject>
+	<Activity_Tag>C206</Activity_Tag>
+	<Students>EEE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>399</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Madhukar P Dave[20500761]</Teacher>
+	<Subject>EED307</Subject>
+	<Activity_Tag>D215</Activity_Tag>
+	<Students>EEE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>400</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Madhukar P Dave[20500761]</Teacher>
+	<Subject>EED307</Subject>
+	<Activity_Tag>D215</Activity_Tag>
+	<Students>EEE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>401</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Dinkar  Prasad[20500201]</Teacher>
+	<Subject>EED402</Subject>
+	<Activity_Tag>D013</Activity_Tag>
+	<Students>EEE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>402</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Dinkar  Prasad[20500201]</Teacher>
+	<Subject>EED402</Subject>
+	<Activity_Tag>D013</Activity_Tag>
+	<Students>EEE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>403</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sonia  Khetarpaul[20500730]</Teacher>
+	<Subject>CSD202</Subject>
+	<Activity_Tag>D317</Activity_Tag>
+	<Students>CSE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>404</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Dolly  Sharma[20500428]</Teacher>
+	<Subject>CSD208</Subject>
+	<Activity_Tag>C305</Activity_Tag>
+	<Students>CSE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>405</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Dolly  Sharma[20500428]</Teacher>
+	<Subject>CSD208</Subject>
+	<Activity_Tag>C305</Activity_Tag>
+	<Students>CSE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>406</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Divya  Lohani[20500325]</Teacher>
+	<Subject>CSD204</Subject>
+	<Activity_Tag>D317</Activity_Tag>
+	<Students>CSE2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>407</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Debopam  Acharya[20500192]</Teacher>
+	<Subject>CSD302</Subject>
+	<Activity_Tag>D313</Activity_Tag>
+	<Students>CSE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>408</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Debopam  Acharya[20500192]</Teacher>
+	<Subject>CSD302</Subject>
+	<Activity_Tag>D313</Activity_Tag>
+	<Students>CSE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>409</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Debopam  Acharya[20500192]</Teacher>
+	<Subject>CSD432</Subject>
+	<Activity_Tag>D313</Activity_Tag>
+	<Students>CSE4</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>410</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Aakash  Kishore Sinha[20500738]</Teacher>
+	<Subject>EED308</Subject>
+	<Activity_Tag>C105</Activity_Tag>
+	<Students>EEE3</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>411</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Aakash  Kishore Sinha[20500738]</Teacher>
+	<Subject>EED308</Subject>
+	<Activity_Tag>C105</Activity_Tag>
+	<Students>EEE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>412</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Aakash  Kishore Sinha[20500738]</Teacher>
+	<Subject>EED308</Subject>
+	<Activity_Tag>C105</Activity_Tag>
+	<Students>ECE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>413</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Aakash  Kishore Sinha[20500738]</Teacher>
+	<Subject>EED308</Subject>
+	<Activity_Tag>C105</Activity_Tag>
+	<Students>ECE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>414</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Aakash  Kishore Sinha[20500738]</Teacher>
+	<Subject>EED308</Subject>
+	<Activity_Tag>C105</Activity_Tag>
+	<Students>ECE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>415</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sonal  Singhal[20500080]</Teacher>
+	<Subject>EED401</Subject>
+	<Activity_Tag>C303</Activity_Tag>
+	<Students>ECE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>416</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sonal  Singhal[20500080]</Teacher>
+	<Subject>EED401</Subject>
+	<Activity_Tag>C303</Activity_Tag>
+	<Students>ECE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>417</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sonal  Singhal[20500080]</Teacher>
+	<Subject>EED401</Subject>
+	<Activity_Tag>C303</Activity_Tag>
+	<Students>ECE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>418</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Vaibhav  Shrivastava[20500030]</Teacher>
+	<Teacher>DHIRENDRA SAHOO[1710120099]</Teacher>
+	<Teacher>Priya Mandal[1610120074]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>A101</Activity_Tag>
+	<Students>ChemEng1</Students>
+	<Students>Civil1</Students>
+	<Students>CSE1</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>419</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sajal Kumar Ghosh[20500246]</Teacher>
+	<Teacher>RITIKA GUPTA[1710120083]</Teacher>
+	<Teacher>JOSHUA ASIRVATHAM[1710120064]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>A101</Activity_Tag>
+	<Students>EEE1</Students>
+	<Students>ECE1</Students>
+	<Students>Mech1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>420</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Susanta Sinha Roy[20500095]</Teacher>
+	<Teacher>Manuja Kothiyal[1610120064]</Teacher>
+	<Subject>PHY102</Subject>
+	<Activity_Tag>A101</Activity_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>421</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sankar  Dhar[20500094]</Teacher>
+	<Teacher>Anurag Pritam[1510120104]</Teacher>
+	<Subject>PHY104</Subject>
+	<Activity_Tag>A101</Activity_Tag>
+	<Students>Phy1</Students>
+	<Students>Chem1</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>422</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Priya  Johari[20500084]</Teacher>
+	<Teacher>Dwaipayan Chakraborty[1610120057]</Teacher>
+	<Subject>PHY106</Subject>
+	<Activity_Tag>B110</Activity_Tag>
+	<Students>Phy1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>423</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Vikash  Kumar[20500361]</Teacher>
+	<Subject>DES101</Subject>
+	<Activity_Tag>B003</Activity_Tag>
+	<Students>Bio1</Students>
+	<Duration>4</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>424</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Vikash  Kumar[20500361]</Teacher>
+	<Subject>DES121</Subject>
+	<Activity_Tag>B003</Activity_Tag>
+	<Students>Bio1</Students>
+	<Duration>4</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>425</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Prakash  Kumar[20500290]</Teacher>
+	<Subject>DES111</Subject>
+	<Activity_Tag>B003</Activity_Tag>
+	<Students>Bio1</Students>
+	<Duration>4</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>426</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Arvind  Shatdal[20500216]</Teacher>
+	<Subject>OHM401</Subject>
+	<Activity_Tag>A001</Activity_Tag>
+	<Students>BMS3</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>427</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Vivek  Ahuja[20500309]</Teacher>
+	<Subject>MGT102</Subject>
+	<Activity_Tag>A001</Activity_Tag>
+	<Students>BMS1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>428</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Aadya  Kaktikar[20500164]</Teacher>
+	<Subject>ADP101</Subject>
+	<Activity_Tag>A001</Activity_Tag>
+	<Students>BMS1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>429</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ashwin  Ramanathan[20500228]</Teacher>
+	<Subject>COM197</Subject>
+	<Activity_Tag>B004</Activity_Tag>
+	<Students>BMS1</Students>
+	<Duration>6</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>430</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Kamineni Nayayana[1510120028]</Teacher>
+	<Teacher>Ramesh  Gupta[20500198]</Teacher>
+	<Subject>MED204</Subject>
+	<Activity_Tag>C112</Activity_Tag>
+	<Students>Mech2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>431</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Kamineni Nayayana[1510120028]</Teacher>
+	<Teacher>Ramesh  Gupta[20500198]</Teacher>
+	<Subject>MED204</Subject>
+	<Activity_Tag>C112</Activity_Tag>
+	<Students>Mech2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>432</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Pradeep  Mehra[20500301]</Teacher>
+	<Subject>STM301</Subject>
+	<Activity_Tag>A001</Activity_Tag>
+	<Students>BMS3</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>433</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Santanu  Mitra[20500178]</Teacher>
+	<Subject>MED209</Subject>
+	<Activity_Tag>C117</Activity_Tag>
+	<Students>Mech2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>434</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Santanu  Mitra[20500178]</Teacher>
+	<Subject>MED209</Subject>
+	<Activity_Tag>C117</Activity_Tag>
+	<Students>Mech2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>435</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ajit  Kumar[20500008]</Teacher>
+	<Subject>MAT280</Subject>
+	<Activity_Tag>B113</Activity_Tag>
+	<Students>Mat2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>436</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Karthick  S[20500917]</Teacher>
+	<Subject>MED305</Subject>
+	<Activity_Tag>D004</Activity_Tag>
+	<Students>Mech3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>437</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Karthick  S[20500917]</Teacher>
+	<Subject>MED305</Subject>
+	<Activity_Tag>D004</Activity_Tag>
+	<Students>Mech3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>438</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Karthick  S[20500917]</Teacher>
+	<Subject>MED305</Subject>
+	<Activity_Tag>D004</Activity_Tag>
+	<Students>Mech3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>439</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Nishant  Mishra[20500056]</Teacher>
+	<Subject>MED306</Subject>
+	<Activity_Tag>C010</Activity_Tag>
+	<Students>Mech3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>440</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Nishant  Mishra[20500056]</Teacher>
+	<Subject>MED306</Subject>
+	<Activity_Tag>C010</Activity_Tag>
+	<Students>Mech3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>441</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Nishant  Mishra[20500056]</Teacher>
+	<Subject>MED306</Subject>
+	<Activity_Tag>C010</Activity_Tag>
+	<Students>Mech3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>442</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sathi Rajesh Reddy[20500731]</Teacher>
+	<Subject>MED404</Subject>
+	<Activity_Tag>D018</Activity_Tag>
+	<Students>Mech3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>443</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sathi Rajesh Reddy[20500731]</Teacher>
+	<Subject>MED404</Subject>
+	<Activity_Tag>D018</Activity_Tag>
+	<Students>Mech3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>444</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sathi Rajesh Reddy[20500731]</Teacher>
+	<Subject>MED404</Subject>
+	<Activity_Tag>D018</Activity_Tag>
+	<Students>Mech3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>445</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Niteesh  Sahni[20500011]</Teacher>
+	<Subject>MAT394</Subject>
+	<Activity_Tag>B113</Activity_Tag>
+	<Students>Mat3</Students>
+	<Students>Mat4</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>446</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Shahid  Jamal[20500122]</Teacher>
+	<Subject>COM196</Subject>
+	<Activity_Tag>B004</Activity_Tag>
+	<Duration>4</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>447</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Shahid  Jamal[20500122]</Teacher>
+	<Subject>COM196</Subject>
+	<Activity_Tag>B004</Activity_Tag>
+	<Duration>4</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>448</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Shahid  Jamal[20500122]</Teacher>
+	<Subject>COM196</Subject>
+	<Activity_Tag>B004</Activity_Tag>
+	<Duration>4</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>449</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Shahid  Jamal[20500122]</Teacher>
+	<Subject>COM196</Subject>
+	<Activity_Tag>B004</Activity_Tag>
+	<Duration>4</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>450</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Shahid  Jamal[20500122]</Teacher>
+	<Subject>COM196</Subject>
+	<Activity_Tag>B004</Activity_Tag>
+	<Duration>4</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>451</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Richa  Priyadarshini[20500150]</Teacher>
+	<Teacher>Deepak  Sehgal[20500085]</Teacher>
+	<Subject>BIO403</Subject>
+	<Activity_Tag>B308</Activity_Tag>
+	<Students>Bio4</Students>
+	<Duration>4</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>452</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Seema  Sehrawat[20500119]</Teacher>
+	<Subject>BIO314</Subject>
+	<Activity_Tag>B312</Activity_Tag>
+	<Students>Bio3</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>453</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Soumya   Pati[20500398]</Teacher>
+	<Subject>BIO313</Subject>
+	<Activity_Tag>B312</Activity_Tag>
+	<Students>Bio3</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>454</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Ashutosh  Singh[20500053]</Teacher>
+	<Subject>BIO208</Subject>
+	<Activity_Tag>A303</Activity_Tag>
+	<Students>Bio2</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>455</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sri Krishna Jayadev Magani[20500054]</Teacher>
+	<Subject>BIO207</Subject>
+	<Activity_Tag>B316</Activity_Tag>
+	<Students>Bio2</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>456</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Richa  Priyadarshini[20500150]</Teacher>
+	<Subject>BIO206</Subject>
+	<Activity_Tag>B308</Activity_Tag>
+	<Students>Bio2</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>457</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Naga Suresh Veerapu[20500209]</Teacher>
+	<Subject>BIO205</Subject>
+	<Activity_Tag>B308</Activity_Tag>
+	<Students>Bio2</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>458</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Koyeli   Mapa[20500426]</Teacher>
+	<Subject>BIO106</Subject>
+	<Activity_Tag>B316</Activity_Tag>
+	<Students>Bio1</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>459</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Rohini  Garg[20500633]</Teacher>
+	<Subject>BIO105</Subject>
+	<Activity_Tag>B316</Activity_Tag>
+	<Students>Bio1</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>460</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Rohini  Garg[20500633]</Teacher>
+	<Teacher>Seema  Sehrawat[20500119]</Teacher>
+	<Subject>BIO305</Subject>
+	<Activity_Tag>B312</Activity_Tag>
+	<Students>Bio3</Students>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>461</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sri Krishna Jayadev Magani[20500054]</Teacher>
+	<Subject>BIO113</Subject>
+	<Activity_Tag>B308</Activity_Tag>
+	<Duration>3</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>462</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Debopam  Acharya[20500192]</Teacher>
+	<Subject>CSD304</Subject>
+	<Activity_Tag>D317</Activity_Tag>
+	<Students>CSE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>463</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Debopam  Acharya[20500192]</Teacher>
+	<Subject>CSD304</Subject>
+	<Activity_Tag>D317</Activity_Tag>
+	<Students>CSE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>464</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Pooja  Malik[20500448]</Teacher>
+	<Subject>CSD201</Subject>
+	<Activity_Tag>D313</Activity_Tag>
+	<Students>CSE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>465</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Pooja  Malik[20500448]</Teacher>
+	<Subject>CSD304</Subject>
+	<Activity_Tag>D313</Activity_Tag>
+	<Students>EEE1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>466</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Rajeev Kumar Singh[20500026]</Teacher>
+	<Subject>CSD101</Subject>
+	<Activity_Tag>D317</Activity_Tag>
+	<Students>ChemEng1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>467</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Rajeev Kumar Singh[20500026]</Teacher>
+	<Subject>CSD101</Subject>
+	<Activity_Tag>D317</Activity_Tag>
+	<Students>Civil1</Students>
+	<Students>Mech1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>468</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Amit  Ray[20500123]</Teacher>
+	<Subject>DES211</Subject>
+	<Activity_Tag>B003</Activity_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>469</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Amit  Ray[20500123]</Teacher>
+	<Subject>CCC510</Subject>
+	<Activity_Tag>B003</Activity_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>470</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Sonia  Khetarpaul[20500730]</Teacher>
+	<Subject>CSD312</Subject>
+	<Activity_Tag>D317</Activity_Tag>
+	<Students>CSE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>471</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Dolly  Sharma[20500428]</Teacher>
+	<Subject>CSD342</Subject>
+	<Activity_Tag>C315</Activity_Tag>
+	<Students>CSE3</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>472</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
 </Activities_List>
 
 <Buildings_List>
 <Building>
-	<Name>AB</Name>
+	<Name>CD</Name>
 	<Comments></Comments>
 </Building>
 <Building>
-	<Name>CD</Name>
+	<Name>Lab</Name>
+	<Comments></Comments>
+</Building>
+<Building>
+	<Name>AB</Name>
 	<Comments></Comments>
 </Building>
 </Buildings_List>
@@ -5665,241 +8461,241 @@
 <Room>
 	<Name>D003</Name>
 	<Building>CD</Building>
-	<Capacity>90</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D006</Name>
 	<Building>CD</Building>
-	<Capacity>90</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D007</Name>
 	<Building>CD</Building>
-	<Capacity>90</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D022</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D026</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D102</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D105</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D106</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D107</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D109</Name>
 	<Building>CD</Building>
-	<Capacity>20</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D110</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D116</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D118</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D120</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D122</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D202</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D205</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D206</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D207</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D209</Name>
 	<Building>CD</Building>
-	<Capacity>20</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D210</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D214</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D216</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D218</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D220</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D222</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D226</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D302</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D305</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D306</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D307</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D309</Name>
 	<Building>CD</Building>
-	<Capacity>20</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D310</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D314</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D316</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D318</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D320</Name>
 	<Building>CD</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D322</Name>
 	<Building>CD</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>C021</Name>
 	<Building>CD</Building>
-	<Capacity>150</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D217</Name>
 	<Building>CD</Building>
-	<Capacity>180</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
@@ -5911,199 +8707,427 @@
 <Room>
 	<Name>B309</Name>
 	<Building>AB</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B311</Name>
 	<Building>AB</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B313</Name>
 	<Building>AB</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B307</Name>
 	<Building>AB</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B305</Name>
 	<Building>AB</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B303</Name>
 	<Building>AB</Building>
-	<Capacity>20</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B215</Name>
 	<Building>AB</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B219</Name>
 	<Building>AB</Building>
-	<Capacity>50</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B203</Name>
 	<Building>AB</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B205</Name>
 	<Building>AB</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B207</Name>
 	<Building>AB</Building>
-	<Capacity>20</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B223</Name>
 	<Building>AB</Building>
-	<Capacity>20</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B108</Name>
 	<Building>AB</Building>
-	<Capacity>120</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B121</Name>
 	<Building>AB</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B103</Name>
 	<Building>AB</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B105</Name>
 	<Building>AB</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B107</Name>
 	<Building>AB</Building>
-	<Capacity>20</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B016</Name>
 	<Building>AB</Building>
-	<Capacity>120</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B012</Name>
 	<Building>AB</Building>
-	<Capacity>100</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B007</Name>
 	<Building>AB</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B011</Name>
 	<Building>AB</Building>
-	<Capacity>50</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A312</Name>
 	<Building>AB</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A316</Name>
 	<Building>AB</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A320</Name>
 	<Building>AB</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A322</Name>
 	<Building>AB</Building>
-	<Capacity>20</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A218</Name>
 	<Building>AB</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A216</Name>
 	<Building>AB</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A214</Name>
 	<Building>AB</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A212</Name>
 	<Building>AB</Building>
-	<Capacity>30</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A222</Name>
 	<Building>AB</Building>
-	<Capacity>20</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A120</Name>
 	<Building>AB</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A116</Name>
 	<Building>AB</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A112</Name>
 	<Building>AB</Building>
-	<Capacity>60</Capacity>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>A001</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>A101</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>A303</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>B003</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>B004</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>B110</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>B113</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>B206</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>B212</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>B214</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>B308</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>B312</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>B316</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C009</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C010</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C017</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C105</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C112</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C114</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C117</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C201</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C205</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C206</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C217</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C303</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C305</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C308</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>C315</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>D004</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>D013</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>D018</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>D112</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>D113</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>D114</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>D117</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>D215</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>D313</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>D317</Name>
+	<Building>Lab</Building>
+	<Capacity>300</Capacity>
 	<Comments></Comments>
 </Room>
 </Rooms_List>
@@ -6162,7 +9186,7 @@
 	<Subject_Name></Subject_Name>
 	<Activity_Tag_Name>MWF</Activity_Tag_Name>
 	<Duration></Duration>
-	<Number_of_Preferred_Starting_Times>11</Number_of_Preferred_Starting_Times>
+	<Number_of_Preferred_Starting_Times>12</Number_of_Preferred_Starting_Times>
 	<Preferred_Starting_Time>
 		<Preferred_Starting_Day>MWF</Preferred_Starting_Day>
 		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
@@ -6207,6 +9231,10 @@
 		<Preferred_Starting_Day>MWF</Preferred_Starting_Day>
 		<Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
 	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>MWF</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivitiesPreferredStartingTimes>
@@ -6217,7 +9245,7 @@
 	<Subject_Name></Subject_Name>
 	<Activity_Tag_Name>TTh</Activity_Tag_Name>
 	<Duration></Duration>
-	<Number_of_Preferred_Starting_Times>5</Number_of_Preferred_Starting_Times>
+	<Number_of_Preferred_Starting_Times>6</Number_of_Preferred_Starting_Times>
 	<Preferred_Starting_Time>
 		<Preferred_Starting_Day>TTh</Preferred_Starting_Day>
 		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
@@ -6237,6 +9265,10 @@
 	<Preferred_Starting_Time>
 		<Preferred_Starting_Day>TTh</Preferred_Starting_Day>
 		<Preferred_Starting_Hour>17:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>TTh</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>18:30</Preferred_Starting_Hour>
 	</Preferred_Starting_Time>
 	<Active>true</Active>
 	<Comments></Comments>
@@ -6264,84 +9296,388 @@
 <ConstraintActivityTagPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Tag>roomAny</Activity_Tag>
-	<Number_of_Preferred_Rooms>74</Number_of_Preferred_Rooms>
-	<Preferred_Room>D118</Preferred_Room>
-	<Preferred_Room>B309</Preferred_Room>
-	<Preferred_Room>A320</Preferred_Room>
-	<Preferred_Room>B219</Preferred_Room>
-	<Preferred_Room>D226</Preferred_Room>
-	<Preferred_Room>B215</Preferred_Room>
-	<Preferred_Room>B011</Preferred_Room>
-	<Preferred_Room>A218</Preferred_Room>
-	<Preferred_Room>D116</Preferred_Room>
+	<Number_of_Preferred_Rooms>112</Number_of_Preferred_Rooms>
+	<Preferred_Room>D007</Preferred_Room>
+	<Preferred_Room>C217</Preferred_Room>
+	<Preferred_Room>D322</Preferred_Room>
+	<Preferred_Room>C117</Preferred_Room>
+	<Preferred_Room>D114</Preferred_Room>
+	<Preferred_Room>B308</Preferred_Room>
+	<Preferred_Room>A303</Preferred_Room>
 	<Preferred_Room>C021</Preferred_Room>
-	<Preferred_Room>D216</Preferred_Room>
-	<Preferred_Room>D217</Preferred_Room>
-	<Preferred_Room>A120</Preferred_Room>
-	<Preferred_Room>D222</Preferred_Room>
-	<Preferred_Room>D006</Preferred_Room>
+	<Preferred_Room>A218</Preferred_Room>
 	<Preferred_Room>D207</Preferred_Room>
-	<Preferred_Room>D209</Preferred_Room>
-	<Preferred_Room>B313</Preferred_Room>
+	<Preferred_Room>D202</Preferred_Room>
+	<Preferred_Room>B223</Preferred_Room>
 	<Preferred_Room>B307</Preferred_Room>
 	<Preferred_Room>B016</Preferred_Room>
-	<Preferred_Room>D305</Preferred_Room>
-	<Preferred_Room>B203</Preferred_Room>
 	<Preferred_Room>D214</Preferred_Room>
-	<Preferred_Room>D307</Preferred_Room>
-	<Preferred_Room>D022</Preferred_Room>
-	<Preferred_Room>D309</Preferred_Room>
+	<Preferred_Room>D006</Preferred_Room>
+	<Preferred_Room>A320</Preferred_Room>
+	<Preferred_Room>D003</Preferred_Room>
+	<Preferred_Room>D118</Preferred_Room>
+	<Preferred_Room>D205</Preferred_Room>
+	<Preferred_Room>B003</Preferred_Room>
+	<Preferred_Room>D306</Preferred_Room>
 	<Preferred_Room>B305</Preferred_Room>
-	<Preferred_Room>A312</Preferred_Room>
-	<Preferred_Room>B311</Preferred_Room>
-	<Preferred_Room>D322</Preferred_Room>
-	<Preferred_Room>D318</Preferred_Room>
+	<Preferred_Room>D107</Preferred_Room>
+	<Preferred_Room>D106</Preferred_Room>
+	<Preferred_Room>D105</Preferred_Room>
+	<Preferred_Room>B205</Preferred_Room>
+	<Preferred_Room>B206</Preferred_Room>
+	<Preferred_Room>A120</Preferred_Room>
+	<Preferred_Room>A212</Preferred_Room>
+	<Preferred_Room>B203</Preferred_Room>
+	<Preferred_Room>B313</Preferred_Room>
+	<Preferred_Room>C010</Preferred_Room>
+	<Preferred_Room>D109</Preferred_Room>
+	<Preferred_Room>D209</Preferred_Room>
+	<Preferred_Room>D112</Preferred_Room>
+	<Preferred_Room>C308</Preferred_Room>
 	<Preferred_Room>B103</Preferred_Room>
+	<Preferred_Room>D310</Preferred_Room>
+	<Preferred_Room>C201</Preferred_Room>
+	<Preferred_Room>C105</Preferred_Room>
 	<Preferred_Room>D206</Preferred_Room>
-	<Preferred_Room>B315</Preferred_Room>
-	<Preferred_Room>D210</Preferred_Room>
 	<Preferred_Room>A322</Preferred_Room>
+	<Preferred_Room>B108</Preferred_Room>
+	<Preferred_Room>C315</Preferred_Room>
+	<Preferred_Room>D110</Preferred_Room>
+	<Preferred_Room>D215</Preferred_Room>
+	<Preferred_Room>B303</Preferred_Room>
+	<Preferred_Room>A312</Preferred_Room>
+	<Preferred_Room>B012</Preferred_Room>
+	<Preferred_Room>C114</Preferred_Room>
+	<Preferred_Room>D226</Preferred_Room>
+	<Preferred_Room>C112</Preferred_Room>
+	<Preferred_Room>D316</Preferred_Room>
+	<Preferred_Room>D210</Preferred_Room>
+	<Preferred_Room>A214</Preferred_Room>
+	<Preferred_Room>B110</Preferred_Room>
+	<Preferred_Room>D120</Preferred_Room>
+	<Preferred_Room>B113</Preferred_Room>
+	<Preferred_Room>B011</Preferred_Room>
+	<Preferred_Room>A316</Preferred_Room>
+	<Preferred_Room>D314</Preferred_Room>
+	<Preferred_Room>B312</Preferred_Room>
+	<Preferred_Room>D216</Preferred_Room>
+	<Preferred_Room>B309</Preferred_Room>
+	<Preferred_Room>B311</Preferred_Room>
+	<Preferred_Room>D122</Preferred_Room>
+	<Preferred_Room>D018</Preferred_Room>
+	<Preferred_Room>C303</Preferred_Room>
+	<Preferred_Room>A001</Preferred_Room>
+	<Preferred_Room>B214</Preferred_Room>
+	<Preferred_Room>D313</Preferred_Room>
+	<Preferred_Room>B316</Preferred_Room>
+	<Preferred_Room>D318</Preferred_Room>
+	<Preferred_Room>D102</Preferred_Room>
+	<Preferred_Room>B212</Preferred_Room>
+	<Preferred_Room>D113</Preferred_Room>
+	<Preferred_Room>B004</Preferred_Room>
+	<Preferred_Room>D320</Preferred_Room>
+	<Preferred_Room>B219</Preferred_Room>
+	<Preferred_Room>A216</Preferred_Room>
+	<Preferred_Room>D217</Preferred_Room>
+	<Preferred_Room>A222</Preferred_Room>
+	<Preferred_Room>C206</Preferred_Room>
+	<Preferred_Room>D309</Preferred_Room>
+	<Preferred_Room>C009</Preferred_Room>
+	<Preferred_Room>D013</Preferred_Room>
+	<Preferred_Room>D022</Preferred_Room>
+	<Preferred_Room>B215</Preferred_Room>
+	<Preferred_Room>D305</Preferred_Room>
+	<Preferred_Room>B107</Preferred_Room>
+	<Preferred_Room>D004</Preferred_Room>
+	<Preferred_Room>A112</Preferred_Room>
+	<Preferred_Room>B121</Preferred_Room>
+	<Preferred_Room>D218</Preferred_Room>
+	<Preferred_Room>B207</Preferred_Room>
+	<Preferred_Room>A116</Preferred_Room>
+	<Preferred_Room>D302</Preferred_Room>
+	<Preferred_Room>D026</Preferred_Room>
+	<Preferred_Room>C017</Preferred_Room>
+	<Preferred_Room>B315</Preferred_Room>
+	<Preferred_Room>C305</Preferred_Room>
+	<Preferred_Room>C205</Preferred_Room>
+	<Preferred_Room>D117</Preferred_Room>
+	<Preferred_Room>B105</Preferred_Room>
+	<Preferred_Room>D307</Preferred_Room>
 	<Preferred_Room>B007</Preferred_Room>
 	<Preferred_Room>D220</Preferred_Room>
-	<Preferred_Room>D205</Preferred_Room>
-	<Preferred_Room>D110</Preferred_Room>
-	<Preferred_Room>D314</Preferred_Room>
-	<Preferred_Room>A216</Preferred_Room>
-	<Preferred_Room>D007</Preferred_Room>
-	<Preferred_Room>A222</Preferred_Room>
-	<Preferred_Room>B108</Preferred_Room>
-	<Preferred_Room>D218</Preferred_Room>
-	<Preferred_Room>B012</Preferred_Room>
-	<Preferred_Room>B303</Preferred_Room>
-	<Preferred_Room>A116</Preferred_Room>
-	<Preferred_Room>D026</Preferred_Room>
-	<Preferred_Room>D316</Preferred_Room>
-	<Preferred_Room>D107</Preferred_Room>
-	<Preferred_Room>A112</Preferred_Room>
-	<Preferred_Room>D122</Preferred_Room>
-	<Preferred_Room>D003</Preferred_Room>
-	<Preferred_Room>B105</Preferred_Room>
-	<Preferred_Room>D105</Preferred_Room>
-	<Preferred_Room>B223</Preferred_Room>
-	<Preferred_Room>D109</Preferred_Room>
-	<Preferred_Room>B205</Preferred_Room>
-	<Preferred_Room>D202</Preferred_Room>
-	<Preferred_Room>A316</Preferred_Room>
-	<Preferred_Room>D102</Preferred_Room>
-	<Preferred_Room>A212</Preferred_Room>
-	<Preferred_Room>D302</Preferred_Room>
-	<Preferred_Room>D106</Preferred_Room>
-	<Preferred_Room>D310</Preferred_Room>
-	<Preferred_Room>B107</Preferred_Room>
-	<Preferred_Room>D306</Preferred_Room>
-	<Preferred_Room>B207</Preferred_Room>
-	<Preferred_Room>D120</Preferred_Room>
-	<Preferred_Room>A214</Preferred_Room>
-	<Preferred_Room>D320</Preferred_Room>
-	<Preferred_Room>B121</Preferred_Room>
+	<Preferred_Room>D116</Preferred_Room>
+	<Preferred_Room>D222</Preferred_Room>
+	<Preferred_Room>A101</Preferred_Room>
+	<Preferred_Room>D317</Preferred_Room>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivityTagPreferredRooms>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>A001</Activity_Tag>
+	<Room>A001</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>A101</Activity_Tag>
+	<Room>A101</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>A303</Activity_Tag>
+	<Room>A303</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>B003</Activity_Tag>
+	<Room>B003</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>B004</Activity_Tag>
+	<Room>B004</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>B110</Activity_Tag>
+	<Room>B110</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>B113</Activity_Tag>
+	<Room>B113</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>B206</Activity_Tag>
+	<Room>B206</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>B212</Activity_Tag>
+	<Room>B212</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>B214</Activity_Tag>
+	<Room>B214</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>B308</Activity_Tag>
+	<Room>B308</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>B312</Activity_Tag>
+	<Room>B312</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>B316</Activity_Tag>
+	<Room>B316</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C009</Activity_Tag>
+	<Room>C009</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C010</Activity_Tag>
+	<Room>C010</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C017</Activity_Tag>
+	<Room>C017</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C105</Activity_Tag>
+	<Room>C105</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C112</Activity_Tag>
+	<Room>C112</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C114</Activity_Tag>
+	<Room>C114</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C117</Activity_Tag>
+	<Room>C117</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C201</Activity_Tag>
+	<Room>C201</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C205</Activity_Tag>
+	<Room>C205</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C206</Activity_Tag>
+	<Room>C206</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C217</Activity_Tag>
+	<Room>C217</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C303</Activity_Tag>
+	<Room>C303</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C305</Activity_Tag>
+	<Room>C305</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C308</Activity_Tag>
+	<Room>C308</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>C315</Activity_Tag>
+	<Room>C315</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>D004</Activity_Tag>
+	<Room>D004</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>D013</Activity_Tag>
+	<Room>D013</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>D018</Activity_Tag>
+	<Room>D018</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>D112</Activity_Tag>
+	<Room>D112</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>D113</Activity_Tag>
+	<Room>D113</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>D114</Activity_Tag>
+	<Room>D114</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>D117</Activity_Tag>
+	<Room>D117</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>D215</Activity_Tag>
+	<Room>D215</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>D313</Activity_Tag>
+	<Room>D313</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>D317</Activity_Tag>
+	<Room>D317</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
 </Space_Constraints_List>
 
 </fet>
