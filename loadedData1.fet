@@ -1,0 +1,958 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<fet version="5.37.5">
+
+<Institution_Name>Shiv Nadar University</Institution_Name>
+
+<Comments>Default comments</Comments>
+
+<Days_List>
+<Number_of_Days>5</Number_of_Days>
+<Day><Name>M</Name></Day>
+<Day><Name>T</Name></Day>
+<Day><Name>W</Name></Day>
+<Day><Name>Th</Name></Day>
+<Day><Name>F</Name></Day>
+</Days_List>
+
+
+<Hours_List>
+<Number_of_Hours>26</Number_of_Hours>
+<Hour><Name>08:00</Name></Hour>
+<Hour><Name>08:30</Name></Hour>
+<Hour><Name>09:00</Name></Hour>
+<Hour><Name>09:30</Name></Hour>
+<Hour><Name>10:00</Name></Hour>
+<Hour><Name>10:30</Name></Hour>
+<Hour><Name>11:00</Name></Hour>
+<Hour><Name>11:30</Name></Hour>
+<Hour><Name>12:00</Name></Hour>
+<Hour><Name>12:30</Name></Hour>
+<Hour><Name>13:00</Name></Hour>
+<Hour><Name>13:30</Name></Hour>
+<Hour><Name>14:00</Name></Hour>
+<Hour><Name>14:30</Name></Hour>
+<Hour><Name>15:00</Name></Hour>
+<Hour><Name>15:30</Name></Hour>
+<Hour><Name>16:00</Name></Hour>
+<Hour><Name>16:30</Name></Hour>
+<Hour><Name>17:00</Name></Hour>
+<Hour><Name>17:30</Name></Hour>
+<Hour><Name>18:00</Name></Hour>
+<Hour><Name>18:30</Name></Hour>
+<Hour><Name>19:00</Name></Hour>
+<Hour><Name>19:30</Name></Hour>
+<Hour><Name>20:00</Name></Hour>
+<Hour><Name>20:30</Name></Hour>
+</Hours_List>
+
+
+<Subjects_List>
+</Subjects_List>
+
+<Activity_Tags_List>
+</Activity_Tags_List>
+
+<Teachers_List>
+</Teachers_List>
+
+<Students_List> 
+<Year> 
+        <Name>BIO1</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>BIO1NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>BIO2</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>BIO2NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>BIO3</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>BIO3NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>BIO4</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>BIO4NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CED1</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CED1NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CED2</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CED2NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CED3</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CED3NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CED4</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CED4NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CHD1</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CHD1NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CHD2</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CHD2NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CHD3</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CHD3NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CHD4</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CHD4NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CHY1</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CHY1NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CHY2</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CHY2NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>CHY2MGT</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>CHY2BIO</Name>
+ 		<Number_of_Students>8</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CHY3</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CHY3NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>CHY3MGT</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>CHY3BIO</Name>
+ 		<Number_of_Students>8</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CHY4</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CHY4NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>CHY4MGT</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>CHY4BIO</Name>
+ 		<Number_of_Students>8</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CSD1</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CSD1NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CSD2</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CSD2NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>CSD2MAT</Name>
+ 		<Number_of_Students>40</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>CSD2ECO</Name>
+ 		<Number_of_Students>20</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CSD3</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CSD3NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>CSD3MAT</Name>
+ 		<Number_of_Students>40</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>CSD3ECO</Name>
+ 		<Number_of_Students>20</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>CSD4</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>CSD4NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>CSD4MAT</Name>
+ 		<Number_of_Students>40</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>CSD4ECO</Name>
+ 		<Number_of_Students>20</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>ECE1</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>ECE1NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>ECE2</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>ECE2NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>ECE3</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>ECE3NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>ECE4</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>ECE4NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>ECO1</Name> 
+        <Number_of_Students>30</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>ECO1NoMinor</Name>
+ 		<Number_of_Students>30</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>ECO2</Name> 
+        <Number_of_Students>30</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>ECO2NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>ECO2MGT</Name>
+ 		<Number_of_Students>20</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>ECO2MAT</Name>
+ 		<Number_of_Students>10</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>ECO3</Name> 
+        <Number_of_Students>30</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>ECO3NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>ECO3MGT</Name>
+ 		<Number_of_Students>20</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>ECO3MAT</Name>
+ 		<Number_of_Students>10</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>ECO4</Name> 
+        <Number_of_Students>30</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>ECO4NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>ECO4MGT</Name>
+ 		<Number_of_Students>20</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>ECO4MAT</Name>
+ 		<Number_of_Students>10</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>EED1</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>EED1NoMinor</Name>
+ 		<Number_of_Students>60</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>EED2</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>EED2NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>EED2DES</Name>
+ 		<Number_of_Students>40</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>EED2MGT</Name>
+ 		<Number_of_Students>20</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>EED3</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>EED3NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>EED3DES</Name>
+ 		<Number_of_Students>40</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>EED3MGT</Name>
+ 		<Number_of_Students>20</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>EED4</Name> 
+        <Number_of_Students>60</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>EED4NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>EED4DES</Name>
+ 		<Number_of_Students>40</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>EED4MGT</Name>
+ 		<Number_of_Students>20</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>ENG1</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>ENG1NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>ENG2</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>ENG2NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>ENG2COM</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>ENG2SOC</Name>
+ 		<Number_of_Students>8</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>ENG3</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>ENG3NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>ENG3COM</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>ENG3SOC</Name>
+ 		<Number_of_Students>8</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>ENG4</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>ENG4NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>ENG4COM</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>ENG4SOC</Name>
+ 		<Number_of_Students>8</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>HIS1</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>HIS1NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>HIS2</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>HIS2NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>HIS2COM</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>HIS2SOC</Name>
+ 		<Number_of_Students>8</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>HIS3</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>HIS3NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>HIS3COM</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>HIS3SOC</Name>
+ 		<Number_of_Students>8</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>HIS4</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>HIS4NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>HIS4COM</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>HIS4SOC</Name>
+ 		<Number_of_Students>8</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>INT1</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>INT1NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>INT2</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>INT2NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>MAT1</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>MAT1NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>MAT2</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>MAT2NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>MAT2ECO</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>MAT2CSD</Name>
+ 		<Number_of_Students>8</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>MAT3</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>MAT3NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>MAT3ECO</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>MAT3CSD</Name>
+ 		<Number_of_Students>8</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>MAT4</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>MAT4NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>MAT4ECO</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>MAT4CSD</Name>
+ 		<Number_of_Students>8</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>MED1</Name> 
+        <Number_of_Students>50</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>MED1NoMinor</Name>
+ 		<Number_of_Students>50</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>MED2</Name> 
+        <Number_of_Students>50</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>MED2NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>MED2DES</Name>
+ 		<Number_of_Students>33</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>MED2MGT</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>MED3</Name> 
+        <Number_of_Students>50</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>MED3NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>MED3DES</Name>
+ 		<Number_of_Students>33</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>MED3MGT</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>MED4</Name> 
+        <Number_of_Students>50</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>MED4NoMinor</Name>
+ 		<Number_of_Students>0</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>MED4DES</Name>
+ 		<Number_of_Students>33</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+	<Group> 
+ 		<Name>MED4MGT</Name>
+ 		<Number_of_Students>17</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>MGT1</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>MGT1NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>MGT2</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>MGT2NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>MGT3</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>MGT3NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>MGT4</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>MGT4NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>PHY1</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>PHY1NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>PHY2</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>PHY2NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>PHY3</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>PHY3NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>PHY4</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>PHY4NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>SOC1</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>SOC1NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>SOC2</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>SOC2NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>SOC3</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>SOC3NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>SOC4</Name> 
+        <Number_of_Students>25</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>SOC4NoMinor</Name>
+ 		<Number_of_Students>25</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+<Year> 
+        <Name>UG1</Name> 
+        <Number_of_Students>100</Number_of_Students>
+        <Comments></Comments> 
+	<Group> 
+ 		<Name>UG1NoMinor</Name>
+ 		<Number_of_Students>100</Number_of_Students>
+ 		<Comments></Comments>
+ 	</Group> 
+</Year>
+
+</Students_List>
+
+<Activities_List>
+</Activities_List>
+
+<Buildings_List>
+</Buildings_List>
+
+<Rooms_List>
+</Rooms_List>
+
+<Time_Constraints_List>
+<ConstraintBasicCompulsoryTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBasicCompulsoryTime>
+</Time_Constraints_List>
+
+<Space_Constraints_List>
+<ConstraintBasicCompulsorySpace>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBasicCompulsorySpace>
+</Space_Constraints_List>
+
+</fet>

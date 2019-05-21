@@ -2,108 +2,66 @@
 
 <fet version="5.37.5">
 
-<Institution_Name>Shiv Nadar University</Institution_Name>
+<Institution_Name>Default institution</Institution_Name>
 
 <Comments>Default comments</Comments>
 
 <Days_List>
 <Number_of_Days>5</Number_of_Days>
 <Day>
-	<Name>M</Name>
+	<Name>Monday</Name>
 </Day>
 <Day>
-	<Name>T</Name>
+	<Name>Tuesday</Name>
 </Day>
 <Day>
-	<Name>W</Name>
+	<Name>Wednesday</Name>
 </Day>
 <Day>
-	<Name>Th</Name>
+	<Name>Thursday</Name>
 </Day>
 <Day>
-	<Name>F</Name>
+	<Name>Friday</Name>
 </Day>
 </Days_List>
 
 <Hours_List>
-<Number_of_Hours>26</Number_of_Hours>
+<Number_of_Hours>12</Number_of_Hours>
 <Hour>
 	<Name>08:00</Name>
-</Hour>
-<Hour>
-	<Name>08:30</Name>
 </Hour>
 <Hour>
 	<Name>09:00</Name>
 </Hour>
 <Hour>
-	<Name>09:30</Name>
-</Hour>
-<Hour>
 	<Name>10:00</Name>
-</Hour>
-<Hour>
-	<Name>10:30</Name>
 </Hour>
 <Hour>
 	<Name>11:00</Name>
 </Hour>
 <Hour>
-	<Name>11:30</Name>
-</Hour>
-<Hour>
 	<Name>12:00</Name>
-</Hour>
-<Hour>
-	<Name>12:30</Name>
 </Hour>
 <Hour>
 	<Name>13:00</Name>
 </Hour>
 <Hour>
-	<Name>13:30</Name>
-</Hour>
-<Hour>
 	<Name>14:00</Name>
-</Hour>
-<Hour>
-	<Name>14:30</Name>
 </Hour>
 <Hour>
 	<Name>15:00</Name>
 </Hour>
 <Hour>
-	<Name>15:30</Name>
-</Hour>
-<Hour>
 	<Name>16:00</Name>
-</Hour>
-<Hour>
-	<Name>16:30</Name>
 </Hour>
 <Hour>
 	<Name>17:00</Name>
 </Hour>
 <Hour>
-	<Name>17:30</Name>
-</Hour>
-<Hour>
 	<Name>18:00</Name>
 </Hour>
 <Hour>
-	<Name>18:30</Name>
-</Hour>
-<Hour>
 	<Name>19:00</Name>
-</Hour>
-<Hour>
-	<Name>19:30</Name>
-</Hour>
-<Hour>
-	<Name>20:00</Name>
-</Hour>
-<Hour>
-	<Name>20:30</Name>
 </Hour>
 </Hours_List>
 
