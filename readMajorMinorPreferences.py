@@ -144,6 +144,9 @@ studentToCsv = 'Year,Number of Students per Year,Group, Number of Students per G
 for sIndex, s in studentsGroup.items():
     for sgIndex, sg in s['subgroups'].items():
         rowi = sIndex+','+str(s['number'])+','+sgIndex+','+ str(sg)+' , ,\n'
+        
+        #try without any subgroup
+        #rowi = sIndex+','+str(s['number'])+','+''+','+ ''+' , ,\n'
         studentToCsv = studentToCsv + rowi
         
 f = open("studentsGroup.csv", "w")

@@ -6,6 +6,7 @@ Created on Fri May 17 2019
 @author: ajit
 """
 
+
 #TODO: Work on CCC  courses
 
 #TODO: adding all majors and minors to all electives is overconstraining
@@ -44,6 +45,7 @@ for cIndex, c in courseList.items():
                
                
 # add minor students in courseList['programs']
+'''
 for cIndex, c in courseList.items():
     if ('Elective' in c['PartofMinoras']) or ('Compulsory' in c['PartofMinoras']):
         y = cIndex[3] # course level
@@ -69,6 +71,8 @@ for cIndex, c in courseList.items():
                 minJd = j+yp1+d
                 if minJd in studentsGroup[j+yp1]['subgroups']:
                     c['programs'][minJd] = studentsGroup[j+yp1]['subgroups'][minJd]
+'''
+
         
 # filling lecture sections, tutorial sections, lab sections with students subgroups               
 for cIndex, c in courseList.items():    
@@ -112,6 +116,8 @@ activityString = "Students Sets,Subject,Teachers,Activity Tags,Total Duration,Sp
 def splitLec(totalDuration, lecDuration = '2'):
     if (totalDuration == '2'):
         return '2'
+    elif (totalDuration == '3'):
+        return '3'
     elif (totalDuration == '4'):
         return '2+2'
     elif (totalDuration == '6'):
@@ -125,8 +131,8 @@ def splitLec(totalDuration, lecDuration = '2'):
         return '5+5'
     else:
         return ''
-    
-        
+      
+activityId = 0
     
 for cIndex, c in courseList.items():
     if 'lecSections' in c:
@@ -158,6 +164,15 @@ for cIndex, c in courseList.items():
                 minDays = '1'
                 weight = '95'
                 consecutive = '1'
+                
+            # add an acitivtyID for each contact session
+            # needed for forcing lectures on diff days to to on same time 
+            activityIdSet = set()
+            for i in range(0,len(splitDuration),2):
+                activityId = activityId + 1
+                activityIdSet.add(activityId)
+                
+            courseList[cIndex]['lecSections'][lIndex]['ids']=activityIdSet
             
             
             row = studentSet+','+subject+','+teachers+','+activityTag+','+totalDuration+','+splitDuration+','+minDays+','+weight+','+consecutive+'\n'
@@ -179,10 +194,26 @@ for cIndex, c in courseList.items():
             
             activityTag = 'TUT+AnyRoom+'+lIndex
             totalDuration = str(c['TutorialHoursPerWeek'])
+            if (int(totalDuration) >= 12):
+                print(cIndex + " abnormally high lecture hours. Skipping")
+                continue
+
+            
+            
             splitDuration = splitLec(totalDuration,'3')
             minDays = ''
             weight = ''
             consecutive = ''
+            
+            # add an acitivtyID for each contact session
+            # needed for forcing lectures on diff days to to on same time 
+            activityIdSet = set()
+            for i in range(0,len(splitDuration),2):
+                activityId = activityId + 1
+                activityIdSet.add(activityId)
+            courseList[cIndex]['tutSections'][lIndex]['ids']=activityIdSet
+
+                
             row = studentSet+','+subject+','+teachers+','+activityTag+','+totalDuration+','+splitDuration+','+minDays+','+weight+','+consecutive+'\n'
             activityString = activityString+row
 
@@ -204,10 +235,25 @@ for cIndex, c in courseList.items():
             activityTag = 'LAB' +'+'+ l['room'][0:4]+'+'+lIndex
             
             totalDuration = str(c['PracticalHoursPerWeek'])
+            if (int(totalDuration) >= 12):
+                print(cIndex + " abnormally high lecture hours. Skipping")
+                continue
+
+            
             splitDuration = totalDuration # no splitting of lab hours
             minDays = ''
             weight = ''
             consecutive = ''
+            
+            # add an acitivtyID for each contact session
+            # needed for forcing lectures on diff days to to on same time 
+            activityIdSet = set()
+            for i in range(0,len(splitDuration),2):
+                activityId = activityId + 1
+                activityIdSet.add(activityId)
+                
+            courseList[cIndex]['labSections'][lIndex]['ids']=activityIdSet
+
             row = studentSet+','+subject+','+teachers+','+activityTag+','+totalDuration+','+splitDuration+','+minDays+','+weight+','+consecutive+'\n'
             activityString = activityString+row
             
@@ -258,14 +304,14 @@ slots = [
          '15:30',
          '16:00',
          '16:30',
-         '17:00',
-         '17:30',
-         '18:00',
-         '18:30',
-          '19:00',
-          '19:30',
-          '20:00',
-          '20:30'
+#         '17:00',
+#         '17:30',
+#         '18:00',
+#         '18:30',
+#          '19:00',
+#          '19:30',
+#          '20:00',
+#          '20:30'
          ]
 
 TThStartTimimgs = ['09:00','10:30', '14:00', '15:30', '17:00', '18:30']
@@ -299,43 +345,17 @@ formattedData = re.sub(
         formattedData,flags=re.DOTALL)
 
 ## fill in student groups list
-#tag = '\
-#<Students_List> \n\
-#
-#
-#
-#<Year> \n\
-#    <Name>SNU</Name> \n\
-#    <Number_of_Students>'+str(totalNumberOfStudents) +'</Number_of_Students>\n\
-#    <Comments></Comments> \n'
-#       
-#for grItem in studentGroupList:
-#    tag = tag +  '<Group> \n <Name>'+ grItem[0] + '</Name>\n \
-#    <Number_of_Students>'+grItem[1]+'</Number_of_Students>\n \
-#	<Comments></Comments>\n \
-#</Group> \n'
-#                   
-#       
-#tag = tag+'</Year>\n</Students_List>'
-#
-##update file
-#formattedData = re.sub(
-#        r"<Students_List>(.*?)</Students_List>", tag,
-#        formattedData,flags=re.DOTALL)      
-
-## fill in student groups list
 tag = '<Students_List> \n'
 for sIndex, s in studentsGroup.items():
     tag = tag + '<Year> \n\
         <Name>'+sIndex+'</Name> \n\
         <Number_of_Students>'+str(s['number']) +'</Number_of_Students>\n\
         <Comments></Comments> \n'
+    
         
     for sgIndex, sg in s['subgroups'].items():
             tag = tag +  '\t<Group> \n \t\t<Name>'+ sgIndex + '</Name>\n \t\t<Number_of_Students>'+str(sg)+'</Number_of_Students>\n \t\t<Comments></Comments>\n \t</Group> \n'
-
-
-        
+            
     tag = tag+'</Year>\n'
 
 tag = tag+'\n</Students_List>'
@@ -346,10 +366,158 @@ formattedData = re.sub(
         formattedData,flags=re.DOTALL)      
 
 
+##----------------------------------------
+#read roomsAndBuildingFile
+with open('testData/rooms_and_buildings.csv', 'r') as ff:
+  reader = csv.reader(ff)
+  roomsAndBuilding = list(reader)
+
+buildingSet = set('');
+lectureRoomSetInA = set('');
+lectureRoomSetInB = set('');
+lectureRoomSetInCD = set('');
+
+labRoomCons = ''
+
+tag = '<Rooms_List>\n'
+for room in roomsAndBuilding[1:]:   # [1:] is for ignoring the first row
+    
+    buildingSet.add(room[2])
+    if (room[2] == 'Lab'):
+        labRoomCons = labRoomCons + '<ConstraintActivityTagPreferredRoom>\n \
+    <Weight_Percentage>100</Weight_Percentage> \n \
+    <Activity_Tag>'+room[0]+'</Activity_Tag> \n \
+    <Room>'+room[0]+'</Room> \n \
+    <Active>true</Active> \n \
+    <Comments></Comments> \n \
+</ConstraintActivityTagPreferredRoom>\n'
+    
+    
+    if (room[0][0] == 'A') and (room[2] != 'Lab'):
+        lectureRoomSetInA.add(room[0])
+    if(room[0][0] == 'B') and (room[2] != 'Lab'):
+        lectureRoomSetInB.add(room[0])
+    if ((room[0][0] == 'C') or (room[0][0] == 'D'))  and (room[2] != 'Lab'):
+        lectureRoomSetInCD.add(room[0])
+
+
+                
+    tag = tag + '<Room> \n\
+    <Name>'+room[0]+'</Name>\n \
+    <Building>'+room[2]+'</Building>\n \
+    <Capacity>'+room[1]+'</Capacity>\n \
+    <Comments></Comments>\n </Room>\n '
+tag = tag+ '</Rooms_List>\n'
+#update file
+formattedData = re.sub(
+        r"<Rooms_List>(.*?)</Rooms_List>", tag,
+        formattedData,flags=re.DOTALL)      
+
+allRoomSet = lectureRoomSetInA.union(lectureRoomSetInB).union(lectureRoomSetInCD)
+
+
+# add building list
+tag = '<Buildings_List>\n'
+for building in buildingSet:   # [1:] is for ignoring the first row
+    tag = tag + '<Building>\n \
+    <Name>'+building+'</Name> \n \
+    <Comments></Comments> \n \
+</Building>\n'
+    
+tag = tag+ '</Buildings_List>\n'
+#update file
+formattedData = re.sub(
+        r"<Buildings_List>(.*?)</Buildings_List>", tag,
+        formattedData,flags=re.DOTALL)      
+#-------------------------------------------------------------
+
+##--space constraint------------------------------------------
+
+# basic compulsory constraint
+spaceCons = '<Space_Constraints_List> \n \
+<ConstraintBasicCompulsorySpace> \n \
+    <Weight_Percentage>100</Weight_Percentage> \n \
+    <Active>true</Active> \n \
+    <Comments></Comments> \n \
+</ConstraintBasicCompulsorySpace>\n'
+
+# all room - tag AnyRoom
+spaceCons = spaceCons + '<ConstraintActivityTagPreferredRooms> \n \
+    <Weight_Percentage>100</Weight_Percentage> \n \
+    <Activity_Tag>AnyRoom</Activity_Tag> \n \
+    <Number_of_Preferred_Rooms>'+str(len(allRoomSet))+'</Number_of_Preferred_Rooms> \n'
+
+for room in allRoomSet:
+    spaceCons = spaceCons + '<Preferred_Room>'+room+'</Preferred_Room>\n'
+    
+spaceCons = spaceCons + '<Active>true</Active> \n \
+    <Comments></Comments> \n \
+</ConstraintActivityTagPreferredRooms>\n'
+
+
+# add lab room constraints
+spaceCons = spaceCons + labRoomCons
+
+spaceCons = spaceCons + '</Space_Constraints_List>\n'
+    
+#update file
+formattedData = re.sub(
+        r"<Space_Constraints_List>(.*?)</Space_Constraints_List>", spaceCons,
+        formattedData,flags=re.DOTALL)      
+    
+
+
+######################################################
+## -- end of space constratint
+
+
+
+#### time constraints ##############################################333
+
+# basic compulsory time constraint
+tag = '<Time_Constraints_List>\n\
+<ConstraintBasicCompulsoryTime>\n\
+    <Weight_Percentage>100</Weight_Percentage>\n\
+    <Active>true</Active>\n\
+    <Comments></Comments>\n\
+</ConstraintBasicCompulsoryTime>\n'
+
+
+# adding constraint of same lectures on diff days to be on same time
+for cIndex, c in courseList.items():
+    if 'lecSections' in c:
+        for lIndex, l in c['lecSections'].items():
+            if 'ids' in l:
+                tag = tag + '<ConstraintActivitiesSameStartingHour>\n'
+                tag = tag + '\t<Weight_Percentage>100</Weight_Percentage>\n'
+                tag = tag + '\t<Number_of_Activities>'+str(len(l['ids']))+'</Number_of_Activities>\n'
+                
+                for id in l['ids']:
+                    tag = tag+ '\t\t<Activity_Id>'+str(id)+'</Activity_Id>\n'
+                tag = tag + '\t<Active>true</Active>\n'
+                tag = tag + '\t<Comments></Comments>\n'
+                tag = tag + '</ConstraintActivitiesSameStartingHour>\n'
+            
+tag = tag + '</Time_Constraints_List>\n'
+##  end time constraints
+
+# write your content in n new file
+formattedData = re.sub(
+        r"<Time_Constraints_List>(.*?)</Time_Constraints_List>",tag ,
+        formattedData,flags=re.DOTALL)      
+###############################################
+
+
+
+#####################################################
+# the activities.csv needs to loaded at the FET interface
+
+
+
 
 ## write file
 
-dataFile = 'loadedData1.fet'
+dataFile = 'loadedData.fet'
 f = open(dataFile,'w+')
 f.write(formattedData)
 f.close
@@ -362,3 +530,14 @@ dayFile = 'trash.xml'
 g = open(dayFile,'w')
 g.write("trash")
 g.close
+
+#<ConstraintActivitiesSameStartingHour>
+#    <Weight_Percentage>100</Weight_Percentage>
+#    <Number_of_Activities>3</Number_of_Activities>
+#    <Activity_Id>1</Activity_Id>
+#    <Activity_Id>2</Activity_Id>
+#    <Activity_Id>3</Activity_Id>
+#    <Active>true</Active>
+#    <Comments></Comments>
+#</ConstraintActivitiesSameStartingHour>
+

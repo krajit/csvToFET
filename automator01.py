@@ -362,7 +362,7 @@ tag = tag + '</Time_Constraints_List>\n'
 formattedData = re.sub(
         r"<Time_Constraints_List>(.*?)</Time_Constraints_List>",tag ,
         formattedData,flags=re.DOTALL)      
-###############################################33333
+###############################################
 
 
 ## space constaints
@@ -405,7 +405,7 @@ formattedData = re.sub(
 
 ## write file
 
-dataFile = 'loadedData.fet'
+dataFile = 'loadedData1.fet'
 f = open(dataFile,'w+')
 f.write(formattedData)
 f.close
