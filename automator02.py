@@ -45,9 +45,10 @@ for cIndex, c in courseList.items():
                
                
 # add minor students in courseList['programs']
-'''
+
 for cIndex, c in courseList.items():
-    if ('Elective' in c['PartofMinoras']) or ('Compulsory' in c['PartofMinoras']):
+    #if ('Elective' in c['PartofMinoras']) or ('Compulsory' in c['PartofMinoras']):
+    if ('Compulsory' in c['PartofMinoras']):
         y = cIndex[3] # course level
         d = cIndex[0:3]
         
@@ -71,7 +72,6 @@ for cIndex, c in courseList.items():
                 minJd = j+yp1+d
                 if minJd in studentsGroup[j+yp1]['subgroups']:
                     c['programs'][minJd] = studentsGroup[j+yp1]['subgroups'][minJd]
-'''
 
         
 # filling lecture sections, tutorial sections, lab sections with students subgroups               
@@ -260,11 +260,10 @@ for cIndex, c in courseList.items():
 f = open("activityTest01.csv", "w")
 f.write(activityString)
 f.close()    
-    
+
+###################################################################    
 #--------------------------------------------------------
 import re, csv
-
-
 # laod a starting template for .fet file readable by FET.
 templatePath = 'basicTemplate.fet'
 basicTemplate = open(templatePath,"r").read()
@@ -538,14 +537,3 @@ dayFile = 'trash.xml'
 g = open(dayFile,'w')
 g.write("trash")
 g.close
-
-#<ConstraintActivitiesSameStartingHour>
-#    <Weight_Percentage>100</Weight_Percentage>
-#    <Number_of_Activities>3</Number_of_Activities>
-#    <Activity_Id>1</Activity_Id>
-#    <Activity_Id>2</Activity_Id>
-#    <Activity_Id>3</Activity_Id>
-#    <Active>true</Active>
-#    <Comments></Comments>
-#</ConstraintActivitiesSameStartingHour>
-
