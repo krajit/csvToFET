@@ -161,8 +161,8 @@ for cIndex, c in courseList.items():
             weight = ''
             consecutive = ''
             if (len(splitDuration) >= 2):
-                minDays = '1'
-                weight = '95'
+                minDays = '2'
+                weight = '100'
                 consecutive = '1'
                 
             # add an acitivtyID for each contact session
@@ -441,18 +441,26 @@ spaceCons = '<Space_Constraints_List> \n \
     <Comments></Comments> \n \
 </ConstraintBasicCompulsorySpace>\n'
 
-# all room - tag AnyRoom
-spaceCons = spaceCons + '<ConstraintActivityTagPreferredRooms> \n \
-    <Weight_Percentage>100</Weight_Percentage> \n \
-    <Activity_Tag>AnyRoom</Activity_Tag> \n \
-    <Number_of_Preferred_Rooms>'+str(len(allRoomSet))+'</Number_of_Preferred_Rooms> \n'
-
-for room in allRoomSet:
-    spaceCons = spaceCons + '<Preferred_Room>'+room+'</Preferred_Room>\n'
-    
-spaceCons = spaceCons + '<Active>true</Active> \n \
-    <Comments></Comments> \n \
-</ConstraintActivityTagPreferredRooms>\n'
+roomArray = []
+for s in allRoomSet:
+    roomArray.append(s)
+j = 0
+# add a specific room preference for each lecture room
+# so that each lecture happens in the same room
+for cIndex, c in courseList.items():
+    if 'lecSections' in c:
+        for lIndex, l in c['lecSections'].items():
+            if 'ids' in l:    
+                for i in l['ids']:
+                    spaceCons = spaceCons + '<ConstraintActivityPreferredRoom>\n\
+                    <Weight_Percentage>100</Weight_Percentage>\n\
+                    <Activity_Id>'+str(i)+'</Activity_Id>\n\
+                    <Room>'+roomArray[j]+'</Room>\n\
+                    <Permanently_Locked>false</Permanently_Locked>\n\
+                    <Active>true</Active>\n\
+                    <Comments></Comments>\n\
+                    </ConstraintActivityPreferredRoom>'
+                j = (j+1) % len(allRoomSet)
 
 
 # add lab room constraints
