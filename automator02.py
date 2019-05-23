@@ -45,9 +45,10 @@ for cIndex, c in courseList.items():
                
                
 # add minor students in courseList['programs']
-'''
+# only if the couse is compulsory for minors
 for cIndex, c in courseList.items():
-    if ('Elective' in c['PartofMinoras']) or ('Compulsory' in c['PartofMinoras']):
+    #if ('Elective' in c['PartofMinoras']) or ('Compulsory' in c['PartofMinoras']):
+    if ('Compulsory' in c['PartofMinoras']):
         y = cIndex[3] # course level
         d = cIndex[0:3]
         
@@ -71,7 +72,6 @@ for cIndex, c in courseList.items():
                 minJd = j+yp1+d
                 if minJd in studentsGroup[j+yp1]['subgroups']:
                     c['programs'][minJd] = studentsGroup[j+yp1]['subgroups'][minJd]
-'''
 
         
 # filling lecture sections, tutorial sections, lab sections with students subgroups               
@@ -149,7 +149,7 @@ for cIndex, c in courseList.items():
                 teachers = teachers +'+' + i
             teachers = teachers[1:]
             
-            activityTag = 'LEC+AnyRoom+'+lIndex
+            activityTag = lIndex #'LEC+AnyRoom+'+lIndex
             totalDuration = str(c['LectureHoursPerWeek'])
             if (int(totalDuration) >= 12):
                 print(cIndex + " abnormally high lecture hours. Skipping")
@@ -192,7 +192,7 @@ for cIndex, c in courseList.items():
                 teachers = teachers +'+' + i
             teachers = teachers[1:]
             
-            activityTag = 'TUT+AnyRoom+'+lIndex
+            activityTag = lIndex #'TUT+AnyRoom+'+lIndex
             totalDuration = str(c['TutorialHoursPerWeek'])
             if (int(totalDuration) >= 12):
                 print(cIndex + " abnormally high lecture hours. Skipping")
@@ -232,7 +232,7 @@ for cIndex, c in courseList.items():
                 teachers = teachers +'+' + i
             teachers = teachers[1:]
             
-            activityTag = 'LAB' +'+'+ l['room'][0:4]+'+'+lIndex
+            activityTag = lIndex #'LAB' +'+'+ l['room'][0:4]+'+'+lIndex
             
             totalDuration = str(c['PracticalHoursPerWeek'])
             if (int(totalDuration) >= 12):
@@ -260,11 +260,10 @@ for cIndex, c in courseList.items():
 f = open("activityTest01.csv", "w")
 f.write(activityString)
 f.close()    
-    
+
+###################################################################    
 #--------------------------------------------------------
 import re, csv
-
-
 # laod a starting template for .fet file readable by FET.
 templatePath = 'basicTemplate.fet'
 basicTemplate = open(templatePath,"r").read()
@@ -538,14 +537,3 @@ dayFile = 'trash.xml'
 g = open(dayFile,'w')
 g.write("trash")
 g.close
-
-#<ConstraintActivitiesSameStartingHour>
-#    <Weight_Percentage>100</Weight_Percentage>
-#    <Number_of_Activities>3</Number_of_Activities>
-#    <Activity_Id>1</Activity_Id>
-#    <Activity_Id>2</Activity_Id>
-#    <Activity_Id>3</Activity_Id>
-#    <Active>true</Active>
-#    <Comments></Comments>
-#</ConstraintActivitiesSameStartingHour>
-
