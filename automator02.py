@@ -45,7 +45,7 @@ for cIndex, c in courseList.items():
                
                
 # add minor students in courseList['programs']
-
+# only if the couse is compulsory for minors
 for cIndex, c in courseList.items():
     #if ('Elective' in c['PartofMinoras']) or ('Compulsory' in c['PartofMinoras']):
     if ('Compulsory' in c['PartofMinoras']):
