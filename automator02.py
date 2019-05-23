@@ -149,7 +149,7 @@ for cIndex, c in courseList.items():
                 teachers = teachers +'+' + i
             teachers = teachers[1:]
             
-            activityTag = 'LEC+AnyRoom+'+lIndex
+            activityTag = lIndex #'LEC+AnyRoom+'+lIndex
             totalDuration = str(c['LectureHoursPerWeek'])
             if (int(totalDuration) >= 12):
                 print(cIndex + " abnormally high lecture hours. Skipping")
@@ -192,7 +192,7 @@ for cIndex, c in courseList.items():
                 teachers = teachers +'+' + i
             teachers = teachers[1:]
             
-            activityTag = 'TUT+AnyRoom+'+lIndex
+            activityTag = lIndex #'TUT+AnyRoom+'+lIndex
             totalDuration = str(c['TutorialHoursPerWeek'])
             if (int(totalDuration) >= 12):
                 print(cIndex + " abnormally high lecture hours. Skipping")
@@ -232,7 +232,7 @@ for cIndex, c in courseList.items():
                 teachers = teachers +'+' + i
             teachers = teachers[1:]
             
-            activityTag = 'LAB' +'+'+ l['room'][0:4]+'+'+lIndex
+            activityTag = lIndex #'LAB' +'+'+ l['room'][0:4]+'+'+lIndex
             
             totalDuration = str(c['PracticalHoursPerWeek'])
             if (int(totalDuration) >= 12):
