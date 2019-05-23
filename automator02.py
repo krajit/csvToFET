@@ -257,6 +257,13 @@ for cIndex, c in courseList.items():
             row = studentSet+','+subject+','+teachers+','+activityTag+','+totalDuration+','+splitDuration+','+minDays+','+weight+','+consecutive+'\n'
             activityString = activityString+row
             
+# add lunch activity for each subgroup
+for sIndex, s in studentsGroup.items():
+    for sgIndex, sg in s['subgroups'].items():
+        row = sgIndex+',Lunch,'+'T'+sgIndex+', ,8,2+2+2+2,1,80,1\n'
+        activityString = activityString+row
+
+            
 f = open("activityTest01.csv", "w")
 f.write(activityString)
 f.close()    
@@ -303,8 +310,8 @@ slots = [
          '15:30',
          '16:00',
          '16:30',
-#         '17:00',
-#         '17:30',
+         '17:00',
+         '17:30',
 #         '18:00',
 #         '18:30',
 #          '19:00',
@@ -489,6 +496,115 @@ tag = '<Time_Constraints_List>\n\
     <Comments></Comments>\n\
 </ConstraintBasicCompulsoryTime>\n'
 
+# add Th 12-2 break time
+tag = tag + '<ConstraintBreakTimes> \n\
+	<Weight_Percentage>100</Weight_Percentage> \n \
+	<Number_of_Break_Times>4</Number_of_Break_Times> \n \
+	<Break_Time> \n \
+		<Day>Th</Day> \n \
+		<Hour>12:00</Hour> \n \
+	</Break_Time> \n \
+	<Break_Time> \n \
+		<Day>Th</Day> \n \
+		<Hour>12:30</Hour> \n \
+	</Break_Time> \n \
+	<Break_Time> \n \
+		<Day>Th</Day> \n \
+		<Hour>13:00</Hour> \n \
+	</Break_Time> \n \
+	<Break_Time> \n \
+		<Day>Th</Day> \n \
+		<Hour>13:30</Hour> \n \
+	</Break_Time> \n \
+	<Active>true</Active> \n \
+	<Comments></Comments> \n \
+</ConstraintBreakTimes>\n'
+
+lunchConsTag = '<ConstraintActivitiesPreferredStartingTimes> \n \
+	<Weight_Percentage>100</Weight_Percentage> \n \
+	<Teacher_Name></Teacher_Name> \n \
+	<Students_Name></Students_Name> \n \
+	<Subject_Name>Lunch</Subject_Name> \n \
+	<Activity_Tag_Name></Activity_Tag_Name> \n \
+	<Duration></Duration> \n \
+	<Number_of_Preferred_Starting_Times>16</Number_of_Preferred_Starting_Times> \n \
+    	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>M</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>12:30</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>M</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>13:00</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Active>true</Active> \n \
+    	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>M</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>13:30</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Active>true</Active> \n \
+    	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>M</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>14:00</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+        	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>T</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>12:30</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>T</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>13:00</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Active>true</Active> \n \
+    	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>T</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>13:30</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Active>true</Active> \n \
+    	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>T</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>14:00</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+        	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>W</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>12:30</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>W</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>13:00</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Active>true</Active> \n \
+    	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>W</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>13:30</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Active>true</Active> \n \
+    	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>W</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>14:00</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+        	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>F</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>12:30</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>F</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>13:00</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Active>true</Active> \n \
+    	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>F</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>13:30</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Active>true</Active> \n \
+    	<Preferred_Starting_Time> \n \
+		<Preferred_Starting_Day>F</Preferred_Starting_Day> \n \
+		<Preferred_Starting_Hour>14:00</Preferred_Starting_Hour> \n \
+	</Preferred_Starting_Time> \n \
+	<Active>true</Active> \n \
+	<Comments></Comments> \n \
+</ConstraintActivitiesPreferredStartingTimes>\n'
+
+tag = tag + lunchConsTag
 
 # adding constraint of same lectures on diff days to be on same time
 for cIndex, c in courseList.items():

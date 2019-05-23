@@ -17,7 +17,7 @@
 
 
 <Hours_List>
-<Number_of_Hours>18</Number_of_Hours>
+<Number_of_Hours>20</Number_of_Hours>
 <Hour><Name>08:00</Name></Hour>
 <Hour><Name>08:30</Name></Hour>
 <Hour><Name>09:00</Name></Hour>
@@ -36,6 +36,8 @@
 <Hour><Name>15:30</Name></Hour>
 <Hour><Name>16:00</Name></Hour>
 <Hour><Name>16:30</Name></Hour>
+<Hour><Name>17:00</Name></Hour>
+<Hour><Name>17:30</Name></Hour>
 </Hours_List>
 
 
@@ -1623,6 +1625,111 @@
     <Active>true</Active>
     <Comments></Comments>
 </ConstraintBasicCompulsoryTime>
+<ConstraintBreakTimes> 
+	<Weight_Percentage>100</Weight_Percentage> 
+ 	<Number_of_Break_Times>4</Number_of_Break_Times> 
+ 	<Break_Time> 
+ 		<Day>Th</Day> 
+ 		<Hour>12:00</Hour> 
+ 	</Break_Time> 
+ 	<Break_Time> 
+ 		<Day>Th</Day> 
+ 		<Hour>12:30</Hour> 
+ 	</Break_Time> 
+ 	<Break_Time> 
+ 		<Day>Th</Day> 
+ 		<Hour>13:00</Hour> 
+ 	</Break_Time> 
+ 	<Break_Time> 
+ 		<Day>Th</Day> 
+ 		<Hour>13:30</Hour> 
+ 	</Break_Time> 
+ 	<Active>true</Active> 
+ 	<Comments></Comments> 
+ </ConstraintBreakTimes>
+<ConstraintActivitiesPreferredStartingTimes> 
+ 	<Weight_Percentage>100</Weight_Percentage> 
+ 	<Teacher_Name></Teacher_Name> 
+ 	<Students_Name></Students_Name> 
+ 	<Subject_Name>Lunch</Subject_Name> 
+ 	<Activity_Tag_Name></Activity_Tag_Name> 
+ 	<Duration></Duration> 
+ 	<Number_of_Preferred_Starting_Times>16</Number_of_Preferred_Starting_Times> 
+     	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>M</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>12:30</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>M</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>13:00</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Active>true</Active> 
+     	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>M</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>13:30</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Active>true</Active> 
+     	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>M</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>14:00</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+         	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>T</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>12:30</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>T</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>13:00</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Active>true</Active> 
+     	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>T</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>13:30</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Active>true</Active> 
+     	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>T</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>14:00</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+         	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>W</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>12:30</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>W</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>13:00</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Active>true</Active> 
+     	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>W</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>13:30</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Active>true</Active> 
+     	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>W</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>14:00</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+         	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>F</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>12:30</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>F</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>13:00</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Active>true</Active> 
+     	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>F</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>13:30</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Active>true</Active> 
+     	<Preferred_Starting_Time> 
+ 		<Preferred_Starting_Day>F</Preferred_Starting_Day> 
+ 		<Preferred_Starting_Hour>14:00</Preferred_Starting_Hour> 
+ 	</Preferred_Starting_Time> 
+ 	<Active>true</Active> 
+ 	<Comments></Comments> 
+ </ConstraintActivitiesPreferredStartingTimes>
 <ConstraintActivitiesSameStartingHour>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>3</Number_of_Activities>
