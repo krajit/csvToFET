@@ -5,6 +5,8 @@ Created on Fri May 17 2019
 
 @author: ajit
 """
+import random
+
 
 
 #TODO: Work on CCC  courses
@@ -42,7 +44,20 @@ for cIndex, c in courseList.items():
        for insListIndex, insList in c['labSections'].items():
            for i in insList['instructors']:
                instructors.add(i)
+ 
+    
+#######################################################################
+# maintain a dictionary of how many minors or UWE each subgroup can enroll
+maxNumOfAllowedUWE = 2
+
+allowedNumOfUWE = dict()
+for sIndex, s in studentsGroup.items():
+    for sgIndex, sg in s['subgroups'].items():
+        
+        if (sgIndex[-7:] != 'NoMinor'):  # only add minor subgroups       
+            allowedNumOfUWE[sgIndex] = maxNumOfAllowedUWE
                
+#######################################################################
                
 # add minor students in courseList['programs']
 # only if the couse is compulsory for minors
@@ -66,12 +81,70 @@ for cIndex, c in courseList.items():
                 minJd = j+y+d
                 if minJd in studentsGroup[j+y]['subgroups']:
                     c['programs'][minJd] = studentsGroup[j+y]['subgroups'][minJd]
+                    allowedNumOfUWE[minJd] = allowedNumOfUWE[minJd] - 1 
                     
             # adding year yp1
             for j in dMinorSeekers:
                 minJd = j+yp1+d
                 if minJd in studentsGroup[j+yp1]['subgroups']:
                     c['programs'][minJd] = studentsGroup[j+yp1]['subgroups'][minJd]
+                    allowedNumOfUWE[minJd] = allowedNumOfUWE[minJd] - 1
+
+
+for sg in allowedNumOfUWE:
+    # need to assign k number of UWE to each group
+    minorIn = sg[4:]
+    y = sg[3] # year
+    ym1 = str(int(y) - 1)   # year -1
+    
+    minor1 = minorIn+y
+    minor2 = minorIn+ym1
+
+    # first choose UWE from minor electives
+    if (allowedNumOfUWE[sg] > 0):
+        minorElectiveCoursesForSG = set()
+        if minor1 in minorElectives:
+            minorElectiveCoursesForSG = minorElectiveCoursesForSG.union(minorElectives[minor1])
+
+        if minor2 in minorElectives:
+            minorElectiveCoursesForSG = minorElectiveCoursesForSG.union(minorElectives[minor2])
+            
+        n = len(minorElectiveCoursesForSG)
+
+        # n might be smaller than k
+        k = min(n,allowedNumOfUWE[sg])
+        if (k > 0):
+            minorCoursesAssignedToSG = random.sample(minorElectiveCoursesForSG,k)
+            # add these  students group sg to these courses
+            for c in minorCoursesAssignedToSG:
+                courseList[c]['programs'][sg] = 10
+        # ki number of UWE courses have been assigned from minor electives
+        allowedNumOfUWE[sg] = allowedNumOfUWE[sg] - k 
+        
+        # if the group still needs to take more UWE, it can take from UWE from minor dept, 
+        # which are not part of minors
+        
+    # choose UWE from minor dept courses but which are not part of minors
+    if (allowedNumOfUWE[sg] > 0):
+        UWEForSG = set()
+        if minor1 in UWEnotInMinors:
+            UWEForSG = UWEForSG.union(UWEnotInMinors[minor1])
+
+        if minor2 in UWEnotInMinors:
+            UWEForSG = UWEForSG.union(UWEnotInMinors[minor2])
+            
+        n = len(UWEForSG)
+
+        # n might be smaller than k
+        k = min(n,allowedNumOfUWE[sg])
+        if (k > 0):
+            UWEassignedForSG = random.sample(UWEForSG,k)
+            # add these  students group sg to these courses
+            for c in UWEassignedForSG:
+                courseList[c]['programs'][sg] = 10
+        # ki number of UWE courses have been assigned from minor electives
+        allowedNumOfUWE[sg] = allowedNumOfUWE[sg] - k 
+    
 
         
 # filling lecture sections, tutorial sections, lab sections with students subgroups               
