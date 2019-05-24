@@ -6,17 +6,20 @@
 - Division of major into subgroups based on choices of minors
 - Minor subgroup added in the 'compulsory' minor courses.
 - Thursday 12-1 break time
+- Lunch hour for everyone
+- Minor subgroups for electives. 
+    - Each subgroup added to two randomly selected minor-electives
+    - If UWE requirement still not met, more courses added from minor dept UWEs which are not part of minor.
+
 
 ## In progress
-- Minor subgroups for electives. This step should be done manually. 
-
-
-## TODO
-
 - Adjust for CCC courses
     - Make groups of first and second year students
 
-- Lunch hour for everyone
+## TODO
+
+
+
 - Add compactness constraint (minimal gaps) for students
 - Add compactness constraint (minimal gaps) for faculty
 - Make ajustments in the room allottment so that large class gets big rooms.

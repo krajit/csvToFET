@@ -182,9 +182,51 @@ for i in range(1,sheet.nrows):
                     courseI['labSections'][praci]['room'] =  sheet.cell_value(k,LabRoomNumber)
                     courseI['labSections'][praci]['students'] = set()
         
-    
-    
+   
+# dictionary of major electives
+majorElectives = dict()
+minorElectives = dict()
+UWEnotInMinors = dict()
+
+for cIndex, c in courseList.items():
+    d = cIndex[0:3] # dept
+    y = cIndex[3]   # year
         
+    # combine many business school minor in one
+    if (d == 'MKT') or (d == 'DOM') or (d == 'FAC') or (d == 'OHM') or (d == 'STM'):
+        d = 'MGT'
+        
+    if (int(y) >= 4):
+        y = '4'
+
+    #combine year and dept again
+    d = d+y
+    
+    # update the list of major electives
+    if 'Major Elective' in c['CourseType']:
+        if d in majorElectives:
+            majorElectives[d].add(cIndex)
+        else:
+            majorElectives[d] = set()
+            majorElectives[d].add(cIndex)
+
+    # update list of minor electives
+    # treat UWE which are not part of minors as minor electives
+    #    for time-tabling purpose
+    if 'Elective' in c['PartofMinoras']:
+        if d in minorElectives:
+            minorElectives[d].add(cIndex)
+        else:
+            minorElectives[d] = set()
+            minorElectives[d].add(cIndex)
+
+    if ('Not a part' in c['PartofMinoras']) and ('Yes' in c['OpenasUWE']):
+        if d in UWEnotInMinors:
+            UWEnotInMinors[d].add(cIndex)
+        else:
+            UWEnotInMinors[d] = set()
+            UWEnotInMinors[d].add(cIndex)
+
         
     
 
