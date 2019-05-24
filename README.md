@@ -19,3 +19,10 @@
 - Lunch hour for everyone
 - Add compactness constraint (minimal gaps) for students
 - Add compactness constraint (minimal gaps) for faculty
+- Make ajustments in the room allottment so that large class gets big rooms.
+
+
+## Notes:
+- Seems like major electives are treated as Compulsory for time-tabling purpose. Can this be relaxed? Lets leave it for now.
+- Treat minor-electives as same as UWE for time-tabling purpose.
+- UWE which are not part of minors, needs to provide a target audience for their course. Else, how about randomly mapping from students doing minors as target audience. 
