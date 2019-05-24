@@ -7,12 +7,9 @@
 - Minor subgroup added in the 'compulsory' minor courses.
 - Thursday 12-1 break time
 - Lunch hour for everyone
-<<<<<<< HEAD
-=======
 - Minor subgroups for electives. 
     - Each subgroup added to two randomly selected minor-electives
     - If UWE requirement still not met, more courses added from minor dept UWEs which are not part of minor.
->>>>>>> electives-as-soft-contraints
 
 
 ## In progress
