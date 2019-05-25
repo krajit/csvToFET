@@ -5,26 +5,419 @@ Created on Fri May 17 2019
 
 @author: ajit
 """
-import random
+
+import random, xlrd
+from colorama import Fore, Back, Style
+
+# some preparotory instructions
+print(Fore.RED+ '\nWarning: File downloaded from COS contains Ziaur Rehman. It is a dummy instructor name. Make sure to replace it with unique name for each activity.\n')
+
+print(Fore.RED+ '\nWarning: Large courses with multiple tutorials generally have instructor names in the tutorials section. Make sure to replace that with course code + TAi to get accurate time table.\n')
+print(Style.RESET_ALL)
 
 
 
-#TODO: Work on CCC  courses
 
-#TODO: adding all majors and minors to all electives is overconstraining
-#TOTO: add majors in elective with probilty 0.5
-#TODO: add minors in minor electives with prabability 0.3 
+# read major minor preferences as filled by UG advisers
+# create subgroup of students based on minor preferences
+filePath = "testData/SNU - popular minors data survey (Responses).xlsx"
+## NOTE: make sure to remove duplicate department rows manually
 
-# read major minor preferences
-from readMajorMinorPreferences import *
+# excel files have rather long names, lets shorten them
+sName = {
+        'Chemical Engineering' : 'CHD',
+        'Civil Engineering' : 'CED',
+        'Computer Science and Engineering' : 'CSD',
+        'Electrical Engineering' : 'EED',
+        'Mechanical Engineering' : 'MED',
+        'Art & Performing Art' : 'ADP',
+        'Communication' : 'COM',
+        'Design' : 'DES',
+        'Economics' : 'ECO',
+        'English' : 'ENG',
+        'History' : 'HIS', 
+        'International Relations and Governance Studies' : 'INT',
+        'Sociology' : 'SOC',
+        'Management': 'MGT',
+        'Chemistry' : 'CHY',
+        'Life Sciences' : 'BIO', 
+        'Mathematics' : 'MAT',
+        'Physics' : 'PHY',
+        'Archaeology' : 'HIS', # TODO: check which dept offers history 
+        'Biotechnology' : 'BIO',
+        'Chemistry' : 'CHY',
+        'Dance' : 'ADP',  # TODO: check which dept offers dance
+        'Data Analytics': 'MGT', # TODO: check which dept offers data analytics
+        'Electronics and Communication Engineering' : 'ECE',
+        'International Relations and Public Affairs': 'INT',
+        'Electrical and Electronics Engineering': 'EED',
+        'International Relations': 'INT',
+        'Art Design and Performing Arts': 'ADP',
+        'Bachelor of Management Studies': 'MGT',
+        'Under Graduate': 'UG',
+        'OHM': 'MGT',
+        'General Management': 'MGT',
+        'FAC': 'MGT',
+        'STM': 'MGT',
+        'DOM': 'MGT'         
+        }
+
+
+
+wb = xlrd.open_workbook(filePath) 
+sheet = wb.sheet_by_index(0) # get first sheet
+  
+deptCol = 3
+popularMinor = dict() # major(students) and minors(dept)
+
+for i in range(1,sheet.nrows):
+    dept = sheet.cell_value(i,deptCol) # read dept names
+    dept = sName[dept]                 # get short name for dept
+    popularMinor[dept] = []
+    
+    for j in range(deptCol+1,deptCol+6):
+        if (sheet.cell_type(i,j) != xlrd.XL_CELL_EMPTY):
+            if (sheet.cell_value(i,j) != 'None'):
+                popularMinor[dept].append(sName[sheet.cell_value(i,j)])
+    
+minorSeeker = dict()
+numMinor = 2 # only first two pref are accounted for now. 
+             # Change this value to 5 to include all pref
+
+for i,dep in popularMinor.items():
+    k = min(len(dep), numMinor)
+    
+    for j in range(k):
+        if dep[j] in minorSeeker:
+            minorSeeker[dep[j]].add(i)
+        else:
+            minorSeeker[dep[j]] = set()
+            minorSeeker[dep[j]].add(i)
+            
+            
+#            
+#studentSet = {'BIO1',  'BIO2',  'BIO3',  'BIO4',  'CED1',  'CED2',  'CED3',  'CED4',
+# 'CHD1',  'CHD2',  'CHD3',  'CHD4',  'CHY1',  'CHY2',  'CHY3',  'CHY4',
+# 'CSD1',  'CSD2',  'CSD3',  'CSD4',  'ECE1',  'ECE2',  'ECE3',  'ECE4',
+# 'ECO1',  'ECO2',  'ECO3',  'ECO4',  'EED1',  'EED2',  'EED3',  'EED4',
+# 'ENG1',  'ENG2',  'ENG3',  'ENG4',  'HIS1',  'HIS2',  'HIS3',  'HIS4',  'INT1', 'INT2',
+# 'MAT1',  'MAT2',  'MAT3',  'MAT4',  'MED1',  'MED2',  'MED3',  'MED4',
+# 'MGT1',  'MGT2',  'MGT3',  'MGT4',  'PHY1',  'PHY2',  'PHY3',  'PHY4',
+# 'SOC1',  'SOC2',  'SOC3',  'SOC4',  'UG1'}
+#            
+#            
+
+
+wb = xlrd.open_workbook('testData/studentsData.xlsx') 
+sheet = wb.sheet_by_index(0) # get first sheet
+   
+studentsGroup = dict()
+for i in range(1,sheet.nrows):
+    s = sheet.cell_value(i,0)
+    n = int(sheet.cell_value(i,1))
+    
+    studentsGroup[s] = dict()
+    studentsGroup[s]['number'] = n
+    studentsGroup[s]['subgroups'] = {s+'NoMinor': n}
+    
+
+# make subgroups in studentGroup
+# only in 2nd to 4th year
+for sIndex, s in studentsGroup.items():
+    
+    y = sIndex[-1] #year
+    d = sIndex[:-1] # dept
+    
+    # pass over first year students
+    # TODO: Work on grouping first year studetns
+    if (y == '1'):
+        continue
+    
+    if d in popularMinor:
+        n = min(len(popularMinor[d]),numMinor) # number of subgroups
+        # weights
+        # w1 + w2 + ... wn = 1
+        # wi = i*a
+        a = 2.0/(n*(n+1))
+        for i in reversed(range(n)):
+            wi = (i+1)*a
+            ni = round(wi*int(s['number']))
+            si = sIndex+popularMinor[d][i]
+            s['subgroups'][si] = ni
+            s['subgroups'][sIndex+'NoMinor'] = s['subgroups'][sIndex+'NoMinor'] - ni 
+# end grouping students
+
+# write subgroups in csv
+            
+studentToCsv = 'Year,Number of Students per Year,Group, Number of Students per Group,Subgroup, Number of Students per Subgroup\n'
+
+for sIndex, s in studentsGroup.items():
+    for sgIndex, sg in s['subgroups'].items():
+        rowi = sIndex+','+str(s['number'])+','+sgIndex+','+ str(sg)+' , ,\n'
+        
+        #try without any subgroup
+        #rowi = sIndex+','+str(s['number'])+','+''+','+ ''+' , ,\n'
+        studentToCsv = studentToCsv + rowi
+        
+f = open("studentsGroup.csv", "w")
+f.write(studentToCsv)
+f.close()    
+    
 
 
 # read excel file
 # data stored as a dictionary in courseList
-from readCourseOfferingFromExcel import *
+#---------------------------------------------
+filePath = "testData/Offered_Course_List_spring2019.xlsx"
+wb = xlrd.open_workbook(filePath) 
+sheet = wb.sheet_by_index(0) # get first sheet
+  
+# column heading numbers
+School	=	0
+Department	=	1
+CourseCode	=	2
+CourseTitle	=	3
+Credits	=	4
+CourseType	=	5
+OpenasUWE	=	6
+PartofMinoras	=	7
+Programs	=	[8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+CourseCapacity	=	18
+LectureHoursPerWeek	=	19
+TutorialHoursPerWeek	=	20
+PracticalHoursPerWeek	=	21
+LectureDuration	=	22
+LectureSections	=	23
+TutorialSections	=	24
+PracticalSections	=	25
+LectureInstructors	=	26
+TutorialInstructors	=	27
+PracticalInstructors	=	28
+LabRoomNumber	=	29
+LabCapacity	=	30
+SpecialRequirement	=	31
+LectureSlottedoutsideMonFriand95	=	32
+TutorialSlottedoutsideMonFriand95	=	33
+PracticalSlottedoutsideMonFriand95	=	34
+LectureRemarks	=	35
+TutorialRemarks	=	36
+PracticalRemarks	=	37
+CourseCoordinator	=	38
+LectureCredits	=	39
+TutorialCredits	=	40
+PracticalCredits	=	41
+AssessmentTypeWeightage	=	42
+CrossListedwith	=	43
+Prerequisite	=	44
+Crosslistedcourseoffered	=	45
+Lasttimeofferedsemester	=	46
 
 
-# extract list of   instructors
+
+courseList = dict()
+
+for i in range(1,sheet.nrows):
+    
+    
+    # loop over courseCode column, make a dictionary for each course
+    # if a cell in this column is empty, that means that row has details of 
+    # last defined course code
+    
+    # skip over empty cells 
+    if (sheet.cell_type(i,CourseCode) == xlrd.XL_CELL_EMPTY):
+        continue
+        
+    j = 0 # How many EXTRA rows for a particular course
+    if ((i+j+1) < sheet.nrows):
+        while (sheet.cell_type(i+j+1,CourseCode) == xlrd.XL_CELL_EMPTY):
+            j = j+1
+       
+    cCode = sheet.cell_value(i,CourseCode)
+
+    courseList[cCode] = dict()
+    
+    courseI = courseList[cCode]
+    courseI['Credits'] = int(sheet.cell_value(i,Credits))
+    courseI['Title'] = sheet.cell_value(i,CourseTitle)
+    courseI['CourseType'] = sheet.cell_value(i,CourseType)
+    
+    if (courseI['CourseType'] != 'CCC'):
+        courseI['level'] = cCode[-3]
+    else:
+        courseI['level'] = 0
+    
+    courseI['OpenasUWE'] = sheet.cell_value(i,OpenasUWE)
+    courseI['PartofMinoras'] = sheet.cell_value(i,PartofMinoras)
+    
+    
+    # read target audience of the course
+    courseI['programs'] = dict()
+    for p in Programs:
+        if (sheet.cell_type(i,p) != xlrd.XL_CELL_EMPTY):
+            cellVal = sheet.cell_value(i,p)
+            cellVal = sName[cellVal[:-1]]+cellVal[-1]
+            courseI['programs'][cellVal] = studentsGroup[cellVal]['number']
+            
+    # read number lecture hours    
+    if (sheet.cell_type(i,LectureHoursPerWeek) == xlrd.XL_CELL_EMPTY):
+        courseI['LectureHoursPerWeek']=0
+    else:
+        courseI['LectureHoursPerWeek']=int(2*float(sheet.cell_value(i,LectureHoursPerWeek)))
+        courseI['LectureDuration']=int(2*float(sheet.cell_value(i,LectureDuration)))
+        
+        
+        
+    #read number of tutorials hours
+    if (sheet.cell_type(i,TutorialHoursPerWeek) == xlrd.XL_CELL_EMPTY):
+        courseI['TutorialHoursPerWeek']=0
+    else:
+        courseI['TutorialHoursPerWeek']=int(2*float(sheet.cell_value(i,TutorialHoursPerWeek)))
+        
+    #read number of lab hours
+    if (sheet.cell_type(i,PracticalHoursPerWeek) == xlrd.XL_CELL_EMPTY):
+        courseI['PracticalHoursPerWeek']=0
+    else:
+        courseI['PracticalHoursPerWeek']=int(2*float(sheet.cell_value(i,PracticalHoursPerWeek)))
+        
+    # read lecture sections and respective instructors
+    if (courseI['LectureHoursPerWeek'] >= 1):
+        
+        courseI['lecSections'] = dict()
+        if (j == 0):
+            seci = 'LEC1'
+            courseI['lecSections'][seci] = dict()
+            courseI['lecSections'][seci]['instructors'] = sheet.cell_value(i,LectureInstructors).split(',\n')[:-1]
+            
+            
+            courseI['lecSections'][seci]['students'] = set()
+        else:
+            for k in range(i,i+j+1):
+                if (sheet.cell_type(k,LectureSections) != xlrd.XL_CELL_EMPTY):
+                    seci = sheet.cell_value(k,LectureSections)
+                    courseI['lecSections'][seci] = dict()
+                    courseI['lecSections'][seci]['instructors'] = sheet.cell_value(k,LectureInstructors).split(',\n')[:-1]
+                    courseI['lecSections'][seci]['students'] = set()
+                   
+         
+            
+    # read tut sections and respective instructors
+    
+    if (courseI['TutorialHoursPerWeek'] >= 1):
+        courseI['tutSections'] = dict()
+        
+        if (j == 0) :
+            seci = 'TUT1'
+            courseI['tutSections'][seci] = dict()
+            courseI['tutSections'][seci]['instructors'] = sheet.cell_value(i,TutorialInstructors).split(',\n')[:-1]
+            courseI['tutSections'][seci]['students'] = set()
+        else:
+            for k in range(i,i+j+1):
+                if (sheet.cell_type(k,TutorialSections) != xlrd.XL_CELL_EMPTY):
+                    seci = sheet.cell_value(k,TutorialSections)
+                    courseI['tutSections'][seci] = dict()
+                    courseI['tutSections'][seci]['instructors'] = sheet.cell_value(k,TutorialInstructors).split(',\n')[:-1]
+                    courseI['tutSections'][seci]['students'] = set()
+
+            
+
+    # read Lab sections, respective instructors, and lab room number
+    if (courseI['PracticalHoursPerWeek'] >= 1):
+       courseI['labSections'] = dict()
+       if (j == 0):
+           praci = 'PRAC1'
+           courseI['labSections'][praci] = dict()
+           courseI['labSections'][praci]['instructors'] =  sheet.cell_value(i,PracticalInstructors).split(',\n')[:-1]
+           courseI['labSections'][praci]['students'] =  set()
+           courseI['labSections'][praci]['room'] =  sheet.cell_value(i,LabRoomNumber) 
+           courseI['labSections'][praci]['students'] = set()
+            
+       else:
+           for k in range(i,i+j+1):
+               if (sheet.cell_type(k,PracticalSections) != xlrd.XL_CELL_EMPTY):
+                    praci = sheet.cell_value(k,PracticalSections)
+                    courseI['labSections'][praci] = dict()
+                    courseI['labSections'][praci]['instructors'] =  sheet.cell_value(k,PracticalInstructors).split(',\n')[:-1]
+                    courseI['labSections'][praci]['room'] =  sheet.cell_value(k,LabRoomNumber)
+                    courseI['labSections'][praci]['students'] = set()
+       
+   
+# dictionary of major electives, minor electives and UWEs
+majorElectives = dict()
+minorElectives = dict()
+UWEnotInMinors = dict()
+
+
+for cIndex, c in courseList.items():
+    d = cIndex[0:3] # dept
+    y = cIndex[3]   # year
+        
+    # combine many business school minor in one
+    if (d == 'MKT') or (d == 'DOM') or (d == 'FAC') or (d == 'OHM') or (d == 'STM'):
+        d = 'MGT'
+        
+    if (int(y) >= 4):
+        y = '4'
+
+    #combine year and dept again
+    d = d+y
+    
+    # update the list of major electives
+    if 'Major Elective' in c['CourseType']:
+        if d in majorElectives:
+            majorElectives[d].add(cIndex)
+        else:
+            majorElectives[d] = set()
+            majorElectives[d].add(cIndex)
+
+    # update list of minor electives
+    # treat UWE which are not part of minors as minor electives
+    #    for time-tabling purpose
+    if 'Elective' in c['PartofMinoras']:
+        if d in minorElectives:
+            minorElectives[d].add(cIndex)
+        else:
+            minorElectives[d] = set()
+            minorElectives[d].add(cIndex)
+
+    if ('Not a part' in c['PartofMinoras']) and ('Yes' in c['OpenasUWE']):
+        if d in UWEnotInMinors:
+            UWEnotInMinors[d].add(cIndex)
+        else:
+            UWEnotInMinors[d] = set()
+            UWEnotInMinors[d].add(cIndex)
+
+        
+    
+# extract a list of CCC
+CCCcourses = set()
+for cIndex in courseList:
+    if 'CCC' in cIndex:
+        CCCcourses.add(cIndex)    
+
+ni = int(len(CCCcourses)/4)
+# make four groups of CCC courses
+# group i will be open to all year-i students
+
+CCC = dict()
+CCC['year1'] = random.sample(CCCcourses,ni)
+CCCcourses.difference_update(CCC['year1'])
+
+CCC['year2'] = random.sample(CCCcourses,ni)
+CCCcourses.difference_update(CCC['year2'])
+
+CCC['year3'] = random.sample(CCCcourses,ni)
+CCCcourses.difference_update(CCC['year3'])
+
+CCC['year4'] = CCCcourses
+
+
+
+
+
+
+
+################################################
+# extract list of instructors
 instructors = set()
 for cIndex, c in courseList.items():    
     # collect lecture instructos name
@@ -44,8 +437,9 @@ for cIndex, c in courseList.items():
        for insListIndex, insList in c['labSections'].items():
            for i in insList['instructors']:
                instructors.add(i)
- 
-    
+
+
+# add student subgroups in courses as UWE (inlcuding minors). Max UWE per subgroup is 2
 #######################################################################
 # maintain a dictionary of how many minors or UWE each subgroup can enroll
 maxNumOfAllowedUWE = 2
@@ -157,6 +551,7 @@ for s in studentsGroup:
         courseList[c]['programs'][s] = 10 # TODO: 10 is a dummy number of students. Fix it
     
 ###---------------------------------------------------
+
         
 # filling lecture sections, tutorial sections, lab sections with students subgroups               
 for cIndex, c in courseList.items():    
@@ -724,7 +1119,7 @@ formattedData = re.sub(
 
 ## write file
 
-dataFile = 'loadedData.fet'
+dataFile = 'SNU-timeTable-spring2019.fet'
 f = open(dataFile,'w+')
 f.write(formattedData)
 f.close
