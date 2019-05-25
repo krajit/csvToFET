@@ -144,8 +144,19 @@ for sg in allowedNumOfUWE:
                 courseList[c]['programs'][sg] = 10
         # ki number of UWE courses have been assigned from minor electives
         allowedNumOfUWE[sg] = allowedNumOfUWE[sg] - k 
-    
 
+###---------------------------------------------------
+### Adding year groups in CCC couurses
+for s in studentsGroup:
+    y = s[-1]
+    yeari = 'year' + y
+    
+    # add this student group in all CCC courses of yeari
+    CCCi = CCC[yeari]
+    for c in CCCi:
+        courseList[c]['programs'][s] = 10 # TODO: 10 is a dummy number of students. Fix it
+    
+###---------------------------------------------------
         
 # filling lecture sections, tutorial sections, lab sections with students subgroups               
 for cIndex, c in courseList.items():    
@@ -365,8 +376,8 @@ timeTableDays = ['M','T','W','Th','F']
 
 # hours, written vertically aligned to easily comment out few slots
 slots = [
-#         '08:00', 
-#         '08:30',
+         '08:00', 
+         '08:30',
          '09:00',
          '09:30',
          '10:00',
@@ -387,10 +398,10 @@ slots = [
          '17:30',
          '18:00',
          '18:30',
-#          '19:00',
-#          '19:30',
-#          '20:00',
-#          '20:30'
+          '19:00',
+          '19:30',
+          '20:00',
+          '20:30'
          ]
 
 TThStartTimimgs = ['09:00','10:30', '14:00', '15:30', '17:00', '18:30']

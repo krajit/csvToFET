@@ -6,6 +6,7 @@ Created on Fri May 17 12:49:44 2019
 @author: ajit
 """
 from colorama import Fore, Back, Style
+import random
 
 # some preparotory instructions
 print(Fore.RED+ '\nWarning: File downloaded from COS contains Ziaur Rehman. It is a dummy instructor name. Make sure to replace it with unique name for each activity.\n')
@@ -197,10 +198,11 @@ for i in range(1,sheet.nrows):
                     courseI['labSections'][praci]['students'] = set()
        
    
-# dictionary of major electives
+# dictionary of major electives, minor electives and UWEs
 majorElectives = dict()
 minorElectives = dict()
 UWEnotInMinors = dict()
+
 
 for cIndex, c in courseList.items():
     d = cIndex[0:3] # dept
@@ -243,5 +245,28 @@ for cIndex, c in courseList.items():
 
         
     
+# extract a list of CCC
+CCCcourses = set()
+for cIndex in courseList:
+    if 'CCC' in cIndex:
+        CCCcourses.add(cIndex)    
+
+ni = int(len(CCCcourses)/4)
+# make four groups of CCC courses
+# group i will be open to all year-i students
+
+CCC = dict()
+CCC['year1'] = random.sample(CCCcourses,ni)
+CCCcourses.difference_update(CCC['year1'])
+
+CCC['year2'] = random.sample(CCCcourses,ni)
+CCCcourses.difference_update(CCC['year2'])
+
+CCC['year3'] = random.sample(CCCcourses,ni)
+CCCcourses.difference_update(CCC['year3'])
+
+CCC['year4'] = CCCcourses
+
+
 
 
