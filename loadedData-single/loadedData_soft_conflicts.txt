@@ -1,0 +1,10 @@
+﻿Soft conflicts of loadedData.fet
+Generated with FET 5.37.5 on 5/25/19 10:57 PM
+
+Number of broken soft constraints: 0
+Total soft conflicts: 0
+
+Soft conflicts list (in decreasing order):
+
+
+End of file.
