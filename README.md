@@ -11,15 +11,18 @@
     - Each subgroup added to two randomly selected minor-electives
     - If UWE requirement still not met, more courses added from minor dept UWEs which are not part of minor.
 
+- Remove Zia's name from the course offering list. Replace with dummy TAs.
+- Remove instructors from TAs name in large classes. Replace them with dummy TAs. 
+
 
 ## In progress
+
+
+
 - Adjust for CCC courses
     - Make groups of first and second year students
 
 ## TODO
-
-
-
 - Add compactness constraint (minimal gaps) for students
 - Add compactness constraint (minimal gaps) for faculty
 - Make ajustments in the room allottment so that large class gets big rooms.

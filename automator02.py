@@ -333,7 +333,7 @@ for cIndex, c in courseList.items():
 # add lunch activity for each subgroup
 for sIndex, s in studentsGroup.items():
     for sgIndex, sg in s['subgroups'].items():
-        row = sgIndex+',Lunch,'+'T'+sgIndex+', ,8,2+2+2+2,1,80,1\n'
+        row = sgIndex+',Lunch,'+'T'+sgIndex+', ,8,2+2+2+2,1,100,1\n'
         activityString = activityString+row
 
             
@@ -365,8 +365,8 @@ timeTableDays = ['M','T','W','Th','F']
 
 # hours, written vertically aligned to easily comment out few slots
 slots = [
-         '08:00', 
-         '08:30',
+#         '08:00', 
+#         '08:30',
          '09:00',
          '09:30',
          '10:00',
@@ -385,8 +385,8 @@ slots = [
          '16:30',
          '17:00',
          '17:30',
-#         '18:00',
-#         '18:30',
+         '18:00',
+         '18:30',
 #          '19:00',
 #          '19:30',
 #          '20:00',

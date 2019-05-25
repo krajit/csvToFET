@@ -5,12 +5,24 @@ Created on Fri May 17 12:49:44 2019
 
 @author: ajit
 """
+from colorama import Fore, Back, Style
+
+# some preparotory instructions
+print(Fore.RED+ '\nWarning: File downloaded from COS contains Ziaur Rehman. It is a dummy instructor name. Make sure to replace it with unique name for each activity.\n')
+
+print(Fore.RED+ '\nWarning: Large courses with multiple tutorials generally have instructor names in the tutorials section. Make sure to replace that with course code + TAi to get accurate time table.\n')
+print(Style.RESET_ALL)
+
+
 
 from readMajorMinorPreferences import *
 
 # Reading an excel file using Python 
 import xlrd # Ajit: panda can also be used for excel reading
 # load course offering file
+
+
+
   
 filePath = "testData/Offered_Course_List_spring2019.xlsx"
 wb = xlrd.open_workbook(filePath) 
@@ -55,8 +67,6 @@ CrossListedwith	=	43
 Prerequisite	=	44
 Crosslistedcourseoffered	=	45
 Lasttimeofferedsemester	=	46
-
-
 
 
 
@@ -133,6 +143,8 @@ for i in range(1,sheet.nrows):
             seci = 'LEC1'
             courseI['lecSections'][seci] = dict()
             courseI['lecSections'][seci]['instructors'] = sheet.cell_value(i,LectureInstructors).split(',\n')[:-1]
+            
+            
             courseI['lecSections'][seci]['students'] = set()
         else:
             for k in range(i,i+j+1):
@@ -141,6 +153,7 @@ for i in range(1,sheet.nrows):
                     courseI['lecSections'][seci] = dict()
                     courseI['lecSections'][seci]['instructors'] = sheet.cell_value(k,LectureInstructors).split(',\n')[:-1]
                     courseI['lecSections'][seci]['students'] = set()
+                   
          
             
     # read tut sections and respective instructors
@@ -160,6 +173,7 @@ for i in range(1,sheet.nrows):
                     courseI['tutSections'][seci] = dict()
                     courseI['tutSections'][seci]['instructors'] = sheet.cell_value(k,TutorialInstructors).split(',\n')[:-1]
                     courseI['tutSections'][seci]['students'] = set()
+
             
 
     # read Lab sections, respective instructors, and lab room number
@@ -181,7 +195,7 @@ for i in range(1,sheet.nrows):
                     courseI['labSections'][praci]['instructors'] =  sheet.cell_value(k,PracticalInstructors).split(',\n')[:-1]
                     courseI['labSections'][praci]['room'] =  sheet.cell_value(k,LabRoomNumber)
                     courseI['labSections'][praci]['students'] = set()
-        
+       
    
 # dictionary of major electives
 majorElectives = dict()
