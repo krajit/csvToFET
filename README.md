@@ -5,7 +5,7 @@
 - Classes in different days have same room
 - Division of major into subgroups based on choices of minors
 - Minor subgroup added in the 'compulsory' minor courses.
-- Thursday 12-1 break time
+- Thursday 12-2 break time
 - Lunch hour for everyone
 - Minor subgroups for electives. 
     - Each subgroup added to two randomly selected minor-electives
