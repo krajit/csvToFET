@@ -14,17 +14,22 @@
 - Remove Zia's name from the course offering list. Replace with dummy TAs.
 - Remove instructors from TAs name in large classes. Replace them with dummy TAs. 
 
+- Adjust for CCC courses
+    - Make groups of year wise students
+    - Make four random groups of CCC courses
+    - Added year group of students to yearwise CCC group.
+
 
 ## In progress
 
 
-
-- Adjust for CCC courses
-    - Make groups of first and second year students
-
 ## TODO
 - Add compactness constraint (minimal gaps) for students
 - Add compactness constraint (minimal gaps) for faculty
+- Simulation is taking long time to converge in 8am to 5 pm slot. For testing purpose, current simulation slots are from 8am to 9pm. 
+    - Eventually try to shrink it to 5 pm.
+
+
 - Make ajustments in the room allottment so that large class gets big rooms.
 
 
