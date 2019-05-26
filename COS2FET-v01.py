@@ -54,7 +54,7 @@ sName = {
         'International Relations': 'INT',
         'Art Design and Performing Arts': 'ADP',
         'Bachelor of Management Studies': 'MGT',
-        'Under Graduate': 'UG',
+        'Under Graduate': 'UGG',
         'OHM': 'MGT',
         'General Management': 'MGT',
         'FAC': 'MGT',
@@ -341,7 +341,7 @@ for i in range(1,sheet.nrows):
                     courseI['labSections'][praci]['students'] = set()
        
    
-# dictionary of major electives, minor electives and UWEs
+# create a dictionary major electives, minor electives and UWEs
 majorElectives = dict()
 minorElectives = dict()
 UWEnotInMinors = dict()
@@ -410,7 +410,55 @@ CCCcourses.difference_update(CCC['year3'])
 
 CCC['year4'] = CCCcourses
 
+###--------------------------------------------------------------------------
 
+
+## helper function to decide is a course should removed from the offerning or not
+#def removeWithProbability(prob):
+#    x = random.uniform(0,1)
+#    if (x < prob):
+#        return True
+#    else:
+#        return False
+#    
+#
+## remove a percentage of UWE for easing out the timetable
+#p = 0.30 # prability of removal 
+#outputFileName = 'SNU-p-'+str(p)+'.fet'   
+#coursesTobeRemoved = set()
+#    
+#for mIndex, mi  in majorElectives.items():
+#    for c in mi:
+#        if removeWithProbability(p):
+#            coursesTobeRemoved.add(c)
+#    
+#for mIndex, mi  in minorElectives.items():
+#    for c in mi:
+#        if removeWithProbability(p):
+#            coursesTobeRemoved.add(c)
+#            
+#for mIndex, mi  in UWEnotInMinors.items():
+#    for c in mi:
+#        if removeWithProbability(p):
+#            coursesTobeRemoved.add(c)
+#            
+#            
+#for c in coursesTobeRemoved:
+#    del courseList[c]
+#    
+#    for i in list(majorElectives):
+#        if c in majorElectives[i]:
+#            majorElectives[i].remove(c)
+#            
+#    for i in list(minorElectives):
+#        if c in minorElectives[i]:
+#            minorElectives[i].remove(c)
+#            
+#    for i in list(UWEnotInMinors):
+#        if c in UWEnotInMinors[i]:
+#            UWEnotInMinors[i].remove(c)
+#    
+#print('For testing purpose: '+str(int(len(coursesTobeRemoved)*100/len(courseList)))+'% elective courses removed')
 
 
 
@@ -442,7 +490,7 @@ for cIndex, c in courseList.items():
 # add student subgroups in courses as UWE (inlcuding minors). Max UWE per subgroup is 2
 #######################################################################
 # maintain a dictionary of how many minors or UWE each subgroup can enroll
-maxNumOfAllowedUWE = 2
+maxNumOfAllowedUWE = 1
 
 allowedNumOfUWE = dict()
 for sIndex, s in studentsGroup.items():
@@ -539,18 +587,37 @@ for sg in allowedNumOfUWE:
         # ki number of UWE courses have been assigned from minor electives
         allowedNumOfUWE[sg] = allowedNumOfUWE[sg] - k 
 
+####---------------------------------------------------
+#### Adding year groups in CCC couurses
+#for s in studentsGroup:
+#    y = s[-1]
+#    yeari = 'year' + y
+#    
+#    # add this student group in all CCC courses of yeari
+#    CCCi = CCC[yeari]
+#      
+#    
+#    # add all first year student in all CCCi course
+#    for c in CCCi:
+#        courseList[c]['programs'][s] = 10 # TODO: 10 is a dummy number of students. Fix it  
+#    
+####---------------------------------------------------
+        
 ###---------------------------------------------------
 ### Adding year groups in CCC couurses
 for s in studentsGroup:
-    y = s[-1]
-    yeari = 'year' + y
     
-    # add this student group in all CCC courses of yeari
-    CCCi = CCC[yeari]
+    y = sIndex[-1]
+    yeari = 'year' + y
+    #   add each year studnets randomly in two  CCCi course
+
+    CCCi = random.sample(CCC[yeari], 1)
+       
     for c in CCCi:
-        courseList[c]['programs'][s] = 10 # TODO: 10 is a dummy number of students. Fix it
+        courseList[c]['programs'][s] = 10 # TODO: 10 is a dummy number of students. Fix it  
     
 ###---------------------------------------------------
+
 
         
 # filling lecture sections, tutorial sections, lab sections with students subgroups               
@@ -588,7 +655,7 @@ for cIndex, c in courseList.items():
                
                
                
-# map courses to activities
+## map courses to activities
 tutDurationSet = set()
 activityString = "Students Sets,Subject,Teachers,Activity Tags,Total Duration,Split Duration,Min Days,Weight,Consecutive\n"
 
@@ -791,10 +858,10 @@ slots = [
          '16:30',
          '17:00',
          '17:30',
-         '18:00',
-         '18:30',
-          '19:00',
-          '19:30',
+#         '18:00',
+#         '18:30',
+#          '19:00',
+#          '19:30',
 #          '20:00',
 #          '20:30'
          ]
@@ -1119,7 +1186,7 @@ formattedData = re.sub(
 
 ## write file
 
-dataFile = 'SNU-timeTable-spring2019.fet'
+dataFile = 'snu-timetable.fet'
 f = open(dataFile,'w+')
 f.write(formattedData)
 f.close
