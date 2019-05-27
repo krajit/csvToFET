@@ -15,7 +15,17 @@ print(Fore.RED+ '\nWarning: File downloaded from COS contains Ziaur Rehman. It i
 print(Fore.RED+ '\nWarning: Large courses with multiple tutorials generally have instructor names in the tutorials section. Make sure to replace that with course code + TAi to get accurate time table.\n')
 print(Style.RESET_ALL)
 
+numCCC  = 0 # expteced number of CCC
+maxNumOfAllowedUWE = 0
+numMajorElectives = 0
+activityCsvFileName =  "generatedActivities/activityTest01.csv"
+fetFileName = 'generatedActivities/snu-timetable.fet'
 
+# hours, written vertically aligned to easily comment out few slots
+slots = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00',
+         '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30',
+         '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00',
+         '18:30', '19:00', '19:30']
 
 
 # read major minor preferences as filled by UG advisers
@@ -486,11 +496,64 @@ for cIndex, c in courseList.items():
            for i in insList['instructors']:
                instructors.add(i)
 
+# clean up major elective course from the list given from COS
+# The major electives are populated with all major students which is putting a lot of constraint on the time-tabling
+for me in majorElectives:
+    for c in majorElectives[me]:
+        courseList[c]['programs'] = dict() # reset student list of major electives
+
+# add each other than ****NonMinor subgroup in a maximum of 2 major electives
+
+studentSubgroupSet = set()
+
+for si in studentsGroup:
+    s = studentsGroup[si]
+    if (len(s['subgroups']) == 1):
+        # this has no subgroups
+        studentSubgroupSet.add(si)
+    else:
+        # has multiple subgroups
+        for sgi in s['subgroups']:
+            if (sgi[4:] != 'NoMinor'):
+                studentSubgroupSet.add(sgi)
+                
+# iterate over this set, and add each subgroup in 2 randomly chosen electives from 
+for s in studentSubgroupSet:
+    sMajor = s[0:3]
+    y         = s[3]
+    ym1       = str(max(int(y) - 1, 1)) # ym1 = max(y-1, 1)
+    yp1       = str(min(int(y) + 1, 4)) # yp1 = min(y+1, 1)    
+    my = sMajor+y
+    mym1 = sMajor + ym1
+    myp1 = sMajor + yp1
+    
+    # majorElective choices for the group
+    sMajorElectiveChoices = set()
+    if mym1 in majorElectives:
+        sMajorElectiveChoices = sMajorElectiveChoices.union(majorElectives[mym1])
+    if my in majorElectives:
+        sMajorElectiveChoices = sMajorElectiveChoices.union(majorElectives[my])
+    if myp1 in majorElectives:
+        sMajorElectiveChoices = sMajorElectiveChoices.union(majorElectives[myp1])
+
+    
+    # if the set is non empty
+    if (len(sMajorElectiveChoices) > 0):
+        k = min(len(sMajorElectiveChoices), numMajorElectives) # adjust number of major electives if there are only one choice
+        
+        # choose k items from sMajorElectiveChoicse
+        sToBeAddedIn = random.sample(sMajorElectiveChoices, k)
+        
+        # add s in each of sToBeAddedIn
+        for c in sToBeAddedIn:
+            courseList[c]['programs'][s] = 10
+
 
 # add student subgroups in courses as UWE (inlcuding minors). Max UWE per subgroup is 2
 #######################################################################
 # maintain a dictionary of how many minors or UWE each subgroup can enroll
-maxNumOfAllowedUWE = 1
+            
+
 
 allowedNumOfUWE = dict()
 for sIndex, s in studentsGroup.items():
@@ -604,6 +667,7 @@ for sg in allowedNumOfUWE:
 ####---------------------------------------------------
         
 ###---------------------------------------------------
+
 ### Adding year groups in CCC couurses
 for s in studentsGroup:
     
@@ -717,12 +781,14 @@ for cIndex, c in courseList.items():
             for i in range(0,len(splitDuration),2):
                 activityId = activityId + 1
                 activityIdSet.add(activityId)
+              
                 
             courseList[cIndex]['lecSections'][lIndex]['ids']=activityIdSet
             
             
             row = studentSet+','+subject+','+teachers+','+activityTag+','+totalDuration+','+splitDuration+','+minDays+','+weight+','+consecutive+'\n'
             activityString = activityString+row
+            
 
     if 'tutSections' in c:
         for lIndex, l in c['tutSections'].items():
@@ -810,7 +876,7 @@ for sIndex, s in studentsGroup.items():
         activityString = activityString+row
 
             
-f = open("activityTest01.csv", "w")
+f = open(activityCsvFileName, "w")
 f.write(activityString)
 f.close()    
 
@@ -836,35 +902,7 @@ formattedData = re.sub(
 #days
 timeTableDays = ['M','T','W','Th','F']
 
-# hours, written vertically aligned to easily comment out few slots
-slots = [
-         '08:00', 
-         '08:30',
-         '09:00',
-         '09:30',
-         '10:00',
-         '10:30',
-         '11:00',
-         '11:30',
-         '12:00',
-         '12:30',
-         '13:00',
-         '13:30',
-         '14:00',
-         '14:30',
-         '15:00',
-         '15:30',
-         '16:00',
-         '16:30',
-         '17:00',
-         '17:30',
-#         '18:00',
-#         '18:30',
-#          '19:00',
-#          '19:30',
-#          '20:00',
-#          '20:30'
-         ]
+
 
 TThStartTimimgs = ['09:00','10:30', '14:00', '15:30', '17:00', '18:30']
 
@@ -1186,8 +1224,7 @@ formattedData = re.sub(
 
 ## write file
 
-dataFile = 'snu-timetable.fet'
-f = open(dataFile,'w+')
+f = open(fetFileName,'w+')
 f.write(formattedData)
 f.close
 

@@ -1,0 +1,10 @@
+﻿Soft conflicts of znCCC_0_nUWE_0_nMajElecive_2_18:00_exp1.fet
+Generated with FET 5.35.5 on 5/27/19 5:36 PM
+
+Number of broken soft constraints: 0
+Total soft conflicts: 0
+
+Soft conflicts list (in decreasing order):
+
+
+End of file.
