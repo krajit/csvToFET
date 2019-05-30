@@ -5,24 +5,28 @@ Created on Fri May 17 2019
 
 @author: ajit
 """
-
+import re, csv
 import random, xlrd
-from colorama import Fore, Back, Style
 
 # some preparotory instructions
-print(Fore.RED+ '\nWarning: File downloaded from COS contains Ziaur Rehman. It is a dummy instructor name. Make sure to replace it with unique name for each activity.\n')
+print('\nWarning: File downloaded from COS contains Ziaur Rehman. It is a dummy instructor name. Make sure to replace it with unique name for each activity.\n')
+print('\nWarning: Large courses with multiple tutorials generally have instructor names in the tutorials section. Make sure to replace that with course code + TAi to get accurate time table.\n')
 
-print(Fore.RED+ '\nWarning: Large courses with multiple tutorials generally have instructor names in the tutorials section. Make sure to replace that with course code + TAi to get accurate time table.\n')
-print(Style.RESET_ALL)
+
+#--------------------------------------------------------
+# laod a starting template for .fet file readable by FET.
+templatePath = 'basicTemplate.fet'
+basicTemplate = open(templatePath,"r").read()
+formattedData = basicTemplate 
+
 
 numCCC  = 2 # expteced number of CCC
 maxNumOfAllowedUWE = 2
 numMajorElectives = 2
-activityCsvFileName =  "activityTest01.csv"
+activityCsvFileName =  "activityTest01.csv" # TODO: remove this
 fetFileName = 'snu-timetable.fet'
 
 insReplacementProb = 0.25
-
 def replaceInstructor(prob):
     x = random.uniform(0,1)
     if (x < prob):
@@ -42,12 +46,6 @@ slots = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00',
          '19:00', 
          '19:30',
          ]
-
-
-# read major minor preferences as filled by UG advisers
-# create subgroup of students based on minor preferences
-filePath = "testData/SNU - popular minors data survey (Responses).xlsx"
-## NOTE: make sure to remove duplicate department rows manually
 
 # excel files have rather long names, lets shorten them
 sName = {
@@ -88,11 +86,12 @@ sName = {
         'DOM': 'MGT'         
         }
 
-
-
-wb = xlrd.open_workbook(filePath) 
-sheet = wb.sheet_by_index(0) # get first sheet
-  
+# read major minor preferences as filled by UG advisers
+# create subgroup of students based on minor preferences
+majorMinorPreferenceFilePath = "testData/SNU - popular minors data survey (Responses).xlsx"
+## NOTE: make sure to remove duplicate department rows manually
+wb = xlrd.open_workbook(majorMinorPreferenceFilePath) 
+sheet = wb.sheet_by_index(0) # get first sheet  
 deptCol = 3
 popularMinor = dict() # major(students) and minors(dept)
 
@@ -107,7 +106,7 @@ for i in range(1,sheet.nrows):
                 popularMinor[dept].append(sName[sheet.cell_value(i,j)])
     
 minorSeeker = dict()
-numMinor = 5# only first two pref are accounted for now. 
+numMinor = 3 # only first two pref are accounted for now. 
              # Change this value to 5 to include all pref
 
 for i,dep in popularMinor.items():
@@ -194,8 +193,8 @@ f.close()
 # read excel file
 # data stored as a dictionary in courseList
 #---------------------------------------------
-filePath = "testData/Offered_Course_List_spring2019.xlsx"
-wb = xlrd.open_workbook(filePath) 
+COSfilePath = "testData/Offered_Course_List_spring2019.xlsx"
+wb = xlrd.open_workbook(COSfilePath) 
 sheet = wb.sheet_by_index(0) # get first sheet
   
 # column heading numbers
@@ -238,12 +237,9 @@ Prerequisite	=	44
 Crosslistedcourseoffered	=	45
 Lasttimeofferedsemester	=	46
 
-
-
 courseList = dict()
 
-for i in range(1,sheet.nrows):
-    
+for i in range(1,sheet.nrows):    
     
     # loop over courseCode column, make a dictionary for each course
     # if a cell in this column is empty, that means that row has details of 
@@ -292,7 +288,6 @@ for i in range(1,sheet.nrows):
         courseI['LectureDuration']=int(2*float(sheet.cell_value(i,LectureDuration)))
         
         
-        
     #read number of tutorials hours
     if (sheet.cell_type(i,TutorialHoursPerWeek) == xlrd.XL_CELL_EMPTY):
         courseI['TutorialHoursPerWeek']=0
@@ -323,11 +318,8 @@ for i in range(1,sheet.nrows):
                     courseI['lecSections'][seci] = dict()
                     courseI['lecSections'][seci]['instructors'] = sheet.cell_value(k,LectureInstructors).split(',\n')[:-1]
                     courseI['lecSections'][seci]['students'] = set()
-                   
-         
             
     # read tut sections and respective instructors
-    
     if (courseI['TutorialHoursPerWeek'] >= 1):
         courseI['tutSections'] = dict()
         
@@ -343,9 +335,7 @@ for i in range(1,sheet.nrows):
                     courseI['tutSections'][seci] = dict()
                     courseI['tutSections'][seci]['instructors'] = sheet.cell_value(k,TutorialInstructors).split(',\n')[:-1]
                     courseI['tutSections'][seci]['students'] = set()
-
-            
-
+ 
     # read Lab sections, respective instructors, and lab room number
     if (courseI['PracticalHoursPerWeek'] >= 1):
        courseI['labSections'] = dict()
@@ -365,13 +355,11 @@ for i in range(1,sheet.nrows):
                     courseI['labSections'][praci]['instructors'] =  sheet.cell_value(k,PracticalInstructors).split(',\n')[:-1]
                     courseI['labSections'][praci]['room'] =  sheet.cell_value(k,LabRoomNumber)
                     courseI['labSections'][praci]['students'] = set()
-       
    
 # create a dictionary major electives, minor electives and UWEs
 majorElectives = dict()
 minorElectives = dict()
 UWEnotInMinors = dict()
-
 
 for cIndex, c in courseList.items():
     d = cIndex[0:3] # dept
@@ -487,9 +475,6 @@ CCC['year4'] = CCCcourses
 #print('For testing purpose: '+str(int(len(coursesTobeRemoved)*100/len(courseList)))+'% elective courses removed')
 
 
-
-
-
 ################################################
 # replace each Lecture instructor with probability p
 for cIndex, c in courseList.items():    
@@ -502,10 +487,8 @@ for cIndex, c in courseList.items():
                     #replace
                     newIns = cIndex+li+'NewInstructor'+str(i)
                     courseList[cIndex]['lecSections'][li]['instructors'][i] = newIns
-                
-                   
                
-
+ 
 # clean up major elective course from the list given from COS
 # The major electives are populated with all major students which is putting a lot of constraint on the time-tabling
 for me in majorElectives:
@@ -685,7 +668,7 @@ for s in studentsGroup:
     yeari = 'year' + y
     #   add each year studnets randomly in two  CCCi course
 
-    CCCi = random.sample(CCC[yeari], 1)
+    CCCi = random.sample(CCC[yeari], numCCC)
        
     for c in CCCi:
         courseList[c]['programs'][s] = 10 # TODO: 10 is a dummy number of students. Fix it  
@@ -724,13 +707,11 @@ for cIndex, c in courseList.items():
         for s in c['programs']:
             courseList[cIndex]['labSections']['PRAC'+str(j+1)]['students'].add(s)
             j = (j +1) % numSections              # cycle over sections 
-            
-        
-               
                
                
 ## map courses to activities
 tutDurationSet = set()
+activityTagSet= set()
 activityString = "Students Sets,Subject,Teachers,Activity Tags,Total Duration,Split Duration,Min Days,Weight,Consecutive\n"
 
 def splitLec(totalDuration, lecDuration = '2'):
@@ -758,182 +739,190 @@ activityId = 0
 activityGroupId = 0
 
 for cIndex, c in courseList.items():
-    print (activityId)
-    if (activityId >= 10):
-        break
     
     if 'lecSections' in c:
         for lIndex, l in c['lecSections'].items():
-            
             activityXML = '<Activity>\n'
             activityXML = activityXML + '\t<Subject>'+cIndex+'</Subject>\n'
-            
-            studentSet = ''
             for s in l['students']:
-                studentSet = studentSet+'+'+s
                 activityXML = activityXML + '\t<Students>'+s+'</Students>\n'
-                
-            studentSet = studentSet[1:]
-            subject = cIndex
-            
             teachers = ''
             for i in l['instructors']:
-                teachers = teachers +'+' + i
                 activityXML = activityXML + '\t<Teacher>'+i+'</Teacher>\n'
-                
-            teachers = teachers[1:]
-            
             activityTag = lIndex #'LEC+AnyRoom+'+lIndex
+            activityTagSet.add(activityTag)
+            activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
             totalDuration = str(c['LectureHoursPerWeek'])
             if (int(totalDuration) >= 12):
                 print(cIndex + " abnormally high lecture hours. Skipping")
                 continue
-            
             lecDuration = str(c['LectureDuration'])
             splitDuration = splitLec(totalDuration,lecDuration)
-            
             activityXML = activityXML + '\t<Duration>'+splitDuration[0]+'</Duration>\n'
             activityXML = activityXML + '\t<Total_Duration>'+totalDuration+'</Total_Duration>\n'
-            
-            minDays = ''
-            weight = ''
-            consecutive = ''
-            if (len(splitDuration) >= 2):
-                minDays = '2'
-                weight = '100'
-
-            consecutive = '1'
                 
             # add an acitivtyID for each contact session
             # needed for forcing lectures on diff days to to on same time 
             activityIdSet = set()
-            
             for i in range(0,len(splitDuration),2):
                 activityId = activityId + 1
                 activityIdSet.add(activityId)
-                
                 # get first lecture id in week
                 if (i == 0):
                     activityGroupId = activityId
-                        
                 activityXMLi = activityXML
                 activityXMLi = activityXMLi + '\t<Id>'+str(activityId)+'</Id>\n'
                 activityXMLi = activityXMLi + '\t<Activity_Group_Id>'+str(activityGroupId)+'</Activity_Group_Id>\n'
                 activityXMLi = activityXMLi + '\t<Active>true</Active>\n'
                 activityXMLi = activityXMLi + '\t<Comments></Comments>\n'
                 activityXMLi = activityXMLi + '</Activity>\n'
-                
                 activityListXML = activityListXML + activityXMLi
-                
             courseList[cIndex]['lecSections'][lIndex]['ids']=activityIdSet
-            
-            
-            row = studentSet+','+subject+','+teachers+','+activityTag+','+totalDuration+','+splitDuration+','+minDays+','+weight+','+consecutive+'\n'
-            activityString = activityString+row
-            
 
     if 'tutSections' in c:
         for lIndex, l in c['tutSections'].items():
-            
-            
-            studentSet = ''
+            activityXML = '<Activity>\n'
+            activityXML = activityXML + '\t<Subject>'+cIndex+'</Subject>\n'
             for s in l['students']:
-                studentSet = studentSet+'+'+s
-            studentSet = studentSet[1:]
-            subject = cIndex
-  
-            teachers = ''
+                activityXML = activityXML + '\t<Students>'+s+'</Students>\n'
             for i in l['instructors']:
-                teachers = teachers +'+' + i
-            teachers = teachers[1:]
-            
+                activityXML = activityXML + '\t<Teacher>'+i+'</Teacher>\n'
             activityTag = lIndex #'TUT+AnyRoom+'+lIndex
+            activityTagSet.add(activityTag)
+            activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
             totalDuration = str(c['TutorialHoursPerWeek'])
             if (int(totalDuration) >= 12):
-                print(cIndex + " abnormally high lecture hours. Skipping")
+                print(cIndex + " abnormally high tutorials hours. Skipping")
                 continue
-
-            
-            
             splitDuration = splitLec(totalDuration,'3')
-            minDays = ''
-            weight = ''
-            consecutive = ''
-            
+            activityXML = activityXML + '\t<Duration>'+splitDuration[0]+'</Duration>\n'
+            activityXML = activityXML + '\t<Total_Duration>'+totalDuration+'</Total_Duration>\n'
+
             # add an acitivtyID for each contact session
             # needed for forcing lectures on diff days to to on same time 
             activityIdSet = set()
             for i in range(0,len(splitDuration),2):
                 activityId = activityId + 1
                 activityIdSet.add(activityId)
+                # get first lecture id in week
+                if (i == 0):
+                    activityGroupId = activityId
+                activityXMLi = activityXML
+                activityXMLi = activityXMLi + '\t<Id>'+str(activityId)+'</Id>\n'
+                activityXMLi = activityXMLi + '\t<Activity_Group_Id>'+str(activityGroupId)+'</Activity_Group_Id>\n'
+                activityXMLi = activityXMLi + '\t<Active>true</Active>\n'
+                activityXMLi = activityXMLi + '\t<Comments></Comments>\n'
+                activityXMLi = activityXMLi + '</Activity>\n'
+                activityListXML = activityListXML + activityXMLi
             courseList[cIndex]['tutSections'][lIndex]['ids']=activityIdSet
-
-                
-            row = studentSet+','+subject+','+teachers+','+activityTag+','+totalDuration+','+splitDuration+','+minDays+','+weight+','+consecutive+'\n'
-            activityString = activityString+row
-
     if 'labSections' in c:
         for lIndex, l in c['labSections'].items():
-            
-            studentSet = ''
+            activityXML = '<Activity>\n'
+            activityXML = activityXML + '\t<Subject>'+cIndex+'</Subject>\n'
             for s in l['students']:
-                studentSet = studentSet+'+'+s
-            studentSet = studentSet[1:]
-            
-            subject = cIndex
-            
-            teachers = ''
+                activityXML = activityXML + '\t<Students>'+s+'</Students>\n'
             for i in l['instructors']:
-                teachers = teachers +'+' + i
-            teachers = teachers[1:]
-            
+                activityXML = activityXML + '\t<Teacher>'+i+'</Teacher>\n'
             activityTag = lIndex #'LAB' +'+'+ l['room'][0:4]+'+'+lIndex
-            
+            activityTagSet.add(activityTag)
+            activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
             totalDuration = str(c['PracticalHoursPerWeek'])
             if (int(totalDuration) >= 12):
-                print(cIndex + " abnormally high lecture hours. Skipping")
+                print(cIndex + " abnormally high practical hours. Skipping")
                 continue
-
-            
             splitDuration = totalDuration # no splitting of lab hours
-            minDays = ''
-            weight = ''
-            consecutive = ''
-            
+            activityXML = activityXML + '\t<Duration>'+splitDuration[0]+'</Duration>\n'
+            activityXML = activityXML + '\t<Total_Duration>'+totalDuration+'</Total_Duration>\n'
             # add an acitivtyID for each contact session
             # needed for forcing lectures on diff days to to on same time 
             activityIdSet = set()
             for i in range(0,len(splitDuration),2):
                 activityId = activityId + 1
                 activityIdSet.add(activityId)
-                
+                # get first lecture id in week
+                if (i == 0):
+                    activityGroupId = activityId
+                activityXMLi = activityXML
+                activityXMLi = activityXMLi + '\t<Id>'+str(activityId)+'</Id>\n'
+                activityXMLi = activityXMLi + '\t<Activity_Group_Id>'+str(activityGroupId)+'</Activity_Group_Id>\n'
+                activityXMLi = activityXMLi + '\t<Active>true</Active>\n'
+                activityXMLi = activityXMLi + '\t<Comments></Comments>\n'
+                activityXMLi = activityXMLi + '</Activity>\n'
+                activityListXML = activityListXML + activityXMLi
             courseList[cIndex]['labSections'][lIndex]['ids']=activityIdSet
 
-            row = studentSet+','+subject+','+teachers+','+activityTag+','+totalDuration+','+splitDuration+','+minDays+','+weight+','+consecutive+'\n'
-            activityString = activityString+row
+##-------------------------------------------------------------------------
+# add Lunch activity and dummy lunch intstructor Set
+instructorSet = set()
+
+# add lunch activity for each subgroup
+lunchActivityIdSet = set()
+lunchId = activityId+1
+lunchInFourDaysXML = ''
+for sIndex, s in studentsGroup.items():
+    for sgIndex, sg in s['subgroups'].items():
+        row = sgIndex+',Lunch,'+'T'+sgIndex+', ,8,2+2+2+2,1,100,1\n'
+        activityString = activityString+row
+        lunchInFourDaysXML = lunchInFourDaysXML + '<ConstraintMinDaysBetweenActivities>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Weight_Percentage>100</Weight_Percentage>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Number_of_Activities>4</Number_of_Activities>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+1)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+2)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+3)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<MinDays>1</MinDays>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Active>true</Active>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Comments></Comments>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '</ConstraintMinDaysBetweenActivities>\n'
+
+        lXML = '<Activity>\n'
+        dummyInstructor = 'Lunch'+sgIndex
+        instructorSet.add(dummyInstructor)
+        
+        lXML = lXML + '\t<Teacher>'+dummyInstructor+'</Teacher>\n'
+        lXML = lXML + '\t<Subject>Lunch</Subject>\n'
+        lXML = lXML + '\t<Activity_Tag></Activity_Tag>\n'
+        lXML = lXML + '\t<Students>'+sgIndex+'</Students>\n'
+        lXML = lXML + '\t<Duration>2</Duration>\n'
+        lXML = lXML + '\t<Total_Duration>8</Total_Duration>\n'
+        
+        for i in range(4): # four activity for lunch on M, T, W, Fri. The lunch on Thursday is automatically in break hours
+            if (i == 0):
+                lunchGroupId = lunchId
+            lXMLi = lXML # each lunch period is a new actvity
+            lXMLi = lXMLi + '\t<Id>'+str(lunchId)+'</Id>\n'
+            lXMLi = lXMLi + '\t<Activity_Group_Id>'+str(lunchGroupId)+'</Activity_Group_Id>\n'
+            lXMLi = lXMLi + '\t<Active>true</Active>\n'
+            lXMLi = lXMLi + '\t<Comments></Comments>\n'
+            lXMLi = lXMLi + '</Activity>\n'
             
-## add lunch activity for each subgroup
-#for sIndex, s in studentsGroup.items():
-#    for sgIndex, sg in s['subgroups'].items():
-#        row = sgIndex+',Lunch,'+'T'+sgIndex+', ,8,2+2+2+2,1,100,1\n'
-#        activityString = activityString+row
+            activityListXML = activityListXML + lXMLi
+            lunchId = lunchId  + 1
 
-            
-f = open(activityCsvFileName, "w")
-f.write(activityString)
-f.close()    
+activityListXML = activityListXML+ '<!-- SPACE FOR MORE ACTIVITIES -->\n'
+activityListXML = activityListXML+ '</Activities_List>\n'
+formattedData = re.sub(
+        r"<Activities_List>(.*?)</Activities_List>", activityListXML,
+        formattedData,flags=re.DOTALL)
 
-###################################################################    
-#--------------------------------------------------------
-import re, csv
-# laod a starting template for .fet file readable by FET.
-templatePath = 'basicTemplate.fet'
-basicTemplate = open(templatePath,"r").read()
+subjectListXML = '<Subjects_List>\n'
+for cIndex in courseList:
+    subjectListXML = subjectListXML + '<Subject>\n'
+    subjectListXML = subjectListXML + '\t<Name>'+cIndex+'</Name>\n'
+    subjectListXML = subjectListXML + '\t<Comments></Comments>\n'
+    subjectListXML = subjectListXML + '</Subject>\n'
+    
+# add lunch subject
+subjectListXML = subjectListXML + '<Subject>\n'
+subjectListXML = subjectListXML + '\t<Name>Lunch</Name>\n'
+subjectListXML = subjectListXML + '\t<Comments></Comments>\n'
+subjectListXML = subjectListXML + '</Subject>\n'
 
-
-
-# one by one load data in the basicTemplate, and will write that in a new file 
-formattedData = basicTemplate 
+subjectListXML = subjectListXML + '</Subjects_List>\n'
+formattedData = re.sub(
+        r"<Subjects_List>(.*?)</Subjects_List>", subjectListXML,
+        formattedData,flags=re.DOTALL)
 
 # add instute name
 formattedData = re.sub(
@@ -941,15 +930,14 @@ formattedData = re.sub(
         '<Institution_Name>Shiv Nadar University</Institution_Name>',
         formattedData)
 
+# add instute name
+formattedData = re.sub(
+        r"<Institution_Name>.*</Institution_Name>",
+        '<Institution_Name>Shiv Nadar University</Institution_Name>',
+        formattedData)
 
 #days
 timeTableDays = ['M','T','W','Th','F']
-
-
-
-TThStartTimimgs = ['09:00','10:30', '14:00', '15:30', '17:00', '18:30']
-
-
 
 # replace default days 
 daysTag = "<Days_List>\n"
@@ -984,20 +972,14 @@ for sIndex, s in studentsGroup.items():
         <Name>'+sIndex+'</Name> \n\
         <Number_of_Students>'+str(s['number']) +'</Number_of_Students>\n\
         <Comments></Comments> \n'
-    
-        
     for sgIndex, sg in s['subgroups'].items():
             tag = tag +  '\t<Group> \n \t\t<Name>'+ sgIndex + '</Name>\n \t\t<Number_of_Students>'+str(sg)+'</Number_of_Students>\n \t\t<Comments></Comments>\n \t</Group> \n'
-            
     tag = tag+'</Year>\n'
-
 tag = tag+'\n</Students_List>'
-
 #update file
 formattedData = re.sub(
         r"<Students_List>(.*?)</Students_List>", tag,
         formattedData,flags=re.DOTALL)      
-
 
 ##----------------------------------------
 #read roomsAndBuildingFile
@@ -1085,14 +1067,14 @@ for cIndex, c in courseList.items():
         for lIndex, l in c['lecSections'].items():
             if 'ids' in l:    
                 for i in l['ids']:
-                    spaceCons = spaceCons + '<ConstraintActivityPreferredRoom>\n\
-                    <Weight_Percentage>100</Weight_Percentage>\n\
-                    <Activity_Id>'+str(i)+'</Activity_Id>\n\
-                    <Room>'+roomArray[j]+'</Room>\n\
-                    <Permanently_Locked>false</Permanently_Locked>\n\
-                    <Active>true</Active>\n\
-                    <Comments></Comments>\n\
-                    </ConstraintActivityPreferredRoom>'
+                    spaceCons = spaceCons + '<ConstraintActivityPreferredRoom>\n'
+                    spaceCons = spaceCons + '\t<Weight_Percentage>100</Weight_Percentage>\n'
+                    spaceCons = spaceCons + '\t<Activity_Id>'+str(i)+'</Activity_Id>\n'
+                    spaceCons = spaceCons + '\t<Room>'+roomArray[j]+'</Room>\n'
+                    spaceCons = spaceCons + '\t<Permanently_Locked>false</Permanently_Locked>\n'
+                    spaceCons = spaceCons + '\t<Active>true</Active>\n'
+                    spaceCons = spaceCons + '\t<Comments></Comments>\n'
+                    spaceCons = spaceCons + '\t</ConstraintActivityPreferredRoom>\n'
                 j = (j+1) % len(allRoomSet)
 
 
@@ -1269,7 +1251,7 @@ for cIndex, c in courseList.items():
             
         
             
-tag = tag + '</Time_Constraints_List>\n'
+tag = tag+ lunchInFourDaysXML + '</Time_Constraints_List>\n'
 ##  end time constraints
 
 # write your content in n new file
@@ -1285,6 +1267,51 @@ formattedData = re.sub(
 
 
 
+# read instructos set
+for cIndex, c in courseList.items():
+    if 'lecSections' in c:
+        for sId,s in c['lecSections'].items():
+            instructorSet = instructorSet.union(set(s['instructors']))
+            
+    if 'tutSections' in c:
+        for sId,s in c['tutSections'].items():
+            instructorSet = instructorSet.union(set(s['instructors']))
+            
+    if 'labSections' in c:
+        for sId,s in c['labSections'].items():
+            instructorSet = instructorSet.union(set(s['instructors']))
+            
+
+teachersXML = '<Teachers_List>\n'
+for i in instructorSet:
+    teachersXML = teachersXML + '<Teacher>\n'
+    teachersXML = teachersXML + '\t<Name>'+i+'</Name>\n'
+    teachersXML = teachersXML + '\t<Target_Number_of_Hours>0</Target_Number_of_Hours>\n'
+    teachersXML = teachersXML + '\t<Qualified_Subjects></Qualified_Subjects>\n'
+    teachersXML = teachersXML + '\t<Comments></Comments>\n'
+    teachersXML = teachersXML + '</Teacher>\n'
+
+teachersXML = teachersXML + '</Teachers_List>\n'
+# write your content in n new file
+formattedData = re.sub(
+        r"<Teachers_List>(.*?)</Teachers_List>",teachersXML ,
+        formattedData,flags=re.DOTALL)      
+
+
+# write activity tags in fet
+activityTagListXML = '<Activity_Tags_List>\n'
+
+for a in activityTagSet:
+    activityTagListXML = activityTagListXML + '<Activity_Tag>\n'
+    activityTagListXML = activityTagListXML + '\t<Name>'+a+'</Name>\n'
+    activityTagListXML = activityTagListXML + '\t<Printable>true</Printable>\n'
+    activityTagListXML = activityTagListXML + '\t<Comments></Comments>\n'
+    activityTagListXML = activityTagListXML + '</Activity_Tag>\n'
+
+activityTagListXML = activityTagListXML + '</Activity_Tags_List>\n'    
+formattedData = re.sub(
+        r"<Activity_Tags_List>(.*?)</Activity_Tags_List>",activityTagListXML,
+        formattedData,flags=re.DOTALL)      
 
 ## write file
 

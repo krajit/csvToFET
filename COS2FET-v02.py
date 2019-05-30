@@ -9,6 +9,18 @@ Created on Fri May 17 2019
 import random, xlrd
 from colorama import Fore, Back, Style
 
+###################################################################    
+#--------------------------------------------------------
+import re, csv
+# laod a starting template for .fet file readable by FET.
+templatePath = 'basicTemplate.fet'
+basicTemplate = open(templatePath,"r").read()
+
+# one by one load data in the basicTemplate, and will write that in a new file 
+formattedData = basicTemplate 
+
+
+
 # some preparotory instructions
 print(Fore.RED+ '\nWarning: File downloaded from COS contains Ziaur Rehman. It is a dummy instructor name. Make sure to replace it with unique name for each activity.\n')
 
@@ -731,6 +743,7 @@ for cIndex, c in courseList.items():
                
 ## map courses to activities
 tutDurationSet = set()
+activityTagSet= set()
 activityString = "Students Sets,Subject,Teachers,Activity Tags,Total Duration,Split Duration,Min Days,Weight,Consecutive\n"
 
 def splitLec(totalDuration, lecDuration = '2'):
@@ -758,9 +771,6 @@ activityId = 0
 activityGroupId = 0
 
 for cIndex, c in courseList.items():
-    print (activityId)
-    if (activityId >= 10):
-        break
     
     if 'lecSections' in c:
         for lIndex, l in c['lecSections'].items():
@@ -784,6 +794,11 @@ for cIndex, c in courseList.items():
             teachers = teachers[1:]
             
             activityTag = lIndex #'LEC+AnyRoom+'+lIndex
+            activityTagSet.add(activityTag)
+            
+            activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
+            
+            
             totalDuration = str(c['LectureHoursPerWeek'])
             if (int(totalDuration) >= 12):
                 print(cIndex + " abnormally high lecture hours. Skipping")
@@ -835,27 +850,39 @@ for cIndex, c in courseList.items():
     if 'tutSections' in c:
         for lIndex, l in c['tutSections'].items():
             
+            activityXML = '<Activity>\n'
+            activityXML = activityXML + '\t<Subject>'+cIndex+'</Subject>\n'
             
             studentSet = ''
             for s in l['students']:
                 studentSet = studentSet+'+'+s
+                activityXML = activityXML + '\t<Students>'+s+'</Students>\n'
             studentSet = studentSet[1:]
             subject = cIndex
   
             teachers = ''
             for i in l['instructors']:
                 teachers = teachers +'+' + i
+                activityXML = activityXML + '\t<Teacher>'+i+'</Teacher>\n'
             teachers = teachers[1:]
             
             activityTag = lIndex #'TUT+AnyRoom+'+lIndex
+            activityTagSet.add(activityTag)
+            activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
+            
+
             totalDuration = str(c['TutorialHoursPerWeek'])
             if (int(totalDuration) >= 12):
-                print(cIndex + " abnormally high lecture hours. Skipping")
+                print(cIndex + " abnormally high tutorials hours. Skipping")
                 continue
 
             
             
             splitDuration = splitLec(totalDuration,'3')
+            
+            activityXML = activityXML + '\t<Duration>'+splitDuration[0]+'</Duration>\n'
+            activityXML = activityXML + '\t<Total_Duration>'+totalDuration+'</Total_Duration>\n'
+            
             minDays = ''
             weight = ''
             consecutive = ''
@@ -866,6 +893,20 @@ for cIndex, c in courseList.items():
             for i in range(0,len(splitDuration),2):
                 activityId = activityId + 1
                 activityIdSet.add(activityId)
+                
+                                # get first lecture id in week
+                if (i == 0):
+                    activityGroupId = activityId
+                        
+                activityXMLi = activityXML
+                activityXMLi = activityXMLi + '\t<Id>'+str(activityId)+'</Id>\n'
+                activityXMLi = activityXMLi + '\t<Activity_Group_Id>'+str(activityGroupId)+'</Activity_Group_Id>\n'
+                activityXMLi = activityXMLi + '\t<Active>true</Active>\n'
+                activityXMLi = activityXMLi + '\t<Comments></Comments>\n'
+                activityXMLi = activityXMLi + '</Activity>\n'
+                
+                activityListXML = activityListXML + activityXMLi
+                
             courseList[cIndex]['tutSections'][lIndex]['ids']=activityIdSet
 
                 
@@ -875,9 +916,13 @@ for cIndex, c in courseList.items():
     if 'labSections' in c:
         for lIndex, l in c['labSections'].items():
             
+            activityXML = '<Activity>\n'
+            activityXML = activityXML + '\t<Subject>'+cIndex+'</Subject>\n'
+            
             studentSet = ''
             for s in l['students']:
                 studentSet = studentSet+'+'+s
+                activityXML = activityXML + '\t<Students>'+s+'</Students>\n'
             studentSet = studentSet[1:]
             
             subject = cIndex
@@ -885,17 +930,25 @@ for cIndex, c in courseList.items():
             teachers = ''
             for i in l['instructors']:
                 teachers = teachers +'+' + i
+                activityXML = activityXML + '\t<Teacher>'+i+'</Teacher>\n'
             teachers = teachers[1:]
             
             activityTag = lIndex #'LAB' +'+'+ l['room'][0:4]+'+'+lIndex
+            activityTagSet.add(activityTag)
+            activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
+
             
             totalDuration = str(c['PracticalHoursPerWeek'])
             if (int(totalDuration) >= 12):
-                print(cIndex + " abnormally high lecture hours. Skipping")
+                print(cIndex + " abnormally high practical hours. Skipping")
                 continue
 
             
             splitDuration = totalDuration # no splitting of lab hours
+            
+            activityXML = activityXML + '\t<Duration>'+splitDuration[0]+'</Duration>\n'
+            activityXML = activityXML + '\t<Total_Duration>'+totalDuration+'</Total_Duration>\n'
+            
             minDays = ''
             weight = ''
             consecutive = ''
@@ -907,33 +960,119 @@ for cIndex, c in courseList.items():
                 activityId = activityId + 1
                 activityIdSet.add(activityId)
                 
+                                # get first lecture id in week
+                if (i == 0):
+                    activityGroupId = activityId
+                        
+                activityXMLi = activityXML
+                activityXMLi = activityXMLi + '\t<Id>'+str(activityId)+'</Id>\n'
+                activityXMLi = activityXMLi + '\t<Activity_Group_Id>'+str(activityGroupId)+'</Activity_Group_Id>\n'
+                activityXMLi = activityXMLi + '\t<Active>true</Active>\n'
+                activityXMLi = activityXMLi + '\t<Comments></Comments>\n'
+                activityXMLi = activityXMLi + '</Activity>\n'
+                
+                activityListXML = activityListXML + activityXMLi
+                
             courseList[cIndex]['labSections'][lIndex]['ids']=activityIdSet
 
             row = studentSet+','+subject+','+teachers+','+activityTag+','+totalDuration+','+splitDuration+','+minDays+','+weight+','+consecutive+'\n'
             activityString = activityString+row
             
-## add lunch activity for each subgroup
-#for sIndex, s in studentsGroup.items():
-#    for sgIndex, sg in s['subgroups'].items():
-#        row = sgIndex+',Lunch,'+'T'+sgIndex+', ,8,2+2+2+2,1,100,1\n'
-#        activityString = activityString+row
+            
+            
+         
+instructorSet = set()
+# add lunch activity for each subgroup
+lunchActivityIdSet = set()
+lunchId = activityId+1
+            
+lunchInFourDaysXML = ''
+
+for sIndex, s in studentsGroup.items():
+    for sgIndex, sg in s['subgroups'].items():
+        row = sgIndex+',Lunch,'+'T'+sgIndex+', ,8,2+2+2+2,1,100,1\n'
+        activityString = activityString+row
+        
+        lunchInFourDaysXML = lunchInFourDaysXML + '<ConstraintMinDaysBetweenActivities>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Weight_Percentage>100</Weight_Percentage>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Number_of_Activities>4</Number_of_Activities>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+1)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+2)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+3)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<MinDays>1</MinDays>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Active>true</Active>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Comments></Comments>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '</ConstraintMinDaysBetweenActivities>\n'
+
+        lXML = '<Activity>\n'
+        dummyInstructor = 'Lunch'+sgIndex
+        instructorSet.add(dummyInstructor)
+        
+        lXML = lXML + '\t<Teacher>'+dummyInstructor+'</Teacher>\n'
+        lXML = lXML + '\t<Subject>Lunch</Subject>\n'
+        lXML = lXML + '\t<Activity_Tag></Activity_Tag>\n'
+        lXML = lXML + '\t<Students>'+sgIndex+'</Students>\n'
+        lXML = lXML + '\t<Duration>2</Duration>\n'
+        lXML = lXML + '\t<Total_Duration>8</Total_Duration>\n'
+        
+        for i in range(4): # four activity for lunch on M, T, W, Fri. The lunch on Thursday is automatically in break hours
+            if (i == 0):
+                lunchGroupId = lunchId
+            
+            lXMLi = lXML # each lunch period is a new actvity
+            lXMLi = lXMLi + '\t<Id>'+str(lunchId)+'</Id>\n'
+            lXMLi = lXMLi + '\t<Activity_Group_Id>'+str(lunchGroupId)+'</Activity_Group_Id>\n'
+            lXMLi = lXMLi + '\t<Active>true</Active>\n'
+            lXMLi = lXMLi + '\t<Comments></Comments>\n'
+            lXMLi = lXMLi + '</Activity>\n'
+            
+            activityListXML = activityListXML + lXMLi
+            lunchId = lunchId  + 1
+        
+
+activityListXML = activityListXML+ '<!-- SPACE FOR MORE ACTIVITIES -->\n'
+activityListXML = activityListXML+ '</Activities_List>\n'
+formattedData = re.sub(
+        r"<Activities_List>(.*?)</Activities_List>", activityListXML,
+        formattedData,flags=re.DOTALL)
+
+
+subjectListXML = '<Subjects_List>\n'
+for cIndex in courseList:
+    subjectListXML = subjectListXML + '<Subject>\n'
+    subjectListXML = subjectListXML + '\t<Name>'+cIndex+'</Name>\n'
+    subjectListXML = subjectListXML + '\t<Comments></Comments>\n'
+    subjectListXML = subjectListXML + '</Subject>\n'
+    
+# add lunch subject
+subjectListXML = subjectListXML + '<Subject>\n'
+subjectListXML = subjectListXML + '\t<Name>Lunch</Name>\n'
+subjectListXML = subjectListXML + '\t<Comments></Comments>\n'
+subjectListXML = subjectListXML + '</Subject>\n'
+
+
+subjectListXML = subjectListXML + '</Subjects_List>\n'
+formattedData = re.sub(
+        r"<Subjects_List>(.*?)</Subjects_List>", subjectListXML,
+        formattedData,flags=re.DOTALL)
+
+
+
+# add instute name
+formattedData = re.sub(
+        r"<Institution_Name>.*</Institution_Name>",
+        '<Institution_Name>Shiv Nadar University</Institution_Name>',
+        formattedData)
+
+
 
             
 f = open(activityCsvFileName, "w")
 f.write(activityString)
 f.close()    
 
-###################################################################    
-#--------------------------------------------------------
-import re, csv
-# laod a starting template for .fet file readable by FET.
-templatePath = 'basicTemplate.fet'
-basicTemplate = open(templatePath,"r").read()
-
-
-
-# one by one load data in the basicTemplate, and will write that in a new file 
-formattedData = basicTemplate 
 
 # add instute name
 formattedData = re.sub(
@@ -1085,14 +1224,14 @@ for cIndex, c in courseList.items():
         for lIndex, l in c['lecSections'].items():
             if 'ids' in l:    
                 for i in l['ids']:
-                    spaceCons = spaceCons + '<ConstraintActivityPreferredRoom>\n\
-                    <Weight_Percentage>100</Weight_Percentage>\n\
-                    <Activity_Id>'+str(i)+'</Activity_Id>\n\
-                    <Room>'+roomArray[j]+'</Room>\n\
-                    <Permanently_Locked>false</Permanently_Locked>\n\
-                    <Active>true</Active>\n\
-                    <Comments></Comments>\n\
-                    </ConstraintActivityPreferredRoom>'
+                    spaceCons = spaceCons + '<ConstraintActivityPreferredRoom>\n'
+                    spaceCons = spaceCons + '\t<Weight_Percentage>100</Weight_Percentage>\n'
+                    spaceCons = spaceCons + '\t<Activity_Id>'+str(i)+'</Activity_Id>\n'
+                    spaceCons = spaceCons + '\t<Room>'+roomArray[j]+'</Room>\n'
+                    spaceCons = spaceCons + '\t<Permanently_Locked>false</Permanently_Locked>\n'
+                    spaceCons = spaceCons + '\t<Active>true</Active>\n'
+                    spaceCons = spaceCons + '\t<Comments></Comments>\n'
+                    spaceCons = spaceCons + '\t</ConstraintActivityPreferredRoom>\n'
                 j = (j+1) % len(allRoomSet)
 
 
@@ -1269,7 +1408,7 @@ for cIndex, c in courseList.items():
             
         
             
-tag = tag + '</Time_Constraints_List>\n'
+tag = tag+ lunchInFourDaysXML + '</Time_Constraints_List>\n'
 ##  end time constraints
 
 # write your content in n new file
@@ -1285,6 +1424,51 @@ formattedData = re.sub(
 
 
 
+# read instructos set
+for cIndex, c in courseList.items():
+    if 'lecSections' in c:
+        for sId,s in c['lecSections'].items():
+            instructorSet = instructorSet.union(set(s['instructors']))
+            
+    if 'tutSections' in c:
+        for sId,s in c['tutSections'].items():
+            instructorSet = instructorSet.union(set(s['instructors']))
+            
+    if 'labSections' in c:
+        for sId,s in c['labSections'].items():
+            instructorSet = instructorSet.union(set(s['instructors']))
+            
+
+teachersXML = '<Teachers_List>\n'
+for i in instructorSet:
+    teachersXML = teachersXML + '<Teacher>\n'
+    teachersXML = teachersXML + '\t<Name>'+i+'</Name>\n'
+    teachersXML = teachersXML + '\t<Target_Number_of_Hours>0</Target_Number_of_Hours>\n'
+    teachersXML = teachersXML + '\t<Qualified_Subjects></Qualified_Subjects>\n'
+    teachersXML = teachersXML + '\t<Comments></Comments>\n'
+    teachersXML = teachersXML + '</Teacher>\n'
+
+teachersXML = teachersXML + '</Teachers_List>\n'
+# write your content in n new file
+formattedData = re.sub(
+        r"<Teachers_List>(.*?)</Teachers_List>",teachersXML ,
+        formattedData,flags=re.DOTALL)      
+
+
+# write activity tags in fet
+activityTagListXML = '<Activity_Tags_List>\n'
+
+for a in activityTagSet:
+    activityTagListXML = activityTagListXML + '<Activity_Tag>\n'
+    activityTagListXML = activityTagListXML + '\t<Name>'+a+'</Name>\n'
+    activityTagListXML = activityTagListXML + '\t<Printable>true</Printable>\n'
+    activityTagListXML = activityTagListXML + '\t<Comments></Comments>\n'
+    activityTagListXML = activityTagListXML + '</Activity_Tag>\n'
+
+activityTagListXML = activityTagListXML + '</Activity_Tags_List>\n'    
+formattedData = re.sub(
+        r"<Activity_Tags_List>(.*?)</Activity_Tags_List>",activityTagListXML,
+        formattedData,flags=re.DOTALL)      
 
 ## write file
 
