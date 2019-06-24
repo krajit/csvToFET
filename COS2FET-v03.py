@@ -187,8 +187,6 @@ for sIndex, s in studentsGroup.items():
 f = open("studentsGroup.csv", "w")
 f.write(studentToCsv)
 f.close()    
-    
-
 
 # read excel file
 # data stored as a dictionary in courseList
