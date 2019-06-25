@@ -242,8 +242,9 @@ for ci in courses:
     cStudents =courses[ci]
     worksheet.write(row, column, ci)
     for sg in cStudents:
-       column = column + 1 
-       worksheet.write(row, column, sg+'('+str(len(cStudents[sg]))+')')
+        if (len(cStudents[sg]) >= 5):
+            column = column + 1 
+            worksheet.write(row, column, sg+'('+str(len(cStudents[sg]))+')')
     row = row+1
 workbook.close() 
     

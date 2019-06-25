@@ -27,10 +27,10 @@ slots = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00',
          '15:00', '15:30', '16:00', '16:30', 
          '17:00', 
          '17:30', 
-         '18:00',
-         '18:30', 
-         '19:00', 
-         '19:30',
+#         '18:00',
+#         '18:30', 
+#         '19:00', 
+#         '19:30',
          ]
 
 
@@ -39,6 +39,20 @@ import readStudentDatabase as sdb
 studentsList = sdb.students
 studentGroups = sdb.studentsGroup
 courseElectiveStudents = sdb.courses
+
+# delete students from course electives who form a small group
+for c in courseElectiveStudents:
+    sg = courseElectiveStudents[c]
+    for s in list(sg):
+        st = sg[s]
+        if (len(st) < 20):
+            del courseElectiveStudents[c][s]
+
+for c in list(courseElectiveStudents):
+    if (len(courseElectiveStudents[c]) == 0):
+        del courseElectiveStudents[c]
+
+    
 studentsListXML = sdb.studentsListXML
 
 
@@ -58,7 +72,7 @@ for ci in courseList:
     c = courseList[ci]
     c['studentsSet'] = set()
     
-    if ('Major' in c['CourseType']):
+    if (c['CourseType'] == 'Major'):
         for m in c['programs']:
             c['studentsSet'].add(m)
             

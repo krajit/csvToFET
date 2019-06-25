@@ -27,20 +27,39 @@ slots = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00',
          '15:00', '15:30', '16:00', '16:30', 
          '17:00', 
          '17:30', 
-         '18:00',
-         '18:30', 
+#         '18:00',
+#         '18:30', 
 #         '19:00', 
 #         '19:30',
          ]
 
 
-# read student database
-import readStudentDatabase as sdb
-studentsList = sdb.students
-studentGroups = sdb.studentsGroup
-courseElectiveStudents = sdb.courses
-studentsListXML = sdb.studentsListXML
+# prepare student groups
+studentGroups = {
+        'year1': {'BIO1', 'BMS1', 'CED1', 'CHD1', 'CHY1', 'CSE1', 'ECE1', 'ECO1', 
+                  'EEE1', 'ENG1', 'HIS1', 'INT1', 'MAT1', 'MED1', 'PHY1', 'SOC1'},
+        'year2': {'BIO2', 'BMS2', 'CED2', 'CHD2', 'CHY2', 'CSE2', 'ECE2', 'ECO2', 
+                  'EEE2', 'ENG2', 'HIS2', 'INT2', 'MAT2', 'MED2', 'PHY2', 'SOC2'},
+        'year3': {'BIO3', 'BMS3', 'CED3', 'CHD3', 'CHY3', 'CSE3', 'ECE3', 'ECO3', 
+                  'EEE3', 'ENG3', 'HIS3', 'INT3', 'MAT3', 'MED3', 'PHY3', 'SOC3'},
+        'year4': {'BIO4', 'BMS4', 'CED4', 'CHD4', 'CHY4', 'CSE4', 'ECE4', 'ECO4', 
+                  'EEE4', 'ENG4', 'HIS4', 'INT4', 'MAT4', 'MED4', 'PHY4', 'SOC4'}}
 
+studentsListXML = '<Students_List>\n'
+for si in studentGroups:
+    studentsListXML = studentsListXML + '<Year>\n' 
+    studentsListXML = studentsListXML + '\t<Name>'+si+'</Name>\n'
+    studentsListXML = studentsListXML + '\t<Number_of_Students>'+str(len(studentGroups[si]))+'</Number_of_Students>\n'
+    studentsListXML = studentsListXML + '\t<Comments></Comments>\n' 
+    
+    for gr in studentGroups[si]:
+        studentsListXML = studentsListXML + '\t<Group>\n'
+        studentsListXML = studentsListXML + '\t\t<Name>'+gr+'</Name>\n'
+        studentsListXML = studentsListXML + '\t\t<Number_of_Students>1</Number_of_Students>\n'
+        studentsListXML = studentsListXML + '\t\t<Comments></Comments>\n'
+        studentsListXML = studentsListXML + '\t</Group>\n'
+    studentsListXML = studentsListXML + '</Year>\n'
+studentsListXML = studentsListXML + '</Students_List>\n'
 
 # read course offering data
 import readCOSdata as COS
@@ -64,13 +83,20 @@ for ci in courseList:
             
             
 # add UWE students preferences given by instructors
-import readUWEInstructorsPreference as up
-UWEcourses = up.UWEcourses
-for c in UWEcourses:
-    if 'pref1' in UWEcourses[c]:
-        courseList[c]['studentsSet'].add(UWEcourses[c]['pref1'])
+#import readUWEInstructorsPreference as up
+#UWEcourses = up.UWEcourses
+#for c in UWEcourses:
+#    if 'pref1' in UWEcourses[c]:
+#        courseList[c]['studentsSet'].add(UWEcourses[c]['pref1'])
 
-            
+## add year1, year2, year3 in on one randomly selected CCC
+# Then manually make sure all CCC overlaps
+courseList['CCC510']['studentsSet'].add('year1')
+
+courseList['CCC515']['studentsSet'].add('year1')
+courseList['CCC515']['studentsSet'].add('year2')
+courseList['CCC515']['studentsSet'].add('year3')
+
             
 # replace 'programs' dictionary with 'studentsSet' dictionary in each course
 # because the pragram is designed to distribute 'programs' dictionary among sections
@@ -153,11 +179,20 @@ for cIndex, c in courseList.items():
             activityTag = lIndex #'LEC+AnyRoom+'+lIndex
             activityTagSet.add(activityTag)
             activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
+            
+            if (cIndex[0:3] == 'CCC'):
+                activityTag = 'CCC'
+                activityTagSet.add(activityTag)
+                activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
+
             totalDuration = str(c['LectureHoursPerWeek'])
             if (int(totalDuration) >= 12):
                 print(cIndex + " abnormally high lecture hours. Skipping")
                 continue
             lecDuration = str(c['LectureDuration'])
+            if (cIndex[0:3] == 'CCC'):
+                lecDuration = '3'            
+            
             splitDuration = splitLec(totalDuration,lecDuration)
             activityXML = activityXML + '\t<Duration>'+splitDuration[0]+'</Duration>\n'
             activityXML = activityXML + '\t<Total_Duration>'+totalDuration+'</Total_Duration>\n'
@@ -191,6 +226,12 @@ for cIndex, c in courseList.items():
             activityTag = lIndex #'TUT+AnyRoom+'+lIndex
             activityTagSet.add(activityTag)
             activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
+
+            if (cIndex[0:3] == 'CCC'):
+                activityTag = 'CCC'
+                activityTagSet.add(activityTag)
+                activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
+            
             totalDuration = str(c['TutorialHoursPerWeek'])
             if (int(totalDuration) >= 12):
                 print(cIndex + " abnormally high tutorials hours. Skipping")
@@ -227,6 +268,14 @@ for cIndex, c in courseList.items():
             activityTag = lIndex #'LAB' +'+'+ l['room'][0:4]+'+'+lIndex
             activityTagSet.add(activityTag)
             activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
+
+            if (cIndex[0:3] == 'CCC'):
+                activityTag = 'CCC'
+                activityTagSet.add(activityTag)
+                activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
+
+            
+            
             totalDuration = str(c['PracticalHoursPerWeek'])
             if (int(totalDuration) >= 12):
                 print(cIndex + " abnormally high practical hours. Skipping")
@@ -262,43 +311,46 @@ instructorSet = set()
 lunchActivityIdSet = set()
 lunchId = activityId+1
 lunchInFourDaysXML = ''
-for s in studentGroups:
-    lunchInFourDaysXML = lunchInFourDaysXML + '<ConstraintMinDaysBetweenActivities>\n'
-    lunchInFourDaysXML = lunchInFourDaysXML + '\t<Weight_Percentage>100</Weight_Percentage>\n'
-    lunchInFourDaysXML = lunchInFourDaysXML + '\t<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>\n'
-    lunchInFourDaysXML = lunchInFourDaysXML + '\t<Number_of_Activities>4</Number_of_Activities>\n'
-    lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId)+'</Activity_Id>\n'
-    lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+1)+'</Activity_Id>\n'
-    lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+2)+'</Activity_Id>\n'
-    lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+3)+'</Activity_Id>\n'
-    lunchInFourDaysXML = lunchInFourDaysXML + '\t<MinDays>1</MinDays>\n'
-    lunchInFourDaysXML = lunchInFourDaysXML + '\t<Active>true</Active>\n'
-    lunchInFourDaysXML = lunchInFourDaysXML + '\t<Comments></Comments>\n'
-    lunchInFourDaysXML = lunchInFourDaysXML + '</ConstraintMinDaysBetweenActivities>\n'
 
-    lXML = '<Activity>\n'
-    dummyInstructor = 'Lunch'+s
-    instructorSet.add(dummyInstructor)
+for sg in studentGroups:
     
-    lXML = lXML + '\t<Teacher>'+dummyInstructor+'</Teacher>\n'
-    lXML = lXML + '\t<Subject>Lunch</Subject>\n'
-    lXML = lXML + '\t<Activity_Tag></Activity_Tag>\n'
-    lXML = lXML + '\t<Students>'+s+'</Students>\n'
-    lXML = lXML + '\t<Duration>2</Duration>\n'
-    lXML = lXML + '\t<Total_Duration>8</Total_Duration>\n'
+    for s in studentGroups[sg]:
+        lunchInFourDaysXML = lunchInFourDaysXML + '<ConstraintMinDaysBetweenActivities>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Weight_Percentage>100</Weight_Percentage>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Number_of_Activities>4</Number_of_Activities>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+1)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+2)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+3)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<MinDays>1</MinDays>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Active>true</Active>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Comments></Comments>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '</ConstraintMinDaysBetweenActivities>\n'
     
-    for i in range(4): # four activity for lunch on M, T, W, Fri. The lunch on Thursday is automatically in break hours
-        if (i == 0):
-            lunchGroupId = lunchId
-        lXMLi = lXML # each lunch period is a new actvity
-        lXMLi = lXMLi + '\t<Id>'+str(lunchId)+'</Id>\n'
-        lXMLi = lXMLi + '\t<Activity_Group_Id>'+str(lunchGroupId)+'</Activity_Group_Id>\n'
-        lXMLi = lXMLi + '\t<Active>true</Active>\n'
-        lXMLi = lXMLi + '\t<Comments></Comments>\n'
-        lXMLi = lXMLi + '</Activity>\n'
+        lXML = '<Activity>\n'
+        dummyInstructor = 'Lunch'+s
+        instructorSet.add(dummyInstructor)
         
-        activityListXML = activityListXML + lXMLi
-        lunchId = lunchId  + 1
+        lXML = lXML + '\t<Teacher>'+dummyInstructor+'</Teacher>\n'
+        lXML = lXML + '\t<Subject>Lunch</Subject>\n'
+        lXML = lXML + '\t<Activity_Tag></Activity_Tag>\n'
+        lXML = lXML + '\t<Students>'+s+'</Students>\n'
+        lXML = lXML + '\t<Duration>2</Duration>\n'
+        lXML = lXML + '\t<Total_Duration>8</Total_Duration>\n'
+        
+        for i in range(4): # four activity for lunch on M, T, W, Fri. The lunch on Thursday is automatically in break hours
+            if (i == 0):
+                lunchGroupId = lunchId
+            lXMLi = lXML # each lunch period is a new actvity
+            lXMLi = lXMLi + '\t<Id>'+str(lunchId)+'</Id>\n'
+            lXMLi = lXMLi + '\t<Activity_Group_Id>'+str(lunchGroupId)+'</Activity_Group_Id>\n'
+            lXMLi = lXMLi + '\t<Active>true</Active>\n'
+            lXMLi = lXMLi + '\t<Comments></Comments>\n'
+            lXMLi = lXMLi + '</Activity>\n'
+            
+            activityListXML = activityListXML + lXMLi
+            lunchId = lunchId  + 1
 
 activityListXML = activityListXML+ '<!-- SPACE FOR MORE ACTIVITIES -->\n'
 activityListXML = activityListXML+ '</Activities_List>\n'
@@ -642,7 +694,17 @@ for cIndex, c in courseList.items():
             
         
             
-tag = tag+ lunchInFourDaysXML + '</Time_Constraints_List>\n'
+tag = tag+ lunchInFourDaysXML
+
+# add CCC overlapping constratint
+import overlappingCCCstring as overlappCCC
+tag = tag+overlappCCC.x
+
+tag = tag+ '</Time_Constraints_List>\n'
+
+
+
+
 ##  end time constraints
 
 # write your content in n new file
