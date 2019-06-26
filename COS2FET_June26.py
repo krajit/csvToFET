@@ -24,7 +24,9 @@ fetFileName = 'snu-timetable.fet'
 # hours, written vertically aligned to easily comment out few slots
 slots = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00',
          '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30',
-         '15:00', '15:30', '16:00', '16:30', 
+         '15:00', '15:30', 
+         '16:00', 
+         '16:30', 
          '17:00', 
          '17:30', 
 #         '18:00',
@@ -69,6 +71,13 @@ CCCcourses = COS.CCCcourses
 # minorElectives = COS.minorElectives
 # UWEnotInMinors = COS.UWEnotInMinors
 
+maxMajorElectives = 3
+numMajorElectives = dict()
+for y in studentGroups:
+    for s in studentGroups[y]:
+        numMajorElectives[s] = maxMajorElectives
+
+
 
 # add students to complusory courses
 # loop over courses and add the set of major studetns to it
@@ -77,17 +86,27 @@ for ci in courseList:
     c = courseList[ci]
     c['studentsSet'] = set()
     
-    if (c['CourseType'] == 'Major') or (c['CourseType'] == 'Major Elective') :
+    if (c['CourseType'] == 'Major') :
         for m in c['programs']:
             c['studentsSet'].add(m)
             
             
-# add UWE students preferences given by instructors
-#import readUWEInstructorsPreference as up
-#UWEcourses = up.UWEcourses
-#for c in UWEcourses:
-#    if 'pref1' in UWEcourses[c]:
-#        courseList[c]['studentsSet'].add(UWEcourses[c]['pref1'])
+    if (c['CourseType'] == 'Major Elective') :
+        for m in c['programs']:
+            if numMajorElectives[m] > 0:
+                c['studentsSet'].add(m)
+                numMajorElectives[m] = numMajorElectives[m] -1 
+            else:
+                print('Student group', m, 'not added in ', ci, 'because too many major electives')
+            
+            
+#add UWE students preferences given by instructors
+import readUWEInstructorsPreference as up
+UWEcourses = up.UWEcourses
+for c in UWEcourses:
+    if 'pref1' in UWEcourses[c]:
+        courseList[c]['studentsSet'].add(UWEcourses[c]['pref1'])
+       
 
 ## add year1, year2, year3 in on one randomly selected CCC
 # Then manually make sure all CCC overlaps
