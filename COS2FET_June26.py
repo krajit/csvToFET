@@ -29,7 +29,7 @@ slots = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00',
          '16:30', 
          '17:00', 
          '17:30', 
-#         '18:00',
+         '18:00',
 #         '18:30', 
 #         '19:00', 
 #         '19:30',
@@ -284,7 +284,7 @@ for cIndex, c in courseList.items():
                 activityXML = activityXML + '\t<Students>'+s+'</Students>\n'
             for i in l['instructors']:
                 activityXML = activityXML + '\t<Teacher>'+i+'</Teacher>\n'
-            activityTag = lIndex #'LAB' +'+'+ l['room'][0:4]+'+'+lIndex
+            activityTag = l['room'][0:4] #'LAB' +'+'+ l['room'][0:4]+'+'+lIndex
             activityTagSet.add(activityTag)
             activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
 
@@ -510,6 +510,35 @@ formattedData = re.sub(
 
 ##--space constraint------------------------------------------
 
+roomsInventory = dict()
+roomsInventory['Labs'] = []
+roomsInventory['Audi'] = []
+roomsInventory['hall'] = []
+roomsInventory['largeClass'] = []
+roomsInventory['regularClass'] = []
+roomsInventory['smallClass'] = []
+
+allRooms = []
+for room in roomsAndBuilding[1:]:
+    if (room[2] != 'Lab'):
+        allRooms.append(room[0])
+
+
+for room in roomsAndBuilding[1:]:
+    if (room[2] == 'Lab'):
+        roomsInventory['Labs'].append(room[0])
+    elif (int(room[1])>=200):
+        roomsInventory['Audi'].append(room[0])
+    elif (int(room[1])>=150):
+        roomsInventory['hall'].append(room[0])
+    elif (int(room[1])>=100):
+        roomsInventory['largeClass'].append(room[0])        
+    elif (int(room[1])>=60):
+        roomsInventory['regularClass'].append(room[0])
+    else:
+        roomsInventory['smallClass'].append(room[0])
+
+
 # basic compulsory constraint
 spaceCons = '<Space_Constraints_List> \n \
 <ConstraintBasicCompulsorySpace> \n \
@@ -518,37 +547,53 @@ spaceCons = '<Space_Constraints_List> \n \
     <Comments></Comments> \n \
 </ConstraintBasicCompulsorySpace>\n'
 
-roomArray = []
-for s in allRoomSet:
-    roomArray.append(s)
-j = 0
-# add a specific room preference for each lecture room
-# so that each lecture happens in the same room
-for cIndex, c in courseList.items():
-    if 'lecSections' in c:
-        for lIndex, l in c['lecSections'].items():
-            if 'ids' in l:    
-                for i in l['ids']:
-                    spaceCons = spaceCons + '<ConstraintActivityPreferredRoom>\n'
-                    spaceCons = spaceCons + '\t<Weight_Percentage>100</Weight_Percentage>\n'
-                    spaceCons = spaceCons + '\t<Activity_Id>'+str(i)+'</Activity_Id>\n'
-                    spaceCons = spaceCons + '\t<Room>'+roomArray[j]+'</Room>\n'
-                    spaceCons = spaceCons + '\t<Permanently_Locked>false</Permanently_Locked>\n'
-                    spaceCons = spaceCons + '\t<Active>true</Active>\n'
-                    spaceCons = spaceCons + '\t<Comments></Comments>\n'
-                    spaceCons = spaceCons + '\t</ConstraintActivityPreferredRoom>\n'
-                j = (j+1) % len(allRoomSet)
-
-
+#roomArray = []
+#for s in allRoomSet:
+#    roomArray.append(s)
+## add a specific room preference for each lecture room
+## so that each lecture happens in the same room
+#for cIndex, c in courseList.items():
+#    if 'lecSections' in c:
+#        for lIndex, l in c['lecSections'].items():
+#            x = allRooms.pop(0)
+#            allRooms.append(x)
+#            
+#            if (c['CourseType'] == 'CCC'):
+#                x = roomsInventory['regularClass'].pop(0)
+#                roomsInventory['regularClass'].append(x)
+#                
+#            if (c['CourseCapacity'] >= 40):
+#                x = roomsInventory['regularClass'].pop(0)
+#                roomsInventory['regularClass'].append(x)
+#                
+#            if (c['CourseCapacity'] >= 100):
+#                x = roomsInventory['largeClass'].pop(0)
+#                roomsInventory['largeClass'].append(x)
+#                
+#            if (c['CourseCapacity'] >= 200):
+#                x = 'B315'
+#                
+#            
+#            if 'ids' in l:    
+#                print(cIndex, c['CourseCapacity'], x)
+#                for i in l['ids']:
+#                    spaceCons = spaceCons + '<ConstraintActivityPreferredRoom>\n'
+#                    spaceCons = spaceCons + '\t<Weight_Percentage>100</Weight_Percentage>\n'
+#                    spaceCons = spaceCons + '\t<Activity_Id>'+str(i)+'</Activity_Id>\n'
+#                    spaceCons = spaceCons + '\t<Room>'+x+'</Room>\n'
+#                    spaceCons = spaceCons + '\t<Permanently_Locked>false</Permanently_Locked>\n'
+#                    spaceCons = spaceCons + '\t<Active>true</Active>\n'
+#                    spaceCons = spaceCons + '\t<Comments></Comments>\n'
+#                    spaceCons = spaceCons + '\t</ConstraintActivityPreferredRoom>\n'
+#
 # add lab room constraints
-spaceCons = spaceCons + labRoomCons
-
-spaceCons = spaceCons + '</Space_Constraints_List>\n'
+#spaceCons = spaceCons + labRoomCons
+spaceCons = labRoomCons+'</Space_Constraints_List>\n'
     
 #update file
-formattedData = re.sub(
-        r"<Space_Constraints_List>(.*?)</Space_Constraints_List>", spaceCons,
-        formattedData,flags=re.DOTALL)      
+#formattedData = re.sub(
+#        r"<Space_Constraints_List>(.*?)</Space_Constraints_List>", spaceCons,
+#        formattedData,flags=re.DOTALL)      
     
 
 
@@ -731,14 +776,6 @@ formattedData = re.sub(
         r"<Time_Constraints_List>(.*?)</Time_Constraints_List>",tag ,
         formattedData,flags=re.DOTALL)      
 ###############################################
-
-
-
-#####################################################
-# the activities.csv needs to loaded at the FET interface
-
-
-
 # read instructos set
 for cIndex, c in courseList.items():
     if 'lecSections' in c:

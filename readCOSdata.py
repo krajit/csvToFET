@@ -130,6 +130,7 @@ for i in range(1,sheet.nrows):
     
     courseI['OpenasUWE'] = sheet.cell_value(i,OpenasUWE)
     courseI['PartofMinoras'] = sheet.cell_value(i,PartofMinoras)
+    courseI['CourseCapacity'] = int(sheet.cell_value(i,CourseCapacity))
     
     
     # read target audience of the course
