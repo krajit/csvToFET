@@ -1,0 +1,134 @@
+Title: FET information
+Message: Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version
+
+Your FET version: 5.35.5, file version: 5.37.5
+
+Title: FET information
+Message: The following time constraint is ignored, because it refers to inactive activities:
+Time constraint
+Activities must have the same starting hour
+Weight (percentage)=100%
+Number of activities=1
+Activity with id=97 (T:N.  Sukumar[20500050], S:CHY400, AT:LEC1, St:CHY3BIO)
+
+Button 0 text: Skip rest
+Button 1 text: See next
+Default button: 1
+Escape button: 0
+Pressing default button 1
+
+Title: FET information
+Message: The following time constraint is ignored, because it refers to inactive activities:
+Time constraint
+Activities must have the same starting hour
+Weight (percentage)=100%
+Number of activities=1
+Activity with id=345 (T:Priya  Johari[20500084], S:PHY106, AT:LEC1, St:PHY1)
+
+Button 0 text: Skip rest
+Button 1 text: See next
+Default button: 1
+Escape button: 0
+Pressing default button 1
+
+Title: FET information
+Message: The following time constraint is ignored, because it refers to inactive activities:
+Time constraint
+Activities must have the same starting hour
+Weight (percentage)=100%
+Number of activities=1
+Activity with id=401 (T:Vivek  Ahuja[20500309], S:MGT201, AT:LEC1, St:ECO3MGT,MGT2)
+
+Button 0 text: Skip rest
+Button 1 text: See next
+Default button: 1
+Escape button: 0
+Pressing default button 1
+
+Title: FET information
+Message: The following time constraint is ignored, because it refers to inactive activities:
+Time constraint
+Activities must have the same starting hour
+Weight (percentage)=100%
+Number of activities=1
+Activity with id=409 (T:Shahid  Jamal[20500122], S:COM198, AT:LEC1, St:ENG2COM,HIS2COM)
+
+Button 0 text: Skip rest
+Button 1 text: See next
+Default button: 1
+Escape button: 0
+Pressing default button 1
+
+Title: FET information
+Message: The following time constraint is ignored, because it refers to inactive activities:
+Time constraint
+Activities must have the same starting hour
+Weight (percentage)=100%
+Number of activities=1
+Activity with id=430 (T:Sandeep Kumar Gupta[20500970], S:DOM402, AT:LEC1, St:)
+
+Button 0 text: Skip rest
+Button 1 text: See next
+Default button: 1
+Escape button: 0
+Pressing default button 1
+
+Title: FET information
+Message: The following time constraint is ignored, because it refers to inactive activities:
+Time constraint
+Activities must have the same starting hour
+Weight (percentage)=100%
+Number of activities=1
+Activity with id=544 (T:Shahid  Jamal[20500122], S:COM196, AT:LEC1, St:)
+
+Button 0 text: Skip rest
+Button 1 text: See next
+Default button: 1
+Escape button: 0
+Pressing default button 1
+
+Title: FET information
+Message: The following time constraint is ignored, because it refers to inactive activities:
+Time constraint
+Activities must have the same starting hour
+Weight (percentage)=100%
+Number of activities=1
+Activity with id=650 (T:Amit  Ray[20500123], S:DES211, AT:LEC1, St:EED3DES,MED3DES)
+
+Button 0 text: Skip rest
+Button 1 text: See next
+Default button: 1
+Escape button: 0
+Pressing default button 1
+
+Title: FET information
+Message: The following time constraint is ignored, because it refers to inactive activities:
+Time constraint
+Activities must have the same starting hour
+Weight (percentage)=100%
+Number of activities=1
+Activity with id=652 (T:Amit  Ray[20500123], S:CCC510, AT:LEC1, St:)
+
+Button 0 text: Skip rest
+Button 1 text: See next
+Default button: 1
+Escape button: 0
+Pressing default button 1
+
+Title: FET information
+Message: The following time constraint is ignored, because it refers to inactive activities:
+Time constraint
+Activities must have the same starting hour
+Weight (percentage)=100%
+Number of activities=1
+Activity with id=660 (T:Shekhar  Pratap Singh[20500427], S:INT142, AT:LEC1, St:)
+
+Button 0 text: Skip rest
+Button 1 text: See next
+Default button: 1
+Escape button: 0
+Pressing default button 1
+
+Starting timetable generation...
+Total searching time (seconds): 1
+Simulation successful

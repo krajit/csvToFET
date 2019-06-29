@@ -5,10 +5,21 @@ Created on Fri Jun 28 00:32:41 2019
 
 @author: ajit
 """
-import csv
+
+# import slots and courses list from COS2FET
+import pickle
+coursesPickle = open('courses.pickle','rb')
+courses = pickle.load(coursesPickle) 
+
+slotsPickle = open('slots.pickle','rb')
+slots = pickle.load(slotsPickle)
+
+
 ##----------------------------------------
 #read exported csv format of the latest timetable
-with open('/home/ajit/fet-results/timetables/csv/snu-timetable/snu-timetable_timetable.csv', 'r') as ff:
+
+import csv
+with open('csv/snu-timetable/snu-timetable_timetable.csv', 'r') as ff:
   reader = csv.reader(ff)
   activities = list(reader)
  
@@ -27,16 +38,13 @@ for a in activities:
 
   ##----------------------------------------
 #read roomsAndBuildingFile
-with open('testData/rooms_and_buildings.csv', 'r') as ff:
+with open('rooms_and_buildings.csv', 'r') as ff:
   reader = csv.reader(ff)
   roomsAndBuilding = list(reader)
-  
-print(roomsAndBuilding)
 
 rooms = dict()
 
-import COS2FET_June26 as cos
-slots = cos.slots
+
 
 for r in roomsAndBuilding[1:]:
     rooms[r[0]] = dict()
@@ -47,9 +55,7 @@ for r in roomsAndBuilding[1:]:
         rooms[r[0]]['slots'][d] = dict()
         for s in slots:
             rooms[r[0]]['slots'][d][s] = 'available'
-            
-
-courses = cos.courseList
+          
 
 # set lecture capacity for each lecture sections
 for c in courses:
@@ -179,16 +185,12 @@ for ci in courses:
 # lets write down the time table in excel
 def formatTime(slotsList):
     lastSlot = slotsList[-1]
-    
     bhh= slotsList[0][0:2]
     bhh = str(int(bhh))
-    
     bmm = slotsList[0][-2:]
-    
     ehh= slotsList[-1][0:2]
     ehh = str(int(ehh))
     emm = slotsList[-1][-2:]
-    
     if emm == '00':
         emm = '30'
     elif (emm == '30'):
@@ -296,15 +298,6 @@ for ci in courses:
                 worksheet.write(row, roomCol, room)
                 
                 row = row+1
-                
-                
-                
-                
-                
-                
-                
-    
-    
 workbook.close()                         
                     
             

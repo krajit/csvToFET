@@ -1,0 +1,187 @@
+Program,Course Code,Tutorial Sections,Tutorial Instructors
+CSE1,EED101,TUT1,"Sonal  Singhal[20500080]
+"
+Mech1,EED101,TUT2,"Sonal  Singhal[20500080]
+"
+CSE1,EED101,TUT3,"Madhur Deo Upadhyay[20500212]
+"
+Mech1,EED101,TUT4,"Madhur Deo Upadhyay[20500212]
+"
+ChemEng3,CHD411,TUT1,"Karnail Baldev Singh[20500469]
+"
+Bio1+Chem1,CHY122,TUT1,"Bimlesh  Lochab[20500076]
+"
+ChemEng1,CED101,TUT1,"Jagabandhu  Dixit[20500135]
+"
+Civil1,CED101,TUT2,"Jagabandhu  Dixit[20500135]
+"
+Chem2,CHY222,TUT1,"Bani  Kanta Sarma[20500278]
+"
+English4,ENG446,TUT1,"Ziaur  Rehman[20500013]
+"
+English3,ENG343,TUT1,"Ziaur  Rehman[20500013]
+"
+English4,ENG445,TUT1,"Ziaur  Rehman[20500013]
+"
+English4,ENG444,TUT1,"Ziaur  Rehman[20500013]
+"
+English3,ENG344,TUT1,"Ziaur  Rehman[20500013]
+"
+CSE2,CSD209,TUT1,"Karmeshu  .[20500800]
+"
+CSE2,CSD209,TUT2,"Karmeshu  .[20500800]
+"
+English1,ENG142,TUT1,"Ziaur  Rehman[20500013]
+"
+English1,ENG143,TUT1,"Ziaur  Rehman[20500013]
+"
+History3,HIS304,TUT1,"Ajay  Dandekar[20500240]
+"
+Sociology3,SOC304,TUT1,"Devika  Bordia[20500658]
+"
+Sociology4,SOC402,TUT1,"Pradeep Krishnakumar Jeganathan[20500314]
+"
+History1,HIS104,TUT1,"Jaya  Menon[20500223]
+"
+History3,HIS312,TUT1,"Jaya  Menon[20500223]
+"
+Eco1,ECO101,TUT1,"Ziaur  Rehman[20500013]
+"
+Eco1,ECO101,TUT2,"Ziaur  Rehman[20500013]
+"
+Eco1,ECO102,TUT1,"Suchismita  Tarafdar[20500106]
+"
+Eco1,ECO102,TUT2,"Suchismita  Tarafdar[20500106]
+"
+Eco1,ECO102,TUT3,"Suchismita  Tarafdar[20500106]
+"
+Eco1,ECO102,TUT4,"Suchismita  Tarafdar[20500106]
+"
+Eco1,ECO102,TUT5,"Suchismita  Tarafdar[20500106]
+"
+Eco2,ECO302,TUT1,"Trishita Ray Barman[20500579]
+"
+Eco3,ECO302,TUT2,"Trishita Ray Barman[20500579]
+"
+Eco3,ECO401,TUT1,"Abhimanyu  Khan[20500783]
+"
+Eco4,ECO401,TUT2,"Abhimanyu  Khan[20500783]
+"
+Eco2,ECO301,TUT1,"Saptarshi Prosonno Ghosh[20500141]
+"
+Eco3,ECO301,TUT2,"Saptarshi Prosonno Ghosh[20500141]
+"
+Eco2,ECO221,TUT1,"Saptarshi Prosonno Ghosh[20500141]
+"
+Eco3,ECO221,TUT2,"Saptarshi Prosonno Ghosh[20500141]
+"
+CSE1,PHY102,TUT1,"Vaibhav  Shrivastava[20500030]
+"
+ChemEng1,PHY102,TUT2,"YOGESH YADAV[1710120094]
+"
+Civil1,PHY102,TUT3,"ANANYA CHATTARAJ[1710120051]
+"
+Mech1,PHY102,TUT4,"Priya Mandal[1610120074]
+"
+CSE1,PHY102,TUT5,"Saheli Mitra[1510120113]
+"
+CSE1,PHY102,TUT6,"Anurag Pritam[1510120104]
+"
+EEE1,PHY102,TUT7,"Manuja Kothiyal[1610120064]
+"
+EEE1,PHY102,TUT8,"Sangita Bhowmick[1510120114]
+"
+ECE1,PHY102,TUT9,"JOSHUA ASIRVATHAM[1710120064]
+"
+ECE1,PHY102,TUT10,"Dip Das[1610120055]
+"
+Phy1+Chem1,PHY104,TUT1,"Manuja Kothiyal[1610120064]
+"
+Phy2,PHY202,TUT1,"Subhra  Sen Gupta[20500365]
+"
+Phy2,PHY204,TUT1,"Santosh  Kumar[20500193]
+"
+Phy3,PHY302,TUT1,"Syed Modammed Kamil[20500088]
+"
+Phy3,PHY306,TUT1,"Bijan Kumar Bagchi[20500510]
+"
+English3,ENG346,TUT1,"Ziaur  Rehman[20500013]
+"
+,COM198,TUT1,"Shahid  Jamal[20500122]
+"
+Mech2,MED205,TUT1,"Harender  1[20500199]
+"
+Mech2,MED205,TUT2,"Harender  1[20500199]
+"
+Mech1,MED105,TUT1,"J  Venkatramani[20500736]
+"
+Mech1,MED105,TUT2,"J  Venkatramani[20500736]
+"
+Chem1,MAT104,TUT1,"Samir Hazra[1510120051]
+"
+ChemEng1,MAT104,TUT2,"Samir Hazra[1510120051]
+"
+Civil1+CSE1,MAT104,TUT3,"Samir Hazra[1510120051]
+"
+EEE1,MAT104,TUT4,"Samir Hazra[1510120051]
+"
+ECE1,MAT104,TUT5,"Samir Hazra[1510120051]
+"
+Mech1,MAT104,TUT6,"Samir Hazra[1510120051]
+"
+Bio1,MAT084,TUT1,"Charu  Sharma[20500010]
+"
+Chem1+Eco1+Mat1+Phy1,MAT102,TUT1,"Amber  Habib[20500009]
+"
+Chem1+Eco1+Mat1+Phy1,MAT102,TUT2,"Amber  Habib[20500009]
+"
+Eco2+Mat1,MAT110,TUT1,"Niteesh  Sahni[20500011]
+"
+Mat1+Mat2,MAT132,TUT1,"Pradip  Kumar[20500271]
+"
+Mat2,MAT221,TUT1,"Sanjeev  Agrawal[20500033]
+"
+Mat2,MAT241,TUT1,"Satyanarayana  Reddy[20500099]
+"
+Mat2+Mat3,MAT246,TUT1,"Satyanarayana  Reddy[20500099]
+"
+Mat2+Mat3,MAT386,TUT1,"Lal Mohan Saha[20500014]
+"
+Mat3+Mat4,MAT434,TUT1,"Ajit  Kumar[20500008]
+"
+Mat3+Mat4,MAT522,TUT1,"Debashish   Bose[20500200]
+"
+,COM196,TUT1,"Shahid  Jamal[20500122]
+"
+,COM192,TUT1,"Ashwin  Ramanathan[20500228]
+"
+History1,HIS103,TUT1,"Ajay  Dandekar[20500240]
+"
+IntRel1,INT103,TUT1,"Atul  Mishra[20500723]
+"
+IntRel1,INT104,TUT1,"Kaveri   Gill[20500669]
+"
+IntRel1,INT105,TUT1,"Siddharth  Mallavarapu[20500876]
+"
+UG1,INT145,TUT1,"Rajeswari Sarala Raina[20500660]
+"
+History3,HIS313,TUT1,"Ziaur  Rehman[20500013]
+"
+,ENG104,TUT1,"Ziaur  Rehman[20500013]
+"
+,ENG104,TUT2,"Ziaur  Rehman[20500013]
+"
+,INT142,TUT1,"Shekhar  Pratap Singh[20500427]
+"
+,INT237,TUT1,"Shekhar  Pratap Singh[20500427]
+"
+Eco1,MAT284,TUT1,"Sanjeev  Agrawal[20500033]
+"
+,MAT101,TUT1,"Priyanka  Grover[20500411]
+"
+Mat2+Mat3,MAT283,TUT1,"Suma  Ghosh[20500513]
+"
+Mat3,MAT388,TUT1,"Samit   Bhattacharyya[20500432]
+"
+Mat3+Mat4,MAT442,TUT1,"Sudeepto  Bhattacharya[20500090]
+"

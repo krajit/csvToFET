@@ -1,0 +1,22 @@
+#!/bin/sh
+
+echo 'Hello'
+
+for c in 0 1 2
+do
+  for u in 0 1 2
+  do
+    for me in 0 1 2
+    do
+        for t in "17:00" "17:30" "18:00" "18:30" "19:00" "19:30"
+        do
+            fetFile='znCCC_'$c'_nUWE_'$u'_nMajElecive_'$me'_'$t'_exp1.fet'
+            logFile='znCCC_'$c'_nUWE_'$u'_nMajElecive_'$me'_'$t'.log'
+            fetFilePath='fetFiles/'$fetFile
+            time=60 # seconds
+            fet-cl --inputfile=$fetFilePath --timelimitseconds=$time > 'terminalReports_Timelimit_'$time'_seconds/'$logFile
+
+        done
+    done
+  done
+done
