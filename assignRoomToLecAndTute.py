@@ -198,21 +198,42 @@ def formatTime(slotsList):
         ehh=str(int(ehh)+1)
     return bhh+':'+bmm+'-'+ehh+':'+emm
         
+
+def cleanInstructor(ins):
+    x = ins.split('[')
+    return x[0]
+    
+    
+    
+    
+    
+
 # record popular choices
 # import xlsxwriter module 
 import xlsxwriter 
-row = 0
 workbook = xlsxwriter.Workbook('timeTable-SNU-Fall2019.xlsx') 
 worksheet = workbook.add_worksheet()
+
+row = 0
+codeCol = 0
+meetingType = 1 # lec,tut,prac
+timeCol = 2
+instructorCol = 3
+studentCol = 4
+roomCol = 5
+
+# header row
+worksheet.write(row, codeCol, 'cCode')
+worksheet.write(row, meetingType, 'LTP')
+worksheet.write(row, timeCol, 'Time')
+worksheet.write(row, instructorCol, 'Instructor')
+worksheet.write(row, studentCol, 'Students')
+worksheet.write(row, roomCol, 'Room')
+row = row+1
+
 for ci in courses:
     c = courses[ci]
     
-    codeCol = 0
-    meetingType = 1 # lec,tut,prac
-    timeCol = 2
-    instructorCol = 3
-    studentCol = 4
-    roomCol = 5
     
     
     if 'lecSections' in c:
@@ -226,7 +247,7 @@ for ci in courses:
                 room = c['lecSections'][li]['room']
                 instructor = ''
                 for i in c['lecSections'][li]['instructors']:
-                    instructor = instructor+i+','
+                    instructor = instructor+cleanInstructor(i)+','
                 instructor = instructor[0:-1]
                 
                 studentSet = ''
@@ -254,7 +275,7 @@ for ci in courses:
                 room = c['tutSections'][li]['room']
                 instructor = ''
                 for i in c['tutSections'][li]['instructors']:
-                    instructor = instructor+i+','
+                    instructor = instructor+cleanInstructor(i)+','
                 instructor = instructor[0:-1]
                 
                 studentSet = ''
@@ -282,7 +303,7 @@ for ci in courses:
                 room = c['labSections'][li]['room']
                 instructor = ''
                 for i in c['labSections'][li]['instructors']:
-                    instructor = instructor+i+','
+                    instructor = instructor+cleanInstructor(i)+','
                 instructor = instructor[0:-1]
                 
                 studentSet = ''

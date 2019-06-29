@@ -1,5 +1,5 @@
 ﻿Soft conflicts of snu-timetable.fet
-Generated with FET 5.37.5 on 6/29/19 11:39 PM
+Generated with FET 5.37.5 on 6/30/19 3:53 AM
 
 Number of broken soft constraints: 0
 Total soft conflicts: 0

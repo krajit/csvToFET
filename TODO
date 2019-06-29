@@ -1,8 +1,0 @@
-TODO
-
-- Add xml format for overlapping CCC courses programitically. Right now this is hardcoded.
-
-- Modify room allottments to map large courses to large rooms, and lecture rooms to 30 seater or 60 seater depending on the class size.
-
-
-

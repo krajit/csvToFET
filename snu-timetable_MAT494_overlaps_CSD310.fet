@@ -26,7 +26,13 @@
 </Days_List>
 
 <Hours_List>
-<Number_of_Hours>18</Number_of_Hours>
+<Number_of_Hours>21</Number_of_Hours>
+<Hour>
+	<Name>08:00</Name>
+</Hour>
+<Hour>
+	<Name>08:30</Name>
+</Hour>
 <Hour>
 	<Name>09:00</Name>
 </Hour>
@@ -80,6 +86,9 @@
 </Hour>
 <Hour>
 	<Name>17:30</Name>
+</Hour>
+<Hour>
+	<Name>18:00</Name>
 </Hour>
 </Hours_List>
 
@@ -1305,6 +1314,11 @@
 </Activity_Tag>
 <Activity_Tag>
 	<Name>A206</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>MAT494CSE3</Name>
 	<Printable>true</Printable>
 	<Comments></Comments>
 </Activity_Tag>
@@ -3628,6 +3642,7 @@
 	<Teacher>Vikash  Kumar[20500361]</Teacher>
 	<Subject>DES101</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>1</Id>
@@ -3639,6 +3654,7 @@
 	<Teacher>Vikash  Kumar[20500361]</Teacher>
 	<Subject>DES101</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>2</Id>
@@ -3650,6 +3666,7 @@
 	<Teacher>Vikash  Kumar[20500361]</Teacher>
 	<Subject>DES101</Subject>
 	<Activity_Tag>B003</Activity_Tag>
+	<Students>MED2</Students>
 	<Duration>8</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>3</Id>
@@ -3661,6 +3678,7 @@
 	<Teacher>Prakash  Kumar[20500290]</Teacher>
 	<Subject>DES131</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>4</Id>
@@ -3672,6 +3690,7 @@
 	<Teacher>Prakash  Kumar[20500290]</Teacher>
 	<Subject>DES131</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>5</Id>
@@ -3683,6 +3702,7 @@
 	<Teacher>Prakash  Kumar[20500290]</Teacher>
 	<Subject>DES131</Subject>
 	<Activity_Tag>B003</Activity_Tag>
+	<Students>CSE3</Students>
 	<Duration>8</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>6</Id>
@@ -3694,6 +3714,7 @@
 	<Teacher>Amit  Ray[20500123]</Teacher>
 	<Subject>DES201</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>MED4</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>7</Id>
@@ -3705,6 +3726,7 @@
 	<Teacher>Amit  Ray[20500123]</Teacher>
 	<Subject>DES201</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>MED4</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>8</Id>
@@ -3716,6 +3738,7 @@
 	<Teacher>Amit  Ray[20500123]</Teacher>
 	<Subject>DES201</Subject>
 	<Activity_Tag>B003</Activity_Tag>
+	<Students>MED4</Students>
 	<Duration>8</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>9</Id>
@@ -3919,6 +3942,7 @@
 	<Teacher>Gatha  Sharma[20500031]</Teacher>
 	<Subject>ENG341</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CSE2</Students>
 	<Students>ENG3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3931,6 +3955,7 @@
 	<Teacher>Gatha  Sharma[20500031]</Teacher>
 	<Subject>ENG341</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CSE2</Students>
 	<Students>ENG3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3943,6 +3968,7 @@
 	<Teacher>Gatha  Sharma[20500031]</Teacher>
 	<Subject>ENG341</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CSE2</Students>
 	<Students>ENG3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3955,6 +3981,7 @@
 	<Teacher>Gatha  Sharma[20500031]</Teacher>
 	<Subject>ENG341</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>CSE2</Students>
 	<Students>ENG3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4267,8 +4294,9 @@
 	<Subject>EED201</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>EEE2</Students>
-	<Students>ECE2</Students>
 	<Students>CSE3</Students>
+	<Students>ECE2</Students>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>55</Id>
@@ -4281,8 +4309,9 @@
 	<Subject>EED201</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>EEE2</Students>
-	<Students>ECE2</Students>
 	<Students>CSE3</Students>
+	<Students>ECE2</Students>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>56</Id>
@@ -4295,8 +4324,9 @@
 	<Subject>EED201</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>EEE2</Students>
-	<Students>ECE2</Students>
 	<Students>CSE3</Students>
+	<Students>ECE2</Students>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>57</Id>
@@ -4308,7 +4338,7 @@
 	<Teacher>EED201TA1</Teacher>
 	<Subject>EED201</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
-	<Students>EEE2</Students>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>58</Id>
@@ -4320,7 +4350,7 @@
 	<Teacher>EED201TA2</Teacher>
 	<Subject>EED201</Subject>
 	<Activity_Tag>TUT2</Activity_Tag>
-	<Students>ECE2</Students>
+	<Students>EEE2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>59</Id>
@@ -4332,7 +4362,7 @@
 	<Teacher>EED201TA3</Teacher>
 	<Subject>EED201</Subject>
 	<Activity_Tag>TUT3</Activity_Tag>
-	<Students>CSE3</Students>
+	<Students>ECE2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>60</Id>
@@ -4344,6 +4374,7 @@
 	<Teacher>EED201TA4</Teacher>
 	<Subject>EED201</Subject>
 	<Activity_Tag>TUT4</Activity_Tag>
+	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>61</Id>
@@ -4408,6 +4439,7 @@
 	<Students>CSE2</Students>
 	<Students>EEE2</Students>
 	<Students>ECE2</Students>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>66</Id>
@@ -4422,6 +4454,7 @@
 	<Students>CSE2</Students>
 	<Students>EEE2</Students>
 	<Students>ECE2</Students>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>67</Id>
@@ -4436,6 +4469,7 @@
 	<Students>CSE2</Students>
 	<Students>EEE2</Students>
 	<Students>ECE2</Students>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>68</Id>
@@ -4483,6 +4517,7 @@
 	<Teacher>Rohit  Singh[20501073]</Teacher>
 	<Subject>EED206</Subject>
 	<Activity_Tag>TUT4</Activity_Tag>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>72</Id>
@@ -4541,6 +4576,7 @@
 	<Teacher>Ranendra Narayan Biswas[20500321]</Teacher>
 	<Subject>EED206</Subject>
 	<Activity_Tag>C205</Activity_Tag>
+	<Students>MED2</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>77</Id>
@@ -5062,6 +5098,7 @@
 	<Teacher>Sruthi  Muraleedharan[20501002]</Teacher>
 	<Subject>INT105</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>SOC1</Students>
 	<Students>INT1</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -5074,6 +5111,7 @@
 	<Teacher>Sruthi  Muraleedharan[20501002]</Teacher>
 	<Subject>INT105</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>SOC1</Students>
 	<Students>INT1</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -5086,6 +5124,7 @@
 	<Teacher>Sruthi  Muraleedharan[20501002]</Teacher>
 	<Subject>INT105</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>SOC1</Students>
 	<Students>INT1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5100,10 +5139,11 @@
 	<Teacher>Parthapratim  Munshi[20500205]</Teacher>
 	<Subject>CHY111</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CHY1</Students>
+	<Students>MED1</Students>
 	<Students>PHY1</Students>
 	<Students>CHD1</Students>
 	<Students>BIO1</Students>
-	<Students>CHY1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>123</Id>
@@ -5117,10 +5157,11 @@
 	<Teacher>Parthapratim  Munshi[20500205]</Teacher>
 	<Subject>CHY111</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CHY1</Students>
+	<Students>MED1</Students>
 	<Students>PHY1</Students>
 	<Students>CHD1</Students>
 	<Students>BIO1</Students>
-	<Students>CHY1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>124</Id>
@@ -5134,10 +5175,11 @@
 	<Teacher>Parthapratim  Munshi[20500205]</Teacher>
 	<Subject>CHY111</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CHY1</Students>
+	<Students>MED1</Students>
 	<Students>PHY1</Students>
 	<Students>CHD1</Students>
 	<Students>BIO1</Students>
-	<Students>CHY1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>125</Id>
@@ -5149,7 +5191,7 @@
 	<Teacher>Bimlesh  Lochab[20500076]</Teacher>
 	<Subject>CHY111</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
-	<Students>PHY1</Students>
+	<Students>CHD1</Students>
 	<Students>CHY1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5162,7 +5204,8 @@
 	<Teacher>Gouriprasanna  Roy[20500138]</Teacher>
 	<Subject>CHY111</Subject>
 	<Activity_Tag>TUT2</Activity_Tag>
-	<Students>CHD1</Students>
+	<Students>MED1</Students>
+	<Students>BIO1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>127</Id>
@@ -5174,7 +5217,7 @@
 	<Teacher>Basab Bijayi Dhar[20500431]</Teacher>
 	<Subject>CHY111</Subject>
 	<Activity_Tag>TUT3</Activity_Tag>
-	<Students>BIO1</Students>
+	<Students>PHY1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>128</Id>
@@ -5188,6 +5231,7 @@
 	<Activity_Tag>B212</Activity_Tag>
 	<Students>PHY1</Students>
 	<Students>BIO1</Students>
+	<Students>CHY1</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>129</Id>
@@ -5199,8 +5243,8 @@
 	<Teacher>Bimlesh  Lochab[20500076]</Teacher>
 	<Subject>CHY111</Subject>
 	<Activity_Tag>B212</Activity_Tag>
+	<Students>MED1</Students>
 	<Students>CHD1</Students>
-	<Students>CHY1</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>130</Id>
@@ -5213,6 +5257,7 @@
 	<Teacher>Kshatresh Dutta Dubey[20501049]</Teacher>
 	<Subject>CHY211</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>BIO2</Students>
 	<Students>CHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -5226,6 +5271,7 @@
 	<Teacher>Kshatresh Dutta Dubey[20501049]</Teacher>
 	<Subject>CHY211</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>BIO2</Students>
 	<Students>CHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -5239,6 +5285,7 @@
 	<Teacher>Kshatresh Dutta Dubey[20501049]</Teacher>
 	<Subject>CHY211</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>BIO2</Students>
 	<Students>CHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -5251,6 +5298,7 @@
 	<Teacher>Kshatresh Dutta Dubey[20501049]</Teacher>
 	<Subject>CHY211</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>BIO2</Students>
 	<Students>CHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5263,6 +5311,7 @@
 	<Teacher>Parthapratim  Munshi[20500205]</Teacher>
 	<Subject>CHY211</Subject>
 	<Activity_Tag>B214</Activity_Tag>
+	<Students>BIO2</Students>
 	<Students>CHY2</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -5276,6 +5325,7 @@
 	<Subject>CHY212</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CHY2</Students>
+	<Students>PHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>136</Id>
@@ -5288,6 +5338,7 @@
 	<Subject>CHY212</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CHY2</Students>
+	<Students>PHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>137</Id>
@@ -5299,6 +5350,7 @@
 	<Teacher>Bimlesh  Lochab[20500076]</Teacher>
 	<Subject>CHY221</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>BIO2</Students>
 	<Students>CHY2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -5311,6 +5363,7 @@
 	<Teacher>Bimlesh  Lochab[20500076]</Teacher>
 	<Subject>CHY221</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>BIO2</Students>
 	<Students>CHY2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -5323,6 +5376,7 @@
 	<Teacher>Bimlesh  Lochab[20500076]</Teacher>
 	<Subject>CHY221</Subject>
 	<Activity_Tag>B212</Activity_Tag>
+	<Students>BIO2</Students>
 	<Students>CHY2</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -5336,6 +5390,7 @@
 	<Subject>CHY311</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CHY3</Students>
+	<Students>PHY2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>141</Id>
@@ -5348,6 +5403,7 @@
 	<Subject>CHY311</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CHY3</Students>
+	<Students>PHY2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>142</Id>
@@ -5360,6 +5416,7 @@
 	<Subject>CHY311</Subject>
 	<Activity_Tag>D112</Activity_Tag>
 	<Students>CHY3</Students>
+	<Students>PHY2</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>143</Id>
@@ -5373,6 +5430,7 @@
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>ECE3</Students>
 	<Students>EEE3</Students>
+	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>144</Id>
@@ -5386,6 +5444,7 @@
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>ECE3</Students>
 	<Students>EEE3</Students>
+	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>145</Id>
@@ -5399,6 +5458,7 @@
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>ECE3</Students>
 	<Students>EEE3</Students>
+	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>146</Id>
@@ -5434,6 +5494,7 @@
 	<Teacher>Rohit  Singh[20501073]</Teacher>
 	<Subject>EED305</Subject>
 	<Activity_Tag>D215</Activity_Tag>
+	<Students>CSE3</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>149</Id>
@@ -5608,6 +5669,7 @@
 	<Subject>CHY351</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CHY3</Students>
+	<Students>BIO2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>163</Id>
@@ -5620,6 +5682,7 @@
 	<Subject>CHY351</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CHY3</Students>
+	<Students>BIO2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>164</Id>
@@ -6091,6 +6154,7 @@
 	<Teacher>Naveen Babu G[20500517]</Teacher>
 	<Subject>EED354</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>ECE3</Students>
 	<Students>ECE4</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6103,6 +6167,7 @@
 	<Teacher>Naveen Babu G[20500517]</Teacher>
 	<Subject>EED354</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>ECE3</Students>
 	<Students>ECE4</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6115,6 +6180,7 @@
 	<Teacher>Naveen Babu G[20500517]</Teacher>
 	<Subject>EED354</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>ECE3</Students>
 	<Students>ECE4</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6164,6 +6230,7 @@
 	<Subject>INT254</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>INT2</Students>
+	<Students>ENG1</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>207</Id>
@@ -6176,6 +6243,7 @@
 	<Subject>INT254</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>INT2</Students>
+	<Students>ENG1</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>208</Id>
@@ -6188,6 +6256,7 @@
 	<Subject>INT254</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
 	<Students>INT2</Students>
+	<Students>ENG1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>209</Id>
@@ -6224,6 +6293,7 @@
 	<Subject>CSD205</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CSE2</Students>
+	<Students>ECE2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>212</Id>
@@ -6236,6 +6306,7 @@
 	<Subject>CSD205</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CSE2</Students>
+	<Students>ECE2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>213</Id>
@@ -6259,6 +6330,7 @@
 	<Teacher>Rajeev Kumar Singh[20500026]</Teacher>
 	<Subject>CSD205</Subject>
 	<Activity_Tag>TUT2</Activity_Tag>
+	<Students>ECE2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>215</Id>
@@ -6365,6 +6437,7 @@
 	<Teacher>Tulika  Chandra[20500029]</Teacher>
 	<Subject>ENG242</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>HIS2</Students>
 	<Students>ENG2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6377,6 +6450,7 @@
 	<Teacher>Tulika  Chandra[20500029]</Teacher>
 	<Subject>ENG242</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>HIS2</Students>
 	<Students>ENG2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6389,6 +6463,7 @@
 	<Teacher>Tulika  Chandra[20500029]</Teacher>
 	<Subject>ENG242</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>HIS2</Students>
 	<Students>ENG2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6401,6 +6476,7 @@
 	<Teacher>Tulika  Chandra[20500029]</Teacher>
 	<Subject>ENG242</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>HIS2</Students>
 	<Students>ENG2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6462,6 +6538,7 @@
 	<Subject>HIS102</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>HIS1</Students>
+	<Students>ENG1</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>232</Id>
@@ -6474,6 +6551,7 @@
 	<Subject>HIS102</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>HIS1</Students>
+	<Students>ENG1</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>233</Id>
@@ -6486,6 +6564,7 @@
 	<Subject>HIS102</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
 	<Students>HIS1</Students>
+	<Students>ENG1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>234</Id>
@@ -6567,6 +6646,7 @@
 	<Subject>HIS203</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>HIS2</Students>
+	<Students>ENG3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>241</Id>
@@ -6579,6 +6659,7 @@
 	<Subject>HIS203</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>HIS2</Students>
+	<Students>ENG3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>242</Id>
@@ -6591,6 +6672,7 @@
 	<Subject>HIS203</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>HIS2</Students>
+	<Students>ENG3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>243</Id>
@@ -6603,6 +6685,7 @@
 	<Subject>HIS203</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
 	<Students>HIS2</Students>
+	<Students>ENG3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>244</Id>
@@ -6781,6 +6864,7 @@
 	<Teacher>Divya  Kannan[20501004]</Teacher>
 	<Subject>HIS318</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>HIS2</Students>
 	<Students>HIS3</Students>
 	<Students>HIS4</Students>
 	<Duration>3</Duration>
@@ -6794,6 +6878,7 @@
 	<Teacher>Divya  Kannan[20501004]</Teacher>
 	<Subject>HIS318</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>HIS2</Students>
 	<Students>HIS3</Students>
 	<Students>HIS4</Students>
 	<Duration>3</Duration>
@@ -6807,6 +6892,7 @@
 	<Teacher>Divya  Kannan[20501004]</Teacher>
 	<Subject>HIS318</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>HIS2</Students>
 	<Students>HIS3</Students>
 	<Students>HIS4</Students>
 	<Duration>2</Duration>
@@ -6821,6 +6907,7 @@
 	<Subject>CED201</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CED2</Students>
+	<Students>CHD2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>262</Id>
@@ -6833,6 +6920,7 @@
 	<Subject>CED201</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CED2</Students>
+	<Students>CHD2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>263</Id>
@@ -6845,6 +6933,7 @@
 	<Subject>CED201</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CED2</Students>
+	<Students>CHD2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>264</Id>
@@ -6868,6 +6957,7 @@
 	<Teacher>Pavan G S[20501000]</Teacher>
 	<Subject>CED201</Subject>
 	<Activity_Tag>C006</Activity_Tag>
+	<Students>CHD2</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>266</Id>
@@ -6987,6 +7077,7 @@
 	<Teacher>Gouriprasanna  Roy[20500138]</Teacher>
 	<Subject>CHY213</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>BIO2</Students>
 	<Students>CHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -7001,6 +7092,7 @@
 	<Teacher>Gouriprasanna  Roy[20500138]</Teacher>
 	<Subject>CHY213</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>BIO2</Students>
 	<Students>CHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -7015,6 +7107,7 @@
 	<Teacher>Gouriprasanna  Roy[20500138]</Teacher>
 	<Subject>CHY213</Subject>
 	<Activity_Tag>B214</Activity_Tag>
+	<Students>BIO2</Students>
 	<Students>CHY2</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -7028,6 +7121,7 @@
 	<Subject>CHY323</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CHY3</Students>
+	<Students>BIO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>279</Id>
@@ -7040,6 +7134,7 @@
 	<Subject>CHY323</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CHY3</Students>
+	<Students>BIO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>280</Id>
@@ -7571,7 +7666,7 @@
 	<Teacher>Subhra K Bhattacharya[20500089]</Teacher>
 	<Subject>ECO101</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
-	<Students>ECO1</Students>
+	<Students>CSE2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>322</Id>
@@ -7583,7 +7678,7 @@
 	<Teacher>Subhra K Bhattacharya[20500089]</Teacher>
 	<Subject>ECO101</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
-	<Students>ECO1</Students>
+	<Students>CSE2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>323</Id>
@@ -7595,6 +7690,7 @@
 	<Teacher>ECO101Instructor2</Teacher>
 	<Subject>ECO101</Subject>
 	<Activity_Tag>LEC2</Activity_Tag>
+	<Students>ECO1</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>324</Id>
@@ -7606,6 +7702,7 @@
 	<Teacher>ECO101Instructor2</Teacher>
 	<Subject>ECO101</Subject>
 	<Activity_Tag>LEC2</Activity_Tag>
+	<Students>ECO1</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>325</Id>
@@ -7617,7 +7714,7 @@
 	<Teacher>Eco101TA1</Teacher>
 	<Subject>ECO101</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
-	<Students>ECO1</Students>
+	<Students>CSE2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>326</Id>
@@ -7629,6 +7726,7 @@
 	<Teacher>Eco101TA2</Teacher>
 	<Subject>ECO101</Subject>
 	<Activity_Tag>TUT2</Activity_Tag>
+	<Students>ECO1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>327</Id>
@@ -7790,6 +7888,7 @@
 	<Teacher>Sailesh Narayan Behera[20500422]</Teacher>
 	<Subject>CED307</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>MED3</Students>
 	<Students>CED4</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -7802,6 +7901,7 @@
 	<Teacher>Sailesh Narayan Behera[20500422]</Teacher>
 	<Subject>CED307</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>MED3</Students>
 	<Students>CED4</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -7814,7 +7914,7 @@
 	<Teacher>Sailesh Narayan Behera[20500422]</Teacher>
 	<Subject>CED307</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
-	<Students>CED4</Students>
+	<Students>MED3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>343</Id>
@@ -7826,6 +7926,7 @@
 	<Teacher>Sailesh Narayan Behera[20500422]</Teacher>
 	<Subject>CED307</Subject>
 	<Activity_Tag>TUT2</Activity_Tag>
+	<Students>CED4</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>344</Id>
@@ -8155,6 +8256,7 @@
 	<Subject>HIS201</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>HIS2</Students>
+	<Students>BIO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>369</Id>
@@ -8167,6 +8269,7 @@
 	<Subject>HIS201</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>HIS2</Students>
+	<Students>BIO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>370</Id>
@@ -8179,6 +8282,7 @@
 	<Subject>HIS201</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>HIS2</Students>
+	<Students>BIO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>371</Id>
@@ -8191,6 +8295,7 @@
 	<Subject>HIS201</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
 	<Students>HIS2</Students>
+	<Students>BIO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>372</Id>
@@ -8617,6 +8722,7 @@
 	<Teacher>Anita  Sharma[20501003]</Teacher>
 	<Subject>SOC205</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>SOC1</Students>
 	<Students>SOC2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -8629,6 +8735,7 @@
 	<Teacher>Anita  Sharma[20501003]</Teacher>
 	<Subject>SOC205</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>SOC1</Students>
 	<Students>SOC2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -8641,6 +8748,7 @@
 	<Teacher>Anita  Sharma[20501003]</Teacher>
 	<Subject>SOC205</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>SOC1</Students>
 	<Students>SOC2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -8713,6 +8821,7 @@
 	<Teacher>Vasundhara  Bhojvaid[20501005]</Teacher>
 	<Subject>SOC306</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>SOC2</Students>
 	<Students>SOC3</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -8725,6 +8834,7 @@
 	<Teacher>Vasundhara  Bhojvaid[20501005]</Teacher>
 	<Subject>SOC306</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>SOC2</Students>
 	<Students>SOC3</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -8737,6 +8847,7 @@
 	<Teacher>Anita  Sharma[20501003]</Teacher>
 	<Subject>SOC306</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>SOC2</Students>
 	<Students>SOC3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -8774,6 +8885,7 @@
 	<Subject>MED309</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MED3</Students>
+	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>419</Id>
@@ -8786,6 +8898,7 @@
 	<Subject>MED309</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MED3</Students>
+	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>420</Id>
@@ -8809,6 +8922,7 @@
 	<Teacher>Divya  Shrivastava[20500160]</Teacher>
 	<Subject>MED309</Subject>
 	<Activity_Tag>TUT2</Activity_Tag>
+	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>422</Id>
@@ -9120,6 +9234,7 @@
 	<Subject>MED303</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MED3</Students>
+	<Students>CHD3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>448</Id>
@@ -9132,6 +9247,7 @@
 	<Subject>MED303</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MED3</Students>
+	<Students>CHD3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>449</Id>
@@ -9144,6 +9260,7 @@
 	<Subject>MED303</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MED3</Students>
+	<Students>CHD3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>450</Id>
@@ -9167,6 +9284,7 @@
 	<Teacher>Abhishek  Tewari[20501061]</Teacher>
 	<Subject>MED303</Subject>
 	<Activity_Tag>D004</Activity_Tag>
+	<Students>CHD3</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>452</Id>
@@ -9229,6 +9347,7 @@
 	<Teacher>Sathi Rajesh Reddy[20500731]</Teacher>
 	<Subject>MED211</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CED2</Students>
 	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -9241,6 +9360,7 @@
 	<Teacher>Sathi Rajesh Reddy[20500731]</Teacher>
 	<Subject>MED211</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CED2</Students>
 	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -9253,6 +9373,7 @@
 	<Teacher>Sathi Rajesh Reddy[20500731]</Teacher>
 	<Subject>MED211</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CED2</Students>
 	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -9265,7 +9386,7 @@
 	<Teacher>Sathi Rajesh Reddy[20500731]</Teacher>
 	<Subject>MED211</Subject>
 	<Activity_Tag>C009</Activity_Tag>
-	<Students>MED2</Students>
+	<Students>CED2</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>460</Id>
@@ -9277,6 +9398,7 @@
 	<Teacher>Sathi Rajesh Reddy[20500731]</Teacher>
 	<Subject>MED211</Subject>
 	<Activity_Tag>C009</Activity_Tag>
+	<Students>MED2</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>461</Id>
@@ -9443,6 +9565,7 @@
 	<Subject>MED104</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MED1</Students>
+	<Students>ECE1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>475</Id>
@@ -9466,6 +9589,7 @@
 	<Teacher>Nishant  Mishra[20500056]</Teacher>
 	<Subject>MED104</Subject>
 	<Activity_Tag>C117</Activity_Tag>
+	<Students>ECE1</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>477</Id>
@@ -9847,6 +9971,7 @@
 	<Subject>CSD101</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>EEE1</Students>
+	<Students>MAT1</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>509</Id>
@@ -9859,6 +9984,7 @@
 	<Subject>CSD101</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>EEE1</Students>
+	<Students>MAT1</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>510</Id>
@@ -9918,6 +10044,7 @@
 	<Teacher>Pooja  Malik[20500448]</Teacher>
 	<Subject>CSD101</Subject>
 	<Activity_Tag>D317</Activity_Tag>
+	<Students>MAT1</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>515</Id>
@@ -9964,6 +10091,7 @@
 	<Teacher>Shahid  Jamal[20500122]</Teacher>
 	<Subject>COM199</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>BMS2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>519</Id>
@@ -9975,6 +10103,7 @@
 	<Teacher>Shahid  Jamal[20500122]</Teacher>
 	<Subject>COM199</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>BMS2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>520</Id>
@@ -9986,6 +10115,7 @@
 	<Teacher>Shahid  Jamal[20500122]</Teacher>
 	<Subject>COM199</Subject>
 	<Activity_Tag>B004</Activity_Tag>
+	<Students>BMS2</Students>
 	<Duration>8</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>521</Id>
@@ -9997,6 +10127,7 @@
 	<Teacher>Shahid  Jamal[20500122]</Teacher>
 	<Subject>COM196</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>BMS3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>522</Id>
@@ -10008,6 +10139,7 @@
 	<Teacher>Shahid  Jamal[20500122]</Teacher>
 	<Subject>COM196</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>BMS3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>523</Id>
@@ -10019,6 +10151,7 @@
 	<Teacher>Shahid  Jamal[20500122]</Teacher>
 	<Subject>COM196</Subject>
 	<Activity_Tag>B004</Activity_Tag>
+	<Students>BMS3</Students>
 	<Duration>8</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>524</Id>
@@ -10175,6 +10308,7 @@
 	<Subject>EED376</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>ECE4</Students>
+	<Students>EEE4</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>536</Id>
@@ -10187,6 +10321,7 @@
 	<Subject>EED376</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>ECE4</Students>
+	<Students>EEE4</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>537</Id>
@@ -10199,6 +10334,7 @@
 	<Subject>EED376</Subject>
 	<Activity_Tag>C217</Activity_Tag>
 	<Students>ECE4</Students>
+	<Students>EEE4</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>538</Id>
@@ -10211,6 +10347,7 @@
 	<Subject>CSD207</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CSE2</Students>
+	<Students>ECE2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>539</Id>
@@ -10223,6 +10360,7 @@
 	<Subject>CSD207</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>CSE2</Students>
+	<Students>ECE2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>540</Id>
@@ -10235,6 +10373,7 @@
 	<Subject>CSD207</Subject>
 	<Activity_Tag>D313</Activity_Tag>
 	<Students>CSE2</Students>
+	<Students>ECE2</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>541</Id>
@@ -10294,6 +10433,7 @@
 	<Teacher>Dolly  Sharma[20500428]</Teacher>
 	<Subject>CSD310</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Activity_Tag>MAT494CSE3</Activity_Tag>
 	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -10306,6 +10446,7 @@
 	<Teacher>Dolly  Sharma[20500428]</Teacher>
 	<Subject>CSD310</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Activity_Tag>MAT494CSE3</Activity_Tag>
 	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -10318,6 +10459,7 @@
 	<Teacher>Dolly  Sharma[20500428]</Teacher>
 	<Subject>CSD310</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Activity_Tag>MAT494CSE3</Activity_Tag>
 	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -10330,6 +10472,7 @@
 	<Teacher>Dolly  Sharma[20500428]</Teacher>
 	<Subject>CSD310</Subject>
 	<Activity_Tag>C315</Activity_Tag>
+	<Activity_Tag>MAT494CSE3</Activity_Tag>
 	<Students>CSE3</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -10391,6 +10534,7 @@
 	<Subject>MAT220</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MAT2</Students>
+	<Students>ECO2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>554</Id>
@@ -10403,6 +10547,7 @@
 	<Subject>MAT220</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MAT2</Students>
+	<Students>ECO2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>555</Id>
@@ -10415,6 +10560,7 @@
 	<Subject>MAT220</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MAT2</Students>
+	<Students>ECO2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>556</Id>
@@ -10427,6 +10573,7 @@
 	<Subject>MAT220</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
 	<Students>MAT2</Students>
+	<Students>ECO2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>557</Id>
@@ -10582,6 +10729,7 @@
 	<Teacher>Samit   Bhattacharyya[20500432]</Teacher>
 	<Subject>MAT330</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>EEE3</Students>
 	<Students>MAT3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -10594,6 +10742,7 @@
 	<Teacher>Samit   Bhattacharyya[20500432]</Teacher>
 	<Subject>MAT330</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>EEE3</Students>
 	<Students>MAT3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -10606,6 +10755,7 @@
 	<Teacher>Samit   Bhattacharyya[20500432]</Teacher>
 	<Subject>MAT330</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>EEE3</Students>
 	<Students>MAT3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -10618,6 +10768,7 @@
 	<Teacher>Samit   Bhattacharyya[20500432]</Teacher>
 	<Subject>MAT330</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>EEE3</Students>
 	<Students>MAT3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -10631,6 +10782,7 @@
 	<Subject>MAT390</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MAT3</Students>
+	<Students>ECO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>574</Id>
@@ -10643,6 +10795,7 @@
 	<Subject>MAT390</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MAT3</Students>
+	<Students>ECO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>575</Id>
@@ -10655,6 +10808,7 @@
 	<Subject>MAT390</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MAT3</Students>
+	<Students>ECO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>576</Id>
@@ -10667,6 +10821,7 @@
 	<Subject>MAT390</Subject>
 	<Activity_Tag>B113</Activity_Tag>
 	<Students>MAT3</Students>
+	<Students>ECO3</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>577</Id>
@@ -10679,6 +10834,7 @@
 	<Subject>MAT422</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MAT3</Students>
+	<Students>ECO3</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>578</Id>
@@ -10691,6 +10847,7 @@
 	<Subject>MAT422</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MAT3</Students>
+	<Students>ECO3</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>579</Id>
@@ -10703,6 +10860,7 @@
 	<Subject>MAT422</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
 	<Students>MAT3</Students>
+	<Students>ECO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>580</Id>
@@ -10910,6 +11068,7 @@
 	<Teacher>Pooja  Malik[20500448]</Teacher>
 	<Subject>CSD301</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>ECE3</Students>
 	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -10922,6 +11081,7 @@
 	<Teacher>Pooja  Malik[20500448]</Teacher>
 	<Subject>CSD301</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>ECE3</Students>
 	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -10934,6 +11094,7 @@
 	<Teacher>Pooja  Malik[20500448]</Teacher>
 	<Subject>CSD301</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>ECE3</Students>
 	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -10946,6 +11107,7 @@
 	<Teacher>Pooja  Malik[20500448]</Teacher>
 	<Subject>CSD301</Subject>
 	<Activity_Tag>C309</Activity_Tag>
+	<Students>ECE3</Students>
 	<Students>CSE3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -11022,6 +11184,7 @@
 	<Subject>BIO202</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>BIO2</Students>
+	<Students>CHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>606</Id>
@@ -11034,6 +11197,7 @@
 	<Subject>BIO202</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>BIO2</Students>
+	<Students>CHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>607</Id>
@@ -11046,6 +11210,7 @@
 	<Subject>BIO202</Subject>
 	<Activity_Tag>B308</Activity_Tag>
 	<Students>BIO2</Students>
+	<Students>CHY2</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>608</Id>
@@ -11058,6 +11223,7 @@
 	<Subject>BIO204</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>BIO2</Students>
+	<Students>CHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>609</Id>
@@ -11070,6 +11236,7 @@
 	<Subject>BIO204</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>BIO2</Students>
+	<Students>CHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>610</Id>
@@ -11082,6 +11249,7 @@
 	<Subject>BIO204</Subject>
 	<Activity_Tag>B308</Activity_Tag>
 	<Students>BIO2</Students>
+	<Students>CHY2</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>611</Id>
@@ -11093,6 +11261,7 @@
 	<Teacher>Sri Krishna Jayadev Magani[20500054]</Teacher>
 	<Subject>BIO301</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CHY3</Students>
 	<Students>BIO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -11105,6 +11274,7 @@
 	<Teacher>Sri Krishna Jayadev Magani[20500054]</Teacher>
 	<Subject>BIO301</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CHY3</Students>
 	<Students>BIO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -11117,6 +11287,7 @@
 	<Teacher>Sri Krishna Jayadev Magani[20500054]</Teacher>
 	<Subject>BIO301</Subject>
 	<Activity_Tag>B308</Activity_Tag>
+	<Students>CHY3</Students>
 	<Students>BIO3</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -11129,6 +11300,7 @@
 	<Teacher>Rohini  Garg[20500633]</Teacher>
 	<Subject>BIO302</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CHY3</Students>
 	<Students>BIO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -11141,6 +11313,7 @@
 	<Teacher>Rohini  Garg[20500633]</Teacher>
 	<Subject>BIO302</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>CHY3</Students>
 	<Students>BIO3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -11153,6 +11326,7 @@
 	<Teacher>Rohini  Garg[20500633]</Teacher>
 	<Subject>BIO302</Subject>
 	<Activity_Tag>B316</Activity_Tag>
+	<Students>CHY3</Students>
 	<Students>BIO3</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -11166,6 +11340,7 @@
 	<Subject>BIO303</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>BIO3</Students>
+	<Students>CHD2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>618</Id>
@@ -11178,6 +11353,7 @@
 	<Subject>BIO303</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>BIO3</Students>
+	<Students>CHD2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>619</Id>
@@ -11190,6 +11366,7 @@
 	<Subject>BIO303</Subject>
 	<Activity_Tag>B308</Activity_Tag>
 	<Students>BIO3</Students>
+	<Students>CHD2</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>620</Id>
@@ -11278,6 +11455,7 @@
 	<Subject>BIO102</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>BIO1</Students>
+	<Students>CHY1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>627</Id>
@@ -11291,6 +11469,7 @@
 	<Subject>BIO102</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>BIO1</Students>
+	<Students>CHY1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>628</Id>
@@ -11303,6 +11482,7 @@
 	<Subject>BIO102</Subject>
 	<Activity_Tag>B316</Activity_Tag>
 	<Students>BIO1</Students>
+	<Students>CHY1</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>629</Id>
@@ -11578,10 +11758,11 @@
 	<Teacher>Amber  Habib[20500009]</Teacher>
 	<Subject>MAT101</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
-	<Students>PHY1</Students>
-	<Students>MAT1</Students>
+	<Students>CSE2</Students>
 	<Students>ECO1</Students>
 	<Students>CHY1</Students>
+	<Students>MAT1</Students>
+	<Students>PHY1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>652</Id>
@@ -11593,10 +11774,11 @@
 	<Teacher>Amber  Habib[20500009]</Teacher>
 	<Subject>MAT101</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
-	<Students>PHY1</Students>
-	<Students>MAT1</Students>
+	<Students>CSE2</Students>
 	<Students>ECO1</Students>
 	<Students>CHY1</Students>
+	<Students>MAT1</Students>
+	<Students>PHY1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>653</Id>
@@ -11608,10 +11790,11 @@
 	<Teacher>Amber  Habib[20500009]</Teacher>
 	<Subject>MAT101</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
-	<Students>PHY1</Students>
-	<Students>MAT1</Students>
+	<Students>CSE2</Students>
 	<Students>ECO1</Students>
 	<Students>CHY1</Students>
+	<Students>MAT1</Students>
+	<Students>PHY1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>654</Id>
@@ -11623,6 +11806,7 @@
 	<Teacher>MAT101TA1</Teacher>
 	<Subject>MAT101</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>CSE2</Students>
 	<Students>PHY1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -11635,7 +11819,7 @@
 	<Teacher>MAT101TA2</Teacher>
 	<Subject>MAT101</Subject>
 	<Activity_Tag>TUT2</Activity_Tag>
-	<Students>MAT1</Students>
+	<Students>ECO1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>656</Id>
@@ -11647,7 +11831,7 @@
 	<Teacher>MAT101TA3</Teacher>
 	<Subject>MAT101</Subject>
 	<Activity_Tag>TUT3</Activity_Tag>
-	<Students>ECO1</Students>
+	<Students>CHY1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>657</Id>
@@ -11659,7 +11843,7 @@
 	<Teacher>MAT101TA4</Teacher>
 	<Subject>MAT101</Subject>
 	<Activity_Tag>TUT4</Activity_Tag>
-	<Students>CHY1</Students>
+	<Students>MAT1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>658</Id>
@@ -11720,6 +11904,7 @@
 	<Subject>MAT184</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MAT2</Students>
+	<Students>PHY2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>663</Id>
@@ -11732,6 +11917,7 @@
 	<Subject>MAT184</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>MAT2</Students>
+	<Students>PHY2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>664</Id>
@@ -11744,6 +11930,7 @@
 	<Subject>MAT184</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
 	<Students>MAT2</Students>
+	<Students>PHY2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>665</Id>
@@ -12120,6 +12307,7 @@
 	<Teacher>Vinita  Krishna[20500900]</Teacher>
 	<Subject>MGT401</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>BMS2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>697</Id>
@@ -12131,6 +12319,7 @@
 	<Teacher>Vinita  Krishna[20500900]</Teacher>
 	<Subject>MGT401</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>BMS2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>698</Id>
@@ -12142,6 +12331,7 @@
 	<Teacher>Vinita  Krishna[20500900]</Teacher>
 	<Subject>MGT401</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>BMS2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>699</Id>
@@ -12446,6 +12636,7 @@
 	<Subject>PHY105</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>PHY1</Students>
+	<Students>MAT1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>723</Id>
@@ -12458,6 +12649,7 @@
 	<Subject>PHY105</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
 	<Students>PHY1</Students>
+	<Students>MAT1</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>724</Id>
@@ -12471,6 +12663,7 @@
 	<Subject>PHY105</Subject>
 	<Activity_Tag>B112</Activity_Tag>
 	<Students>PHY1</Students>
+	<Students>MAT1</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>725</Id>
@@ -12567,6 +12760,7 @@
 	<Subject>PHY205</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>PHY2</Students>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>733</Id>
@@ -12579,6 +12773,7 @@
 	<Subject>PHY205</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>PHY2</Students>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>734</Id>
@@ -12591,6 +12786,7 @@
 	<Subject>PHY205</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
 	<Students>PHY2</Students>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>735</Id>
@@ -12603,6 +12799,7 @@
 	<Subject>PHY205</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
 	<Students>PHY2</Students>
+	<Students>MED2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>736</Id>
@@ -12615,6 +12812,7 @@
 	<Teacher>Syed Modammed Kamil[20500088]</Teacher>
 	<Subject>PHY207</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>ECE2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>737</Id>
@@ -12627,6 +12825,7 @@
 	<Teacher>Syed Modammed Kamil[20500088]</Teacher>
 	<Subject>PHY207</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>ECE2</Students>
 	<Duration>3</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>738</Id>
@@ -12638,6 +12837,7 @@
 	<Teacher>Harneet  Kaur[20501083]</Teacher>
 	<Subject>PHY207</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>ECE2</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>739</Id>
@@ -12781,6 +12981,7 @@
 	<Teacher>Samarendra Pratap Singh[20500036]</Teacher>
 	<Subject>PHY307</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>EEE3</Students>
 	<Students>PHY3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -12793,6 +12994,7 @@
 	<Teacher>Samarendra Pratap Singh[20500036]</Teacher>
 	<Subject>PHY307</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>EEE3</Students>
 	<Students>PHY3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -12805,6 +13007,7 @@
 	<Teacher>YOGESH YADAV[1710120094]</Teacher>
 	<Subject>PHY307</Subject>
 	<Activity_Tag>TUT1</Activity_Tag>
+	<Students>EEE3</Students>
 	<Students>PHY3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -12818,6 +13021,7 @@
 	<Teacher>Rakesh  Kumar[20500918]</Teacher>
 	<Subject>PHY307</Subject>
 	<Activity_Tag>B110</Activity_Tag>
+	<Students>EEE3</Students>
 	<Students>PHY3</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -12938,6 +13142,9 @@
 	<Teacher>Niteesh  Sahni[20500011]</Teacher>
 	<Subject>MAT494</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Activity_Tag>MAT494CSE3</Activity_Tag>
+	<Students>MAT3</Students>
+	<Students>CSE4</Students>
 	<Students>MAT4</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -12950,6 +13157,9 @@
 	<Teacher>Niteesh  Sahni[20500011]</Teacher>
 	<Subject>MAT494</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Activity_Tag>MAT494CSE3</Activity_Tag>
+	<Students>MAT3</Students>
+	<Students>CSE4</Students>
 	<Students>MAT4</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -12962,6 +13172,9 @@
 	<Teacher>Niteesh  Sahni[20500011]</Teacher>
 	<Subject>MAT494</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Activity_Tag>MAT494CSE3</Activity_Tag>
+	<Students>MAT3</Students>
+	<Students>CSE4</Students>
 	<Students>MAT4</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -12974,6 +13187,9 @@
 	<Teacher>Niteesh  Sahni[20500011]</Teacher>
 	<Subject>MAT494</Subject>
 	<Activity_Tag>D313</Activity_Tag>
+	<Activity_Tag>MAT494CSE3</Activity_Tag>
+	<Students>MAT3</Students>
+	<Students>CSE4</Students>
 	<Students>MAT4</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -12986,6 +13202,7 @@
 	<Teacher>Priyanka  Grover[20500411]</Teacher>
 	<Subject>MAT399</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>MAT3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>768</Id>
@@ -12997,6 +13214,7 @@
 	<Teacher>Priyanka  Grover[20500411]</Teacher>
 	<Subject>MAT399</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>MAT3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>769</Id>
@@ -13008,6 +13226,7 @@
 	<Teacher>Priyanka  Grover[20500411]</Teacher>
 	<Subject>MAT399</Subject>
 	<Activity_Tag>LEC1</Activity_Tag>
+	<Students>MAT3</Students>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>770</Id>
@@ -13019,6 +13238,7 @@
 	<Teacher>Priyanka  Grover[20500411]</Teacher>
 	<Subject>MAT399</Subject>
 	<Activity_Tag>B113</Activity_Tag>
+	<Students>MAT3</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>771</Id>
@@ -22082,38 +22302,6 @@
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>549</Activity_Id>
 	<Activity_Id>767</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>768</Activity_Id>
-	<Activity_Id>585</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>769</Activity_Id>
-	<Activity_Id>586</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>770</Activity_Id>
-	<Activity_Id>587</Activity_Id>
-	<Active>true</Active>
-	<Comments></Comments>
-</ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesSameStartingTime>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Number_of_Activities>2</Number_of_Activities>
-	<Activity_Id>771</Activity_Id>
-	<Activity_Id>588</Activity_Id>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivitiesSameStartingTime>

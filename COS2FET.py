@@ -22,14 +22,15 @@ formattedData = basicTemplate
 fetFileName = 'snu-timetable.fet'
 
 # hours, written vertically aligned to easily comment out few slots
-slots = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00',
+slots = [#'08:00', '08:30', 
+         '09:00', '09:30', '10:00', '10:30', '11:00',
          '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30',
          '15:00', '15:30', 
          '16:00', 
          '16:30', 
          '17:00', 
          '17:30', 
-         '18:00',
+#         '18:00',
 #         '18:30', 
 #         '19:00', 
 #         '19:30',
@@ -93,6 +94,16 @@ for ci in courseList:
             
     if (c['CourseType'] == 'Major Elective') :
         for m in c['programs']:
+            
+            # increase maxMajorElectives for all except CSE
+            # overlap MAT494 with CSD311
+            if (m[0:3] != 'CSE'):
+                maxMajorElectives = 10
+                if (m[0:3] == 'MAT'):
+                    maxMajorElectives = 5
+            else:
+                maxMajorElectives = 3
+            
             if len(numMajorElectives[m]) < maxMajorElectives:
                 c['studentsSet'].add(m)
                 numMajorElectives[m].add(ci) 
@@ -101,18 +112,18 @@ for ci in courseList:
                       ci, 'in the same time as ',numMajorElectives[m],'\n')
                         
 ##add UWE students preferences given by instructors
-import readUWEInstructorsPreference as up
-UWEcourses = up.UWEcourses
-for c in UWEcourses:
-    if 'pref1' in UWEcourses[c]:
-        courseList[c]['studentsSet'].add(UWEcourses[c]['pref1'])
+#import readUWEInstructorsPreference as up
+#UWEcourses = up.UWEcourses
+#for c in UWEcourses:
+#    if 'pref1' in UWEcourses[c]:
+#        courseList[c]['studentsSet'].add(UWEcourses[c]['pref1'])
        
 
 ## add year1, year2, year3 in on one randomly selected CCC
 # Then manually make sure all CCC overlaps
 courseList['CCC510']['studentsSet'].add('year1')
 
-courseList['CCC515']['studentsSet'].add('year1')
+courseList['CCC515']['studentsSet'].add('year1')    
 courseList['CCC515']['studentsSet'].add('year2')
 courseList['CCC515']['studentsSet'].add('year3')
 
@@ -633,7 +644,9 @@ tag = tag+ lunchInFourDaysXML
 import overlappingCCCstring as overlappCCC
 tag = tag+overlappCCC.x
 
-tag = tag+ '</Time_Constraints_List>\n'
+import MAT494_overlaps_CSD310 as ov
+
+tag = tag+ov.MAT494_overlaps_CSD310 + ov.MAT440overlapsMAT399+ '</Time_Constraints_List>\n'
 ##  end time constraints
 
 # write your content in n new file
