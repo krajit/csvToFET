@@ -124,6 +124,9 @@ for ci in courses:
                             for d in lecTimes: # loop over lec days 
                                 for s in lecTimes[d]: # loop over lec times
                                     rooms[r]['slots'][d][s] = ci+'L'
+            if not roomAssigned:
+                print('fucked')
+
 
     if 'tutSections' in c:
         for li in c['tutSections']:
@@ -231,6 +234,36 @@ worksheet.write(row, studentCol, 'Students')
 worksheet.write(row, roomCol, 'Room')
 row = row+1
 
+def sortedDays(times, cCode):
+    
+    # sort days
+    x = dict()
+    
+    if 'M' in times:
+        x['M'] = times['M']
+    if 'T' in times:
+        x['T'] = times['T']
+    if 'W' in times:
+        x['W'] = times['W']
+    if 'Th' in times:
+        x['Th'] = times['Th']
+    if 'F' in times:
+        x['F'] = times['F']
+    
+    days = list(x)
+    D = ''
+    hh = formatTime( times[days[0]])
+    
+    for d in days:
+        if (times[d] != times[days[0]]):
+            print(cCode, 'error', times)
+        D = D+d
+    
+    x = D+' '+hh
+    return(x)
+        
+        
+    
 for ci in courses:
     c = courses[ci]
     
@@ -239,10 +272,7 @@ for ci in courses:
     if 'lecSections' in c:
         for li in c['lecSections']:
             if 'timings' in c['lecSections'][li]:
-                time = ''
-                for t in c['lecSections'][li]['timings']:
-                    time = time+t+'('+formatTime(c['lecSections'][li]['timings'][t])+'),'
-                time = time[0:-1]
+                time = sortedDays(c['lecSections'][li]['timings'],ci)
                 
                 room = c['lecSections'][li]['room']
                 instructor = ''
@@ -267,10 +297,7 @@ for ci in courses:
     if 'tutSections' in c:
         for li in c['tutSections']:
             if 'timings' in c['tutSections'][li]:
-                time = ''
-                for t in c['tutSections'][li]['timings']:
-                    time = time+t+'('+formatTime(c['tutSections'][li]['timings'][t])+'),'
-                time = time[0:-1]
+                time = sortedDays(c['tutSections'][li]['timings'],ci)
                 
                 room = c['tutSections'][li]['room']
                 instructor = ''
@@ -295,10 +322,7 @@ for ci in courses:
     if 'labSections' in c:
         for li in c['labSections']:
             if 'timings' in c['labSections'][li]:
-                time = ''
-                for t in c['labSections'][li]['timings']:
-                    time = time+t+'('+formatTime(c['labSections'][li]['timings'][t])+'),'
-                time = time[0:-1]
+                time = sortedDays(c['labSections'][li]['timings'],ci)
                 
                 room = c['labSections'][li]['room']
                 instructor = ''

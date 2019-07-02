@@ -22,7 +22,7 @@ formattedData = basicTemplate
 fetFileName = 'snu-timetable.fet'
 
 # hours, written vertically aligned to easily comment out few slots
-slots = [#'08:00', '08:30', 
+slots = ['08:00', '08:30', 
          '09:00', '09:30', '10:00', '10:30', '11:00',
          '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30',
          '15:00', '15:30', 
@@ -47,6 +47,11 @@ studentGroups = {
                   'EEE3', 'ENG3', 'HIS3', 'INT3', 'MAT3', 'MED3', 'PHY3', 'SOC3'},
         'year4': {'BIO4', 'BMS4', 'CED4', 'CHD4', 'CHY4', 'CSE4', 'ECE4', 'ECO4', 
                   'EEE4', 'ENG4', 'HIS4', 'INT4', 'MAT4', 'MED4', 'PHY4', 'SOC4'}}
+
+import pickle
+with open('studentGroups.pickle', 'wb') as f:
+    pickle.dump(studentGroups, f)
+
 
 studentsListXML = '<Students_List>\n'
 for si in studentGroups:
@@ -111,7 +116,7 @@ for ci in courseList:
                 print('Student group', m, 'not added in ', ci, 'because too many major electives.\nManually add',
                       ci, 'in the same time as ',numMajorElectives[m],'\n')
                         
-##add UWE students preferences given by instructors
+#add UWE students preferences given by instructors
 #import readUWEInstructorsPreference as up
 #UWEcourses = up.UWEcourses
 #for c in UWEcourses:
@@ -126,6 +131,7 @@ courseList['CCC510']['studentsSet'].add('year1')
 courseList['CCC515']['studentsSet'].add('year1')    
 courseList['CCC515']['studentsSet'].add('year2')
 courseList['CCC515']['studentsSet'].add('year3')
+courseList['CCC515']['studentsSet'].add('year4')
 
             
 # replace 'programs' dictionary with 'studentsSet' dictionary in each course
@@ -266,7 +272,7 @@ for cIndex, c in courseList.items():
             if (int(totalDuration) >= 12):
                 print(cIndex + " abnormally high tutorials hours. Skipping")
                 continue
-            splitDuration = splitLec(totalDuration,'3')
+            splitDuration = totalDuration#splitLec(totalDuration,'3')
             activityXML = activityXML + '\t<Duration>'+splitDuration[0]+'</Duration>\n'
             activityXML = activityXML + '\t<Total_Duration>'+totalDuration+'</Total_Duration>\n'
 
@@ -303,8 +309,6 @@ for cIndex, c in courseList.items():
                 activityTag = 'CCC'
                 activityTagSet.add(activityTag)
                 activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
-
-            
             
             totalDuration = str(c['PracticalHoursPerWeek'])
             if (int(totalDuration) >= 12):
@@ -641,12 +645,29 @@ for cIndex, c in courseList.items():
 tag = tag+ lunchInFourDaysXML
 
 # add CCC overlapping constratint
-import overlappingCCCstring as overlappCCC
-tag = tag+overlappCCC.x
+import overlappingCCCstring as ov
+tag = tag+ov.x
 
-import MAT494_overlaps_CSD310 as ov
 
-tag = tag+ov.MAT494_overlaps_CSD310 + ov.MAT440overlapsMAT399+ '</Time_Constraints_List>\n'
+tag = tag + ov.MAT494_overlaps_CSD310+ov.MAT494overlapsMAT399
+zeroGapCons = '<ConstraintTeachersMaxGapsPerDay>\n \
+	<Weight_Percentage>100</Weight_Percentage>\n\
+	<Max_Gaps>0</Max_Gaps>\n\
+	<Active>true</Active>\n\
+	<Comments></Comments>\n \
+</ConstraintTeachersMaxGapsPerDay>\n'
+
+tag = tag + zeroGapCons
+
+import studentsNotAvailableSlots as sna
+tag = tag+ sna.studentsNotAvailalbeAfter5XML
+
+import teachersNotAvailableSlots as tna
+tag = tag+tna.x
+
+
+tag = tag + '</Time_Constraints_List>\n'
+#tag = tag+'</Time_Constraints_List>\n'
 ##  end time constraints
 
 # write your content in n new file
@@ -665,6 +686,11 @@ for cIndex, c in courseList.items():
     if 'labSections' in c:
         for sId,s in c['labSections'].items():
             instructorSet = instructorSet.union(set(s['instructors']))
+            
+#save the instructor set for creating their non available slots
+with open('instructorSet.pickle', 'wb') as f:
+    pickle.dump(instructorSet, f)
+
 
 teachersXML = '<Teachers_List>\n'
 for i in instructorSet:
@@ -709,7 +735,6 @@ g.write("trash")
 g.close
 
 
-import pickle
 with open('courses.pickle', 'wb') as f:
     pickle.dump(courseList, f)
 
