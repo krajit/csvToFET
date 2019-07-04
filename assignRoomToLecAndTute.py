@@ -17,7 +17,6 @@ slots = pickle.load(slotsPickle)
 
 ##----------------------------------------
 #read exported csv format of the latest timetable
-
 import csv
 with open('csv/snu-timetable/snu-timetable_timetable.csv', 'r') as ff:
   reader = csv.reader(ff)
@@ -36,26 +35,31 @@ for a in activities:
     else:
         activitiesTime[a[0]][a[1]].append(a[2])
 
-  ##----------------------------------------
-#read roomsAndBuildingFile
-with open('rooms_and_buildings.csv', 'r') as ff:
-  reader = csv.reader(ff)
-  roomsAndBuilding = list(reader)
 
+
+# read room inventory
+import xlrd
 rooms = dict()
-
-
-
-for r in roomsAndBuilding[1:]:
-    rooms[r[0]] = dict()
-    rooms[r[0]]['capacity'] = int(r[1])
-    rooms[r[0]]['slots'] = dict()    
+roomFile = "RoomNumbers.xlsx"
+wb = xlrd.open_workbook(roomFile) 
+sheet = wb.sheet_by_index(0) # get first sheet
+for i in range(1,sheet.nrows):
+    r = sheet.cell_value(i,0)
+    rooms[r] = dict()
+    rooms[r]['capacity'] = int(sheet.cell_value(i,1))
+    
+    if int(sheet.cell_value(i,2)) == 1:
+        rooms[r]['isBiometric'] = True
+    else:
+        rooms[r]['isBiometric'] = False
+    
+    rooms[r]['slots'] = dict()    
     days = ['M', 'T', 'W', 'Th', 'F']
     for d in days:
-        rooms[r[0]]['slots'][d] = dict()
+        rooms[r]['slots'][d] = dict()
         for s in slots:
-            rooms[r[0]]['slots'][d][s] = 'available'
-          
+            rooms[r]['slots'][d][s] = 'available'
+    
 
 # set lecture capacity for each lecture sections
 for c in courses:
@@ -84,107 +88,126 @@ for r in roomsList:
 
 # start filling in rooms for each of the lecture sections
 # start from the biggest lecures and fit it in the smallest possible room
-for ci in courses:
-    c = courses[ci]
-    if 'lecSections' in c:
-        for li in c['lecSections']:
-            lecTimes = {}
-            l = c['lecSections'][li]
-            lecIds = l['ids']
-            for i in lecIds:
-                x = activitiesTime[str(i)]
-                for t in x:
-                    lecTimes[t] = x[t]
-            courses[ci]['lecSections'][li]['timings'] = lecTimes 
-            # lecTimes is a dictionary holding information for all the times this lecture is happening
-            # find the smallest rooms that fits this lecture capacity and is available
-            lecCapacity = c['lecCapacity']
-            # pretend that lecCapacity for MAT103 is 300
-            if (lecCapacity > 300):
-                lecCapacity = 300
-            lecRoom = 'no room'
-            roomAssigned = False
-            for r in rooms:
-                if not roomAssigned:
-                    roomCapacity = rooms[r]['capacity']
-                    # check for room capacity
-                    if (lecCapacity <= roomCapacity):
-                        # check if available
-                        isRoomAvailable = True
-                        for d in lecTimes: # loop over lec days 
-                            for s in lecTimes[d]: # loop over lec times
-                                if (rooms[r]['slots'][d][s] != 'available'):
-                                    isRoomAvailable = False
-                        # take the room if available
-                        if isRoomAvailable:
-                            lecRoom = r
-                            courses[ci]['lecSections'][li]['room'] = lecRoom
-                            roomAssigned = True
-                            # mark non availability this room in these slots
+def assignRooms(level = '1'):
+    for ci in courses:
+        c = courses[ci]
+        biometricRoomNeeded = False
+        if courses[ci]['level'] == '1':
+            biometricRoomNeeded = True
+            
+        if ci[3] not in level:
+            continue
+        
+        if 'lecSections' in c:
+            for li in c['lecSections']:
+                lecTimes = {}
+                l = c['lecSections'][li]
+                lecIds = l['ids']
+                for i in lecIds:
+                    x = activitiesTime[str(i)]
+                    for t in x:
+                        lecTimes[t] = x[t]
+                courses[ci]['lecSections'][li]['timings'] = lecTimes 
+                # lecTimes is a dictionary holding information for all the times this lecture is happening
+                # find the smallest rooms that fits this lecture capacity and is available
+                lecCapacity = c['lecCapacity']
+                # pretend that lecCapacity for MAT103 is 300
+                if (lecCapacity > 300):
+                    lecCapacity = 300
+                lecRoom = 'no room'
+                roomAssigned = False
+                for r in rooms:
+                    if biometricRoomNeeded and (not rooms[r]['isBiometric']):
+                        continue
+                    if not roomAssigned:
+                        roomCapacity = rooms[r]['capacity']
+                        # check for room capacity
+                        if (lecCapacity <= roomCapacity):
+                            # check if available
+                            isRoomAvailable = True
                             for d in lecTimes: # loop over lec days 
                                 for s in lecTimes[d]: # loop over lec times
-                                    rooms[r]['slots'][d][s] = ci+'L'
-            if not roomAssigned:
-                print('fucked')
-
-
-    if 'tutSections' in c:
-        for li in c['tutSections']:
-            lecTimes = {}
-            l = c['tutSections'][li]
-            lecIds = l['ids']
-            for i in lecIds:
-                x = activitiesTime[str(i)]
-                for t in x:
-                    lecTimes[t] = x[t]
-            courses[ci]['tutSections'][li]['timings'] = lecTimes
-            # lecTimes is a dictionary holding information for all the times this lecture is happening
-            # find the smallest rooms that fits this lecture capacity and is available
-            lecCapacity = c['lecCapacity']
-            # pretend that lecCapacity for MAT103 is 300
-            lecCapacity = min(30, lecCapacity)
-            lecRoom = 'no room'
-            roomAssigned = False
-            for r in rooms:
+                                    if (rooms[r]['slots'][d][s] != 'available'):
+                                        isRoomAvailable = False
+                            # take the room if available
+                            if isRoomAvailable:
+                                lecRoom = r
+                                courses[ci]['lecSections'][li]['room'] = lecRoom
+                                roomAssigned = True
+                                # mark non availability this room in these slots
+                                for d in lecTimes: # loop over lec days 
+                                    for s in lecTimes[d]: # loop over lec times
+                                        rooms[r]['slots'][d][s] = ci+'L'
                 if not roomAssigned:
-                    roomCapacity = rooms[r]['capacity']
-                    # check for room capacity
-                    if (lecCapacity <= roomCapacity):
-                        # check if available
-                        isRoomAvailable = True
-                        for d in lecTimes: # loop over lec days 
-                            for s in lecTimes[d]: # loop over lec times
-                                if (rooms[r]['slots'][d][s] != 'available'):
-                                    isRoomAvailable = False
-                        # take the room if available
-                        if isRoomAvailable:
-                            lecRoom = r
-                            courses[ci]['tutSections'][li]['room'] = lecRoom
-                            roomAssigned = True
-                            # mark non availability this room in these slots
+                    print('fucked')
+    
+    
+        if 'tutSections' in c:
+            for li in c['tutSections']:
+                lecTimes = {}
+                l = c['tutSections'][li]
+                lecIds = l['ids']
+                for i in lecIds:
+                    x = activitiesTime[str(i)]
+                    for t in x:
+                        lecTimes[t] = x[t]
+                courses[ci]['tutSections'][li]['timings'] = lecTimes
+                # lecTimes is a dictionary holding information for all the times this lecture is happening
+                # find the smallest rooms that fits this lecture capacity and is available
+                lecCapacity = c['lecCapacity']
+                # pretend that lecCapacity for MAT103 is 300
+                lecCapacity = min(30, lecCapacity)
+                lecRoom = 'no room'
+                roomAssigned = False
+                for r in rooms:
+                    if biometricRoomNeeded and (not rooms[r]['isBiometric']):
+                        continue
+                    if not roomAssigned:
+                        roomCapacity = rooms[r]['capacity']
+                        # check for room capacity
+                        if (lecCapacity <= roomCapacity):
+                            # check if available
+                            isRoomAvailable = True
                             for d in lecTimes: # loop over lec days 
                                 for s in lecTimes[d]: # loop over lec times
-                                    rooms[r]['slots'][d][s] = ci+'T'
-            if not roomAssigned:
-                print('fucked')
-                                    
-                        
-    if 'labSections' in c:
-        for li in c['labSections']:
-            lecTimes = {}
-            l = c['labSections'][li]
-            
-            if 'ids' not in l: # ignore project courses
-                continue
-            
-            lecIds = l['ids']
-            for i in lecIds:
-                x = activitiesTime[str(i)]
-                for t in x:
-                    lecTimes[t] = x[t]
-            courses[ci]['labSections'][li]['timings'] = lecTimes
-                        
-            
+                                    if (rooms[r]['slots'][d][s] != 'available'):
+                                        isRoomAvailable = False
+                            # take the room if available
+                            if isRoomAvailable:
+                                lecRoom = r
+                                courses[ci]['tutSections'][li]['room'] = lecRoom
+                                roomAssigned = True
+                                # mark non availability this room in these slots
+                                for d in lecTimes: # loop over lec days 
+                                    for s in lecTimes[d]: # loop over lec times
+                                        rooms[r]['slots'][d][s] = ci+'T'
+                if not roomAssigned:
+                    print('fucked')
+                                        
+                            
+        if 'labSections' in c:
+            for li in c['labSections']:
+                lecTimes = {}
+                l = c['labSections'][li]
+                
+                if 'ids' not in l: # ignore project courses
+                    continue
+                
+                lecIds = l['ids']
+                for i in lecIds:
+                    x = activitiesTime[str(i)]
+                    for t in x:
+                        lecTimes[t] = x[t]
+                courses[ci]['labSections'][li]['timings'] = lecTimes
+                
+# assign rooms to  first year coures first to biometric rooms
+assignRooms(level = '1')
+
+# then assign higher level coureses to any rooms
+assignRooms(level = '2345')
+
+
+
 # lets write down the time table in excel
 def formatTime(slotsList):
     lastSlot = slotsList[-1]
@@ -266,9 +289,6 @@ def sortedDays(times, cCode):
     
 for ci in courses:
     c = courses[ci]
-    
-    
-    
     if 'lecSections' in c:
         for li in c['lecSections']:
             if 'timings' in c['lecSections'][li]:

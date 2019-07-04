@@ -48,6 +48,41 @@ studentGroups = {
         'year4': {'BIO4', 'BMS4', 'CED4', 'CHD4', 'CHY4', 'CSE4', 'ECE4', 'ECO4', 
                   'EEE4', 'ENG4', 'HIS4', 'INT4', 'MAT4', 'MED4', 'PHY4', 'SOC4'}}
 
+
+hasSubGroups = {'BMS1': {'BMS11',	'BMS12'}, 
+             'CSE1':{'CSE11',	'CSE12',	'CSE13'},
+             'CSE2':{'CSE21',	'CSE22'},	
+             'CSE3':{'CSE31',	'CSE32'},	
+             'EEE1':{'EEE11',	'EEE12'},	
+             'EEE2':{'EEE21',	'EEE22'},	
+             'EEE3':{'EEE31',	'EEE32'},	
+             'EEE4':{'EEE41',	'EEE42'},	
+             'ECE1':{'ECE11',	'ECE12'},	
+             'ECE2':{'ECE21',	'ECE22'},
+             'ECE3':{'ECE31',	'ECE32'},
+             'ECE4':{'ECE41',	'ECE42'},	
+             'MED1':{'MED11',	'MED12'},	
+             'MED3':{'MED31',	'MED32'},	
+             'MED4':{'MED41',	'MED42', 'MED43'}}
+
+import copy
+sg = copy.deepcopy(studentGroups)
+for y in studentGroups:
+    for s in studentGroups[y]:
+        if s in hasSubGroups:
+            
+            # remove the section
+            sg[y].remove(s)
+            # add sections subgroups
+            for i in hasSubGroups[s]:
+                sg[y].add(i)
+                
+studentGroups = dict()
+studentGroups = copy.deepcopy(sg)
+
+
+
+
 import pickle
 with open('studentGroups.pickle', 'wb') as f:
     pickle.dump(studentGroups, f)
@@ -73,6 +108,26 @@ studentsListXML = studentsListXML + '</Students_List>\n'
 import readCOSdata as COS
 courseList = COS.courseList # a dictionary containing details of each course read from COS excel file
 CCCcourses = COS.CCCcourses
+
+# replaces branches with sections in coures
+
+tempCourseList = copy.deepcopy(courseList)
+for c in courseList:
+    sg = courseList[c]['programs']
+    for s in sg:
+        if s in hasSubGroups:
+            tempCourseList[c]['programs'].remove(s)
+            # add sections subgroups
+            for i in hasSubGroups[s]:
+                tempCourseList[c]['programs'].add(i)
+    
+# update courseList
+courseList = dict()
+courseList = copy.deepcopy(tempCourseList)
+    
+
+
+
 
 # minorElectives = COS.minorElectives
 # UWEnotInMinors = COS.UWEnotInMinors
@@ -126,7 +181,7 @@ for ci in courseList:
 
 ## add year1, year2, year3 in on one randomly selected CCC
 # Then manually make sure all CCC overlaps
-courseList['CCC510']['studentsSet'].add('year1')
+#courseList['CCC510']['studentsSet'].add('year1')
 
 courseList['CCC515']['studentsSet'].add('year1')    
 courseList['CCC515']['studentsSet'].add('year2')
