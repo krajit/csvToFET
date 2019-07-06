@@ -53,7 +53,7 @@ sName = {
 
 
 
-COSfilePath = "COS.xlsx"
+COSfilePath = "COS_backUp_Jul05.xlsx"
 wb = xlrd.open_workbook(COSfilePath) 
 sheet = wb.sheet_by_index(0) # get first sheet
   
@@ -138,7 +138,7 @@ for i in range(1,sheet.nrows):
     for p in Programs:
         if (sheet.cell_type(i,p) != xlrd.XL_CELL_EMPTY):
             cellVal = sheet.cell_value(i,p)
-            cellVal = sName[cellVal[:-1]]+cellVal[-1]
+#            cellVal = cellVal[:-1]+cellVal[-1]
             courseI['programs'].add(cellVal)
             
     # read number lecture hours    

@@ -8,6 +8,7 @@ Created on Mon Jun  3 17:00:47 2019
 
 import re, csv
 import random, xlrd
+import pickle
 
 # some preparotory instructions
 print('\nWarning: File downloaded from COS contains Ziaur Rehman. It is a dummy instructor name. Make sure to replace it with unique name for each activity.\n')
@@ -36,198 +37,107 @@ slots = ['08:00', '08:30',
 #         '19:30',
          ]
 
+import studentsGroupXML as stuXML
+studentGroups = stuXML.studentGroups
+studentsListXML = stuXML.studentsListXML
 
-# prepare student groups
-studentGroups = {
-        'year1': {'BIO1', 'BMS1', 'CED1', 'CHD1', 'CHY1', 'CSE1', 'ECE1', 'ECO1', 
-                  'EEE1', 'ENG1', 'HIS1', 'INT1', 'MAT1', 'MED1', 'PHY1', 'SOC1'},
-        'year2': {'BIO2', 'BMS2', 'CED2', 'CHD2', 'CHY2', 'CSE2', 'ECE2', 'ECO2', 
-                  'EEE2', 'ENG2', 'HIS2', 'INT2', 'MAT2', 'MED2', 'PHY2', 'SOC2'},
-        'year3': {'BIO3', 'BMS3', 'CED3', 'CHD3', 'CHY3', 'CSE3', 'ECE3', 'ECO3', 
-                  'EEE3', 'ENG3', 'HIS3', 'INT3', 'MAT3', 'MED3', 'PHY3', 'SOC3'},
-        'year4': {'BIO4', 'BMS4', 'CED4', 'CHD4', 'CHY4', 'CSE4', 'ECE4', 'ECO4', 
-                  'EEE4', 'ENG4', 'HIS4', 'INT4', 'MAT4', 'MED4', 'PHY4', 'SOC4'}}
-
-
-hasSubGroups = {'BMS1': {'BMS11',	'BMS12'}, 
-             'CSE1':{'CSE11',	'CSE12',	'CSE13'},
-             'CSE2':{'CSE21',	'CSE22'},	
-             'CSE3':{'CSE31',	'CSE32'},	
-             'EEE1':{'EEE11',	'EEE12'},	
-             'EEE2':{'EEE21',	'EEE22'},	
-             'EEE3':{'EEE31',	'EEE32'},	
-             'EEE4':{'EEE41',	'EEE42'},	
-             'ECE1':{'ECE11',	'ECE12'},	
-             'ECE2':{'ECE21',	'ECE22'},
-             'ECE3':{'ECE31',	'ECE32'},
-             'ECE4':{'ECE41',	'ECE42'},	
-             'MED1':{'MED11',	'MED12'},	
-             'MED3':{'MED31',	'MED32'},	
-             'MED4':{'MED41',	'MED42', 'MED43'}}
-
-import copy
-sg = copy.deepcopy(studentGroups)
-for y in studentGroups:
-    for s in studentGroups[y]:
-        if s in hasSubGroups:
-            
-            # remove the section
-            sg[y].remove(s)
-            # add sections subgroups
-            for i in hasSubGroups[s]:
-                sg[y].add(i)
-                
-studentGroups = dict()
-studentGroups = copy.deepcopy(sg)
-
-
-
-
-import pickle
-with open('studentGroups.pickle', 'wb') as f:
-    pickle.dump(studentGroups, f)
-
-
-studentsListXML = '<Students_List>\n'
-for si in studentGroups:
-    studentsListXML = studentsListXML + '<Year>\n' 
-    studentsListXML = studentsListXML + '\t<Name>'+si+'</Name>\n'
-    studentsListXML = studentsListXML + '\t<Number_of_Students>'+str(len(studentGroups[si]))+'</Number_of_Students>\n'
-    studentsListXML = studentsListXML + '\t<Comments></Comments>\n' 
-    
-    for gr in studentGroups[si]:
-        studentsListXML = studentsListXML + '\t<Group>\n'
-        studentsListXML = studentsListXML + '\t\t<Name>'+gr+'</Name>\n'
-        studentsListXML = studentsListXML + '\t\t<Number_of_Students>1</Number_of_Students>\n'
-        studentsListXML = studentsListXML + '\t\t<Comments></Comments>\n'
-        studentsListXML = studentsListXML + '\t</Group>\n'
-    studentsListXML = studentsListXML + '</Year>\n'
-studentsListXML = studentsListXML + '</Students_List>\n'
 
 # read course offering data
-import readCOSdata as COS
+import readManuallyGroupedCOSdata as COS
 courseList = COS.courseList # a dictionary containing details of each course read from COS excel file
-CCCcourses = COS.CCCcourses
-
-# replaces branches with sections in coures
-
-tempCourseList = copy.deepcopy(courseList)
-for c in courseList:
-    sg = courseList[c]['programs']
-    for s in sg:
-        if s in hasSubGroups:
-            tempCourseList[c]['programs'].remove(s)
-            # add sections subgroups
-            for i in hasSubGroups[s]:
-                tempCourseList[c]['programs'].add(i)
-    
-# update courseList
-courseList = dict()
-courseList = copy.deepcopy(tempCourseList)
-    
-
-
-
-
-# minorElectives = COS.minorElectives
-# UWEnotInMinors = COS.UWEnotInMinors
-
-maxMajorElectives = 3
-numMajorElectives = dict()
-for y in studentGroups:
-    for s in studentGroups[y]:
-        numMajorElectives[s] = set() #maxMajorElectives
-
-
 
 # add students to complusory courses
 # loop over courses and add the set of major studetns to it
+        
 print('Adding major students in their compulsory courses ......')
+
+for ci in courseList:
+    c = courseList[ci]    
+    
+    #only work with major courses in this loop
+    if (c['CourseType'] != 'Major') :
+        continue
+    
+    if 'lecSections' in c:
+        for li in c['lecSections']:
+            courseList[ci]['lecSections'][li]['students'] = courseList[ci]['lecSections'][li]['potentialStudents'] 
+            del courseList[ci]['lecSections'][li]['potentialStudents'] 
+            
+    if 'tutSections' in c:
+        for li in c['tutSections']:
+            courseList[ci]['tutSections'][li]['students'] = courseList[ci]['tutSections'][li]['potentialStudents'] 
+            del courseList[ci]['tutSections'][li]['potentialStudents'] 
+
+    if 'labSections' in c:
+        for li in c['labSections']:
+            courseList[ci]['labSections'][li]['students'] = courseList[ci]['labSections'][li]['potentialStudents'] 
+            del courseList[ci]['labSections'][li]['potentialStudents'] 
+        
+            
+# adding major elective courses
+print('......')
+print('Adding students in major electives ......')
+print('......')
+
+maxMajorElectives = 3
+enrolledMajorElectives = dict()
+for y in studentGroups:
+    for s in studentGroups[y]:
+        enrolledMajorElectives[s] = set() #maxMajorElectives
+
+
 for ci in courseList:
     c = courseList[ci]
-    c['studentsSet'] = set()
-    
-    if (c['CourseType'] == 'Major') :
-        for m in c['programs']:
-            c['studentsSet'].add(m)
-            
-            
-    if (c['CourseType'] == 'Major Elective') :
-        for m in c['programs']:
-            
-            # increase maxMajorElectives for all except CSE
-            # overlap MAT494 with CSD311
-            if (m[0:3] != 'CSE'):
-                maxMajorElectives = 10
-                if (m[0:3] == 'MAT'):
-                    maxMajorElectives = 5
-            else:
-                maxMajorElectives = 3
-            
-            if len(numMajorElectives[m]) < maxMajorElectives:
-                c['studentsSet'].add(m)
-                numMajorElectives[m].add(ci) 
-            else:
-                print('Student group', m, 'not added in ', ci, 'because too many major electives.\nManually add',
-                      ci, 'in the same time as ',numMajorElectives[m],'\n')
-                        
-#add UWE students preferences given by instructors
-#import readUWEInstructorsPreference as up
-#UWEcourses = up.UWEcourses
-#for c in UWEcourses:
-#    if 'pref1' in UWEcourses[c]:
-#        courseList[c]['studentsSet'].add(UWEcourses[c]['pref1'])
-       
+    # skip if not major electives type
+    if (c['CourseType'] != 'Major Elective'):
+        continue
+    # get list of all students
+    cStudents = set()
+    for li in c['lecSections']:
+        cStudents = cStudents.union(c['lecSections'][li]['potentialStudents'])
+ 
+    for s in cStudents:
+        # increase maxMajorElectives for all except CSE
+        # overlap MAT494 with CSD311
+        if (s[0:3] != 'CSE'):
+            maxMajorElectives = 10
+            if (s[0:3] == 'MAT'):
+                maxMajorElectives = 5
+        else:
+            maxMajorElectives = 3
+        
+        
+        if len(enrolledMajorElectives[s]) >= maxMajorElectives: # dont enroll s in ci
+            print('Student group', s, 'not added in ', ci, 'because too many major electives.\nManually add',
+                      ci, 'in the same time as ',enrolledMajorElectives[s],'\n')
+
+        else: # enroll s in ci
+            # add course in students major electives courses
+            enrolledMajorElectives[s].add(ci)            
+            # add student in the course lecture, tut, practical
+            if 'lecSections' in c:
+                for li in c['lecSections']:
+                    if s in c['lecSections'][li]['potentialStudents']:
+                        c['lecSections'][li]['students'].add(s)
+            if 'tutSections' in c:
+                for li in c['tutSections']:
+                    if s in c['tutSections'][li]['potentialStudents']:
+                        c['tutSections'][li]['students'].add(s)
+            if 'labSections' in c:
+                for li in c['labSections']:
+                    if s in c['labSections'][li]['potentialStudents']:
+                        c['labSections'][li]['students'].add(s)
+        
 
 ## add year1, year2, year3 in on one randomly selected CCC
 # Then manually make sure all CCC overlaps
 #courseList['CCC510']['studentsSet'].add('year1')
 
-courseList['CCC515']['studentsSet'].add('year1')    
-courseList['CCC515']['studentsSet'].add('year2')
-courseList['CCC515']['studentsSet'].add('year3')
-courseList['CCC515']['studentsSet'].add('year4')
+courseList['CCC515']['lecSections']['LEC1']['students'].add('year1')  
+courseList['CCC515']['lecSections']['LEC1']['students'].add('year2')  
+courseList['CCC515']['lecSections']['LEC1']['students'].add('year3')  
+courseList['CCC515']['lecSections']['LEC1']['students'].add('year4')  
 
-            
-# replace 'programs' dictionary with 'studentsSet' dictionary in each course
-# because the pragram is designed to distribute 'programs' dictionary among sections
-for ci in courseList:
-    c = courseList[ci]
-    c['programs'] = c['studentsSet']
-   
-            
-            
-# filling lecture sections, tutorial sections, lab sections with students subgroups               
-for cIndex, c in courseList.items():    
-    
-    # fill lecture dictionary with students
-    if 'lecSections' in c:
-        numSections = len(c['lecSections'])
-        # start picking programs and putting them in lecSEcSTudents
-        j = 0 # section index
-        for s in c['programs']:
-            courseList[cIndex]['lecSections']['LEC'+str(j+1)]['students'].add(s)
-            j = (j +1) % numSections              # cycle over sections 
-            
-    # fill tutorials with students
-    if 'tutSections' in c:
-        numSections = len(c['tutSections'])
-        # start picking programs and putting them in tut
-        j = 0 # section index
-        for s in c['programs']:
-            courseList[cIndex]['tutSections']['TUT'+str(j+1)]['students'].add(s)
-            j = (j +1) % numSections              # cycle over sections 
-            
-                        
-    # fill practicals sections with students
-    if 'labSections' in c:
-        numSections = len(c['labSections'])
-        # start picking programs and putting them in tut
-        j = 0 # section index
-        for s in c['programs']:
-            courseList[cIndex]['labSections']['PRAC'+str(j+1)]['students'].add(s)
-            j = (j +1) % numSections              # cycle over sections 
-               
                
 ## map courses to activities
 tutDurationSet = set()
@@ -283,6 +193,8 @@ for cIndex, c in courseList.items():
             lecDuration = str(c['LectureDuration'])
             if (cIndex[0:3] == 'CCC'):
                 lecDuration = '3'            
+                
+    
             
             splitDuration = splitLec(totalDuration,lecDuration)
             activityXML = activityXML + '\t<Duration>'+splitDuration[0]+'</Duration>\n'
@@ -447,6 +359,23 @@ activityListXML = activityListXML+ '</Activities_List>\n'
 formattedData = re.sub(
         r"<Activities_List>(.*?)</Activities_List>", activityListXML,
         formattedData,flags=re.DOTALL)
+
+# read instructos set
+for cIndex, c in courseList.items():
+    if 'lecSections' in c:
+        for sId,s in c['lecSections'].items():
+            instructorSet = instructorSet.union(set(s['instructors']))
+    if 'tutSections' in c:
+        for sId,s in c['tutSections'].items():
+            instructorSet = instructorSet.union(set(s['instructors']))
+    if 'labSections' in c:
+        for sId,s in c['labSections'].items():
+            instructorSet = instructorSet.union(set(s['instructors']))
+            
+#save the instructor set for creating their non available slots
+with open('instructorSet.pickle', 'wb') as f:
+    pickle.dump(instructorSet, f)
+
 
 subjectListXML = '<Subjects_List>\n'
 for cIndex in courseList:
@@ -730,21 +659,6 @@ formattedData = re.sub(
         r"<Time_Constraints_List>(.*?)</Time_Constraints_List>",tag ,
         formattedData,flags=re.DOTALL)      
 
-# read instructos set
-for cIndex, c in courseList.items():
-    if 'lecSections' in c:
-        for sId,s in c['lecSections'].items():
-            instructorSet = instructorSet.union(set(s['instructors']))
-    if 'tutSections' in c:
-        for sId,s in c['tutSections'].items():
-            instructorSet = instructorSet.union(set(s['instructors']))
-    if 'labSections' in c:
-        for sId,s in c['labSections'].items():
-            instructorSet = instructorSet.union(set(s['instructors']))
-            
-#save the instructor set for creating their non available slots
-with open('instructorSet.pickle', 'wb') as f:
-    pickle.dump(instructorSet, f)
 
 
 teachersXML = '<Teachers_List>\n'
