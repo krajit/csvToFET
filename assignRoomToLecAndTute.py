@@ -60,6 +60,8 @@ for i in range(1,sheet.nrows):
         for s in slots:
             rooms[r]['slots'][d][s] = 'available'
     
+#temporarily make D217 biometric
+rooms['D217']['isBiometric'] = True
 
 # set lecture capacity for each lecture sections
 for c in courses:
@@ -228,12 +230,7 @@ def formatTime(slotsList):
 def cleanInstructor(ins):
     x = ins.split('[')
     return x[0]
-    
-    
-    
-    
-    
-
+        
 # record popular choices
 # import xlsxwriter module 
 import xlsxwriter 

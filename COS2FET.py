@@ -133,7 +133,7 @@ for ci in courseList:
 # Then manually make sure all CCC overlaps
 #courseList['CCC510']['studentsSet'].add('year1')
 
-courseList['CCC515']['lecSections']['LEC1']['students'].add('year1')  
+#courseList['CCC515']['lecSections']['LEC1']['students'].add('year1')  
 courseList['CCC515']['lecSections']['LEC1']['students'].add('year2')  
 courseList['CCC515']['lecSections']['LEC1']['students'].add('year3')  
 courseList['CCC515']['lecSections']['LEC1']['students'].add('year4')  
@@ -194,8 +194,6 @@ for cIndex, c in courseList.items():
             if (cIndex[0:3] == 'CCC'):
                 lecDuration = '3'            
                 
-    
-            
             splitDuration = splitLec(totalDuration,lecDuration)
             activityXML = activityXML + '\t<Duration>'+splitDuration[0]+'</Duration>\n'
             activityXML = activityXML + '\t<Total_Duration>'+totalDuration+'</Total_Duration>\n'
@@ -302,10 +300,8 @@ for cIndex, c in courseList.items():
                 activityListXML = activityListXML + activityXMLi
             courseList[cIndex]['labSections'][lIndex]['ids']=activityIdSet
 
-##-------------------------------------------------------------------------
-# TODO add Lunch activity and dummy lunch intstructor Set
-##-------------------------------------------------------------------------
-# add Lunch activity and dummy lunch intstructor Set
+
+# Adding Lunch activity and dummy lunch intstructor Set
 instructorSet = set()
 
 # add lunch activity for each subgroup
@@ -444,15 +440,11 @@ formattedData = re.sub(
 
 ##----------------------------------------
 #read roomsAndBuildingFile
-with open('rooms_and_buildings.csv', 'r') as ff:
+with open('labRoomList.csv', 'r') as ff:
   reader = csv.reader(ff)
   roomsAndBuilding = list(reader)
 
 buildingSet = set('');
-lectureRoomSetInA = set('');
-lectureRoomSetInB = set('');
-lectureRoomSetInCD = set('');
-
 labRoomCons = ''
 
 tag = '<Rooms_List>\n'
@@ -468,16 +460,6 @@ for room in roomsAndBuilding[1:]:   # [1:] is for ignoring the first row
     <Comments></Comments> \n \
 </ConstraintActivityTagPreferredRoom>\n'
     
-    
-    if (room[0][0] == 'A') and (room[2] != 'Lab'):
-        lectureRoomSetInA.add(room[0])
-    if(room[0][0] == 'B') and (room[2] != 'Lab'):
-        lectureRoomSetInB.add(room[0])
-    if ((room[0][0] == 'C') or (room[0][0] == 'D'))  and (room[2] != 'Lab'):
-        lectureRoomSetInCD.add(room[0])
-
-
-                
     tag = tag + '<Room> \n\
     <Name>'+room[0]+'</Name>\n \
     <Building>'+room[2]+'</Building>\n \
@@ -488,9 +470,6 @@ tag = tag+ '</Rooms_List>\n'
 formattedData = re.sub(
         r"<Rooms_List>(.*?)</Rooms_List>", tag,
         formattedData,flags=re.DOTALL)      
-
-allRoomSet = lectureRoomSetInA.union(lectureRoomSetInB).union(lectureRoomSetInCD)
-
 
 # add building list
 tag = '<Buildings_List>\n'
@@ -508,35 +487,6 @@ formattedData = re.sub(
 #-------------------------------------------------------------
 
 ##--space constraint------------------------------------------
-
-roomsInventory = dict()
-roomsInventory['Labs'] = []
-roomsInventory['Audi'] = []
-roomsInventory['hall'] = []
-roomsInventory['largeClass'] = []
-roomsInventory['regularClass'] = []
-roomsInventory['smallClass'] = []
-
-allRooms = []
-for room in roomsAndBuilding[1:]:
-    if (room[2] != 'Lab'):
-        allRooms.append(room[0])
-
-
-for room in roomsAndBuilding[1:]:
-    if (room[2] == 'Lab'):
-        roomsInventory['Labs'].append(room[0])
-    elif (int(room[1])>=200):
-        roomsInventory['Audi'].append(room[0])
-    elif (int(room[1])>=150):
-        roomsInventory['hall'].append(room[0])
-    elif (int(room[1])>=100):
-        roomsInventory['largeClass'].append(room[0])        
-    elif (int(room[1])>=60):
-        roomsInventory['regularClass'].append(room[0])
-    else:
-        roomsInventory['smallClass'].append(room[0])
-
 
 # basic compulsory constraint
 spaceCons = '<Space_Constraints_List> \n \

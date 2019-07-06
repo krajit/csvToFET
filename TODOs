@@ -1,7 +1,7 @@
-- fix first year groupings - Manual entry in tut and practicals
 - fix overlapping courses in major electives
 - Add EVS courses
 
+- Add a lecture capacity column, so that two lecture sections need not be same size. 
 
 
 - First years to be removed from general CCC
@@ -19,3 +19,6 @@
 DONE:
 - - fix rooms allottments with updated list from zia
     - first year classes in biometric classes only
+
+
+- fix first year groupings - Manual entry in tut and practicals

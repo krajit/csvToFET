@@ -18,44 +18,13 @@ sheet = wb.sheet_by_index(0) # get first sheet
 for i in range(1,sheet.nrows):    
     instructorsOnCampus.add(sheet.cell_value(i,0))
 
-#
-#
-#whoIsAvailalbein8to9 = ['Ranendra']
-#whoIsNotAvailalbein9to10 = ['Ajit', 'Divya  Shrivastava']
-#
-#
-#insNotAvailalbeIn8to9XML = ''
-#for i in instructorSet:
-#    iAvailable = False
-#    for j in whoIsAvailalbein8to9:
-#        if j in i:
-#            iAvailable = True
-#            break
-#    for j in whoIsNotAvailalbein9to10:
-#        if j in i:
-#            iAvailable = True
-#            break        
-#    if not iAvailable:        
-#        xi = notAvailableIn8To9Template
-#        xi = xi.replace('INSTRUCTOR',i)
-#        insNotAvailalbeIn8to9XML  = insNotAvailalbeIn8to9XML +xi
-#
-
-#insNotAvailalbeIn9to10XML = ''
-#for i in instructorSet:
-#    for j in whoIsNotAvailalbein9to10:
-#        if j in i:
-#            print(j)
-#            xi = notAvailableIn9To10Template
-#            xi = xi.replace('INSTRUCTOR',i)
-#            insNotAvailalbeIn9to10XML  = insNotAvailalbeIn9to10XML +xi
         
 teachersNotAvailalbeSlots = {
         'Divya  Shrivastava[20500160]':{'8to9': False, '9to10': False,'5to6': False},
         'Ajit  Kumar[20500008]':{'8to9': False, '9to10': False,'5to6': False},
-        'Ranendra Narayan Biswas[20500321]': {'8to9': True, '9to10': True,'5to6': True},  
+        'Ranendra Narayan Biswas[20500321]': {'8to9': False, '9to10': True,'5to6': False},  
         #'Seema  Sehrawat[20500119]' :{'5to6': True}, 
-        'Ashutosh  Singh[20500053]' : {'5to6': True},
+        'Ashutosh  Singh[20500053]' : {'5to6': False},
         }
 
 eightToNineXML = '<Not_Available_Time>\n\
@@ -198,7 +167,7 @@ for i in instructorSet:
             
     if iOnCampus:
         availableIn8to9 = False # remove this
-        availableIn5to6 = True
+        availableIn5to6 = False
         
         
     if i in teachersNotAvailalbeSlots:
