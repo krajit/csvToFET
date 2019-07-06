@@ -92,7 +92,7 @@ def assignRooms(level = '1'):
     for ci in courses:
         c = courses[ci]
         biometricRoomNeeded = False
-        if courses[ci]['level'] == '1':
+        if ci[3] == '1':
             biometricRoomNeeded = True
             
         if ci[3] not in level:
@@ -139,7 +139,7 @@ def assignRooms(level = '1'):
                                     for s in lecTimes[d]: # loop over lec times
                                         rooms[r]['slots'][d][s] = ci+'L'
                 if not roomAssigned:
-                    print('fucked')
+                    print(ci, 'lec, room not found')
     
     
         if 'tutSections' in c:
@@ -182,7 +182,7 @@ def assignRooms(level = '1'):
                                     for s in lecTimes[d]: # loop over lec times
                                         rooms[r]['slots'][d][s] = ci+'T'
                 if not roomAssigned:
-                    print('fucked')
+                    print(ci, 'tute, room not found')
                                         
                             
         if 'labSections' in c:
@@ -294,7 +294,12 @@ for ci in courses:
             if 'timings' in c['lecSections'][li]:
                 time = sortedDays(c['lecSections'][li]['timings'],ci)
                 
-                room = c['lecSections'][li]['room']
+                room = ''
+                if 'room' in c['lecSections'][li]:
+                    room = c['lecSections'][li]['room']
+                else:
+                    room = 'TBA'
+                
                 instructor = ''
                 for i in c['lecSections'][li]['instructors']:
                     instructor = instructor+cleanInstructor(i)+','
