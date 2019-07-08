@@ -86,7 +86,8 @@ roomsList = sorted(rooms.items(), key = lambda x: x[1]['capacity'], reverse=Fals
 rooms = dict()
 for r in roomsList:
     rooms[r[0]] = r[1]
-    
+
+roomNotAssigned = []            
 
 # start filling in rooms for each of the lecture sections
 # start from the biggest lecures and fit it in the smallest possible room
@@ -141,7 +142,8 @@ def assignRooms(level = '1'):
                                     for s in lecTimes[d]: # loop over lec times
                                         rooms[r]['slots'][d][s] = ci+'L'
                 if not roomAssigned:
-                    print(ci, 'lec, room not found')
+                    print(ci,courses[ci]['lecCapacity'] ,'lec, room not found')
+                    roomNotAssigned.append(ci)
     
     
         if 'tutSections' in c:
@@ -206,9 +208,46 @@ def assignRooms(level = '1'):
 assignRooms(level = '1')
 
 # then assign higher level coureses to any rooms
-assignRooms(level = '2345')
+assignRooms(level = '23456789')
+
+##----------------------
+print('\n....')
+print('Some rooms have not been assigned rooms. For these course, different days are getting mapped to different rooms...')
+for ci in roomNotAssigned:
+    lectureSlots = courses[ci]['lecSections']['LEC1']['timings']
+    courses[ci]['lecSections']['LEC1']['room'] = ''
+    
+    for dayi in lectureSlots:
+        dayiSlots = lectureSlots[dayi]
+        roomAssigned = False
+        
+        for r in rooms:
+            # skip is room is not big enough
+            if rooms[r]['capacity'] < courses[ci]['lecCapacity']:
+                continue
+            
+            isRoomAvailable = True
+            for s in dayiSlots:
+                if (rooms[r]['slots'][dayi][s] != 'available'):
+                    isRoomAvailable = False
+                    
+            if isRoomAvailable:
+                # make the room unavailalbe
+                for s in dayiSlots:
+                    rooms[r]['slots'][dayi][s] = ci
+                
+                # note down the room for the lecture
+                courses[ci]['lecSections']['LEC1']['room'] = courses[ci]['lecSections']['LEC1']['room'] + dayi+"("+r+")"
+                roomAssigned = True
+                
+            if roomAssigned:
+                break
+        if  not roomAssigned:
+            print(ci,dayi, 'rooms not found')
+            courses[ci]['lecSections']['LEC1']['room'] = 'TBA'
 
 
+##---------------------
 
 # lets write down the time table in excel
 def formatTime(slotsList):
@@ -282,7 +321,8 @@ def sortedDays(times, cCode):
     x = D+' '+hh
     return(x)
         
-        
+
+
     
 for ci in courses:
     c = courses[ci]
@@ -367,17 +407,10 @@ for ci in courses:
                 row = row+1
 workbook.close()                         
                     
+                
             
-            
-    
-    
-    
 
-    
-
-
-
-
+ 
 
 
 

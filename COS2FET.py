@@ -43,7 +43,7 @@ studentsListXML = stuXML.studentsListXML
 
 
 # read course offering data
-import readManuallyGroupedCOSdata as COS
+import readCOSdata as COS
 courseList = COS.courseList # a dictionary containing details of each course read from COS excel file
 
 # add students to complusory courses
@@ -133,7 +133,7 @@ for ci in courseList:
 # Then manually make sure all CCC overlaps
 #courseList['CCC510']['studentsSet'].add('year1')
 
-#courseList['CCC515']['lecSections']['LEC1']['students'].add('year1')  
+courseList['CCC515']['lecSections']['LEC1']['students'].add('year1')  
 courseList['CCC515']['lecSections']['LEC1']['students'].add('year2')  
 courseList['CCC515']['lecSections']['LEC1']['students'].add('year3')  
 courseList['CCC515']['lecSections']['LEC1']['students'].add('year4')  
@@ -185,6 +185,11 @@ for cIndex, c in courseList.items():
                 activityTag = 'CCC'
                 activityTagSet.add(activityTag)
                 activityXML = activityXML + '\t<Activity_Tag>'+activityTag+'</Activity_Tag>\n'
+
+            for aTag in l['activityTags']:
+                activityTagSet.add(aTag)
+                activityXML = activityXML + '\t<Activity_Tag>'+aTag+'</Activity_Tag>\n'
+                
 
             totalDuration = str(c['LectureHoursPerWeek'])
             if (int(totalDuration) >= 12):
@@ -443,6 +448,7 @@ formattedData = re.sub(
 with open('labRoomList.csv', 'r') as ff:
   reader = csv.reader(ff)
   roomsAndBuilding = list(reader)
+ 
 
 buildingSet = set('');
 labRoomCons = ''
@@ -466,6 +472,7 @@ for room in roomsAndBuilding[1:]:   # [1:] is for ignoring the first row
     <Capacity>'+room[1]+'</Capacity>\n \
     <Comments></Comments>\n </Room>\n '
 tag = tag+ '</Rooms_List>\n'
+
 #update file
 formattedData = re.sub(
         r"<Rooms_List>(.*?)</Rooms_List>", tag,
@@ -488,6 +495,8 @@ formattedData = re.sub(
 
 ##--space constraint------------------------------------------
 
+
+
 # basic compulsory constraint
 spaceCons = '<Space_Constraints_List> \n \
 <ConstraintBasicCompulsorySpace> \n \
@@ -495,7 +504,16 @@ spaceCons = '<Space_Constraints_List> \n \
     <Active>true</Active> \n \
     <Comments></Comments> \n \
 </ConstraintBasicCompulsorySpace>\n'
-spaceCons =spaceCons +  labRoomCons+'</Space_Constraints_List>\n'
+spaceCons =spaceCons +  labRoomCons
+
+# universal room constraint
+#import roomsConstraint as roomConstraint
+#spaceCons = spaceCons + roomConstraint.LEC1SpaceCons
+
+
+
+spaceCons =spaceCons +  '</Space_Constraints_List>\n'
+
     
 #update file
 formattedData = re.sub(
@@ -522,7 +540,7 @@ tag = '<Time_Constraints_List>\n\
 # add Th 12-2 break time
 tag = tag + '<ConstraintBreakTimes> \n\
 	<Weight_Percentage>100</Weight_Percentage> \n \
-	<Number_of_Break_Times>4</Number_of_Break_Times> \n \
+	<Number_of_Break_Times>8</Number_of_Break_Times> \n \
 	<Break_Time> \n \
 		<Day>Th</Day> \n \
 		<Hour>12:00</Hour> \n \
@@ -538,6 +556,22 @@ tag = tag + '<ConstraintBreakTimes> \n\
 	<Break_Time> \n \
 		<Day>Th</Day> \n \
 		<Hour>13:30</Hour> \n \
+	</Break_Time> \n \
+    <Break_Time> \n \
+		<Day>T</Day> \n \
+		<Hour>15:00</Hour> \n \
+	</Break_Time> \n \
+    <Break_Time> \n \
+		<Day>T</Day> \n \
+		<Hour>15:30</Hour> \n \
+	</Break_Time> \n \
+	<Break_Time> \n \
+		<Day>T</Day> \n \
+		<Hour>16:00</Hour> \n \
+	</Break_Time> \n \
+	<Break_Time> \n \
+		<Day>T</Day> \n \
+		<Hour>16:30</Hour> \n \
 	</Break_Time> \n \
 	<Active>true</Active> \n \
 	<Comments></Comments> \n \
@@ -599,6 +633,8 @@ tag = tag+ sna.studentsNotAvailalbeAfter5XML
 import teachersNotAvailableSlots as tna
 tag = tag+tna.x
 
+import lecturesPrefferedinEarlyslots as lecEarlyCons
+tag = tag + lecEarlyCons.LEC1early
 
 tag = tag + '</Time_Constraints_List>\n'
 #tag = tag+'</Time_Constraints_List>\n'

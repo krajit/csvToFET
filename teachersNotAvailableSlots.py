@@ -23,8 +23,7 @@ teachersNotAvailalbeSlots = {
         'Divya  Shrivastava[20500160]':{'8to9': False, '9to10': False,'5to6': False},
         'Ajit  Kumar[20500008]':{'8to9': False, '9to10': False,'5to6': False},
         'Ranendra Narayan Biswas[20500321]': {'8to9': False, '9to10': True,'5to6': False},  
-        #'Seema  Sehrawat[20500119]' :{'5to6': True}, 
-        'Ashutosh  Singh[20500053]' : {'5to6': False},
+        'Ashish  Gupta[20500190]': {'5to6': True}
         }
 
 eightToNineXML = '<Not_Available_Time>\n\
