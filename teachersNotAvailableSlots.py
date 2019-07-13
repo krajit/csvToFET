@@ -22,7 +22,16 @@ for i in range(1,sheet.nrows):
 teachersNotAvailalbeSlots = {
         'Divya  Shrivastava[20500160]':{'8to9': False, '9to10': False,'5to6': False},
         'Ajit  Kumar[20500008]':{'8to9': False, '9to10': False,'5to6': False},
-        'Ranendra Narayan Biswas[20500321]': {'8to9': False, '9to10': True,'5to6': False},  
+        'Ranendra Narayan Biswas[20500321]': {'8to9': True, 
+                                '5to6': True,
+                                '1to2': False},
+        'Rohit  Singh[20501073]': {'8to9': True, 
+                                '5to6': True,
+                                '1to2': False},
+        'Upendra Kumar Pandey[20501071]': {'8to9': True, 
+                                '5to6': True,
+                                '1to2': False},
+        'Sonal  Singhal[20500080]': {'1to2': False},
         'Ashish  Gupta[20500190]': {'5to6': True}
         }
 
@@ -150,13 +159,55 @@ fiveToSixXML = '<Not_Available_Time>\n\
 	</Not_Available_Time>\n'
 
 
+lunchXML = '<Not_Available_Time>\n\
+		<Day>M</Day>\n\
+		<Hour>13:00</Hour>\n\
+	</Not_Available_Time>\n\
+	<Not_Available_Time>\n\
+		<Day>M</Day>\n\
+		<Hour>13:30</Hour>\n\
+	</Not_Available_Time>\n\
+	<Not_Available_Time>\n\
+		<Day>T</Day>\n\
+		<Hour>13:00</Hour>\n\
+	</Not_Available_Time>\n\
+	<Not_Available_Time>\n\
+		<Day>T</Day>\n\
+		<Hour>13:30</Hour>\n\
+	</Not_Available_Time>\n\
+	<Not_Available_Time>\n\
+		<Day>W</Day>\n\
+		<Hour>13:00</Hour>\n\
+	</Not_Available_Time>\n\
+	<Not_Available_Time>\n\
+		<Day>W</Day>\n\
+		<Hour>13:30</Hour>\n\
+	</Not_Available_Time>\n\
+	<Not_Available_Time>\n\
+		<Day>Th</Day>\n\
+		<Hour>13:00</Hour>\n\
+	</Not_Available_Time>\n\
+	<Not_Available_Time>\n\
+		<Day>Th</Day>\n\
+		<Hour>13:30</Hour>\n\
+	</Not_Available_Time>\n\
+	<Not_Available_Time>\n\
+		<Day>F</Day>\n\
+		<Hour>13:00</Hour>\n\
+	</Not_Available_Time>\n\
+	<Not_Available_Time>\n\
+		<Day>F</Day>\n\
+		<Hour>13:30</Hour>\n\
+	</Not_Available_Time>\n'
+
+
 x = ''
 for i in instructorSet:
     
     availableIn8to9 = False
     availableIn9to10 = True
     availableIn5to6 = False
-    
+    availableIn1to2 = True 
     iOnCampus = False
     
     for j in instructorsOnCampus:
@@ -176,6 +227,9 @@ for i in instructorSet:
             availableIn9to10 = teachersNotAvailalbeSlots[i]['9to10']
         if '5to6' in teachersNotAvailalbeSlots[i]:
             availableIn5to6 = teachersNotAvailalbeSlots[i]['5to6']
+        if '1to2' in teachersNotAvailalbeSlots[i]:
+            availableIn1to2 = teachersNotAvailalbeSlots[i]['1to2']
+            
 
     numSlots=0
     notSlots = ''
@@ -188,6 +242,9 @@ for i in instructorSet:
     if not availableIn5to6:
         numSlots = numSlots + 10
         notSlots = notSlots + fiveToSixXML
+    if not availableIn1to2:
+        numSlots = numSlots + 10
+        notSlots = notSlots + lunchXML
             
     # teacher not available slot
     xi = "<ConstraintTeacherNotAvailableTimes>\n\

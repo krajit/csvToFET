@@ -1,0 +1,22 @@
+﻿Soft conflicts of snu-timetable_maxHourCont_8_95.fet
+Generated with FET 5.37.5 on 7/10/19 2:41 AM
+
+Number of broken soft constraints: 12
+Total soft conflicts: 11.4
+
+Soft conflicts list (in decreasing order):
+
+Time constraint teachers max 8 hours continuously broken for teacher Upendra Kumar Pandey[20501071], on day M, length=14. This increases the conflicts total by 0.95
+Time constraint teachers max 8 hours continuously broken for teacher J  Venkatramani[20500736], on day M, length=13. This increases the conflicts total by 0.95
+Time constraint teachers max 8 hours continuously broken for teacher Ganeshthangaraj  Ponniah[20500265], on day W, length=10. This increases the conflicts total by 0.95
+Time constraint teachers max 8 hours continuously broken for teacher Shahid  Jamal[20500122], on day F, length=12. This increases the conflicts total by 0.95
+Time constraint teachers max 8 hours continuously broken for teacher Pooja  Malik[20500448], on day M, length=14. This increases the conflicts total by 0.95
+Time constraint teachers max 8 hours continuously broken for teacher Pooja  Malik[20500448], on day W, length=13. This increases the conflicts total by 0.95
+Time constraint teachers max 8 hours continuously broken for teacher Pooja  Malik[20500448], on day F, length=13. This increases the conflicts total by 0.95
+Time constraint teachers max 8 hours continuously broken for teacher Ranendra Narayan Biswas[20500321], on day W, length=12. This increases the conflicts total by 0.95
+Time constraint teachers max 8 hours continuously broken for teacher Ranendra Narayan Biswas[20500321], on day F, length=12. This increases the conflicts total by 0.95
+Time constraint teachers max 8 hours continuously broken for teacher Nishant  Mishra[20500056], on day W, length=10. This increases the conflicts total by 0.95
+Time constraint teachers max 8 hours continuously broken for teacher Divya  Lohani[20500325], on day F, length=10. This increases the conflicts total by 0.95
+Time constraint teachers max 8 hours continuously broken for teacher Rajeev Kumar Singh[20500026], on day M, length=16. This increases the conflicts total by 0.95
+
+End of file.

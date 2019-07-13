@@ -150,7 +150,10 @@ def splitLec(totalDuration, lecDuration = '2'):
     elif (totalDuration == '3'):
         return '3'
     elif (totalDuration == '4'):
-        return '2+2'
+        if (lecDuration == '4'):
+            return '4'
+        else:
+            return '2+2'
     elif (totalDuration == '6'):
         if (lecDuration == '3'):
             return '3+3'
@@ -617,7 +620,7 @@ import overlappingCCCstring as ov
 tag = tag+ov.x
 
 
-tag = tag + ov.MAT494_overlaps_CSD310+ov.MAT494overlapsMAT399
+tag = tag +ov.coursesOverlappingXML
 zeroGapCons = '<ConstraintTeachersMaxGapsPerDay>\n \
 	<Weight_Percentage>100</Weight_Percentage>\n\
 	<Max_Gaps>0</Max_Gaps>\n\
@@ -627,15 +630,29 @@ zeroGapCons = '<ConstraintTeachersMaxGapsPerDay>\n \
 
 tag = tag + zeroGapCons
 
-import studentsNotAvailableSlots as sna
-tag = tag+ sna.studentsNotAvailalbeAfter5XML
+# Ajit: Jul 10, students set not availability is ignored. Completely determined by faculty availability
+#import studentsNotAvailableSlots as sna
+#tag = tag+ sna.studentsNotAvailalbeAfter5XML
 
-import teachersNotAvailableSlots as tna
+#import teachersNotAvailableSlots as tna
+import teachersNonAvailability as tna
 tag = tag+tna.x
 
+# large lectures early constrints
 import lecturesPrefferedinEarlyslots as lecEarlyCons
 tag = tag + lecEarlyCons.LEC1early
 
+
+# teachers max hours continuously constraint
+import teacherMaxContinuousHoursDaily as tMaxContinuous
+tag = tag + tMaxContinuous.consList
+
+# teachers max number of working day constraint
+import teachersMaxWorkingDay as teacherMaxDay
+tag = tag + teacherMaxDay.teacherMaxDayConsXML
+
+
+# end of time constraint
 tag = tag + '</Time_Constraints_List>\n'
 #tag = tag+'</Time_Constraints_List>\n'
 ##  end time constraints

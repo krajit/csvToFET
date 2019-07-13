@@ -37,7 +37,6 @@ courseList = dict()
 
 for i in range(2,sheet.nrows):    
     cCode = sheet.cell_value(i,CourseCode)
-    
     if cCode not in courseList:
         courseList[cCode] = dict()
         courseList[cCode]['Title'] = sheet.cell_value(i,CourseTitle)
