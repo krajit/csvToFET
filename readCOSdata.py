@@ -7,6 +7,11 @@ Created on Fri Jul  5 15:11:10 2019
 """
 import xlrd
 
+import pickle
+studentSubGroupsPickle = open('studentSubGroups.pickle','rb')
+studentSubGroups = pickle.load(studentSubGroupsPickle)
+
+
 COSfilePath = "COS.xlsx"
 wb = xlrd.open_workbook(COSfilePath) 
 sheet = wb.sheet_by_index(0) # get first sheet
@@ -30,13 +35,15 @@ LabRoomNumber	=	29
 LabCapacity	=	30
 CourseCoordinator	=	38
 LectureTag1Col = 55
-LectureTag2Col = 56
-LectureTag3Col = 57
+UWELecCol = 60
+UWETutCol = 61
+UWEPracCol = 62
 
 courseList = dict()
 
 for i in range(2,sheet.nrows):    
     cCode = sheet.cell_value(i,CourseCode)
+    
     if cCode not in courseList:
         courseList[cCode] = dict()
         courseList[cCode]['Title'] = sheet.cell_value(i,CourseTitle)
@@ -70,6 +77,7 @@ for i in range(2,sheet.nrows):
         lecStudentsColumn = 51
         seci = sheet.cell_value(i,LectureSections)
         courseList[cCode]['lecSections'][seci] = dict()
+        
         courseList[cCode]['lecSections'][seci]['instructors'] = sheet.cell_value(i,LectureInstructors).split(',\n')[:-1]
         courseList[cCode]['lecSections'][seci]['potentialStudents'] = set()
         if (sheet.cell_type(i,lecStudentsColumn) != xlrd.XL_CELL_EMPTY):        
@@ -81,12 +89,19 @@ for i in range(2,sheet.nrows):
             
         if (sheet.cell_type(i,LectureTag1Col) != xlrd.XL_CELL_EMPTY):
             courseList[cCode]['lecSections'][seci]['activityTags'].add(sheet.cell_value(i,LectureTag1Col))
+           
+           
+        # add UWE studetns i
+        if (sheet.cell_type(i,UWELecCol) != xlrd.XL_CELL_EMPTY):
+            studentsList =  sheet.cell_value(i,UWELecCol)
+            studentsList = studentsList.split(',')
+            studentSet = set()
+            for s in studentsList:
+                ss = studentSet.union(set(studentSubGroups[s].split(',')))
+                courseList[cCode]['lecSections'][seci]['students'] = courseList[cCode]['lecSections'][seci]['students'].union(ss)
+                
             
-        if (sheet.cell_type(i,LectureTag2Col) != xlrd.XL_CELL_EMPTY):
-            courseList[cCode]['lecSections'][seci]['activityTags'].add(sheet.cell_value(i,LectureTag2Col))
-            
-        if (sheet.cell_type(i,LectureTag3Col) != xlrd.XL_CELL_EMPTY):
-            courseList[cCode]['lecSections'][seci]['activityTags'].add(sheet.cell_value(i,LectureTag3Col))
+ #           courseList[cCode]['lecSections'][seci]['UWEStudents'].union(set(sheet.cell_value(i,UWELecCol).split(',')))
         
     
     if (sheet.cell_type(i,TutorialSections) != xlrd.XL_CELL_EMPTY):
@@ -101,6 +116,16 @@ for i in range(2,sheet.nrows):
         if (sheet.cell_type(i,tutStudentsColumn) != xlrd.XL_CELL_EMPTY):        
             courseList[cCode]['tutSections'][seci]['potentialStudents'] = set(sheet.cell_value(i,tutStudentsColumn).split(','))
         courseList[cCode]['tutSections'][seci]['students'] = set()
+        
+        # add UWE studetns i
+        if (sheet.cell_type(i,UWETutCol) != xlrd.XL_CELL_EMPTY):
+            studentsList =  sheet.cell_value(i,UWETutCol)
+            studentsList = studentsList.split(',')
+            studentSet = set()
+            for s in studentsList:
+                ss = studentSet.union(set(studentSubGroups[s].split(',')))
+                courseList[cCode]['tutSections'][seci]['students'] = courseList[cCode]['tutSections'][seci]['students'].union(ss)
+
 
             
     if (sheet.cell_type(i,PracticalSections) != xlrd.XL_CELL_EMPTY):
@@ -114,9 +139,17 @@ for i in range(2,sheet.nrows):
         courseList[cCode]['labSections'][seci]['potentialStudents'] = set()
         if (sheet.cell_type(i,labStudentsColumn) != xlrd.XL_CELL_EMPTY):        
             courseList[cCode]['labSections'][seci]['potentialStudents'] = set(sheet.cell_value(i,labStudentsColumn).split(','))
-
-        
         
         courseList[cCode]['labSections'][seci]['room'] =  sheet.cell_value(i,LabRoomNumber)
         courseList[cCode]['labSections'][seci]['students'] = set()
     
+    
+            # add UWE studetns i
+        if (sheet.cell_type(i,UWEPracCol) != xlrd.XL_CELL_EMPTY):
+            studentsList =  sheet.cell_value(i,UWEPracCol)
+            studentsList = studentsList.split(',')
+            studentSet = set()
+            for s in studentsList:
+                ss = studentSet.union(set(studentSubGroups[s].split(',')))
+                courseList[cCode]['labSections'][seci]['students'] = courseList[cCode]['labSections'][seci]['students'].union(ss)
+

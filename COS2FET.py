@@ -60,17 +60,20 @@ for ci in courseList:
     
     if 'lecSections' in c:
         for li in c['lecSections']:
-            courseList[ci]['lecSections'][li]['students'] = courseList[ci]['lecSections'][li]['potentialStudents'] 
+            courseList[ci]['lecSections'][li]['students'] = courseList[ci]['lecSections'][li]['students'].union(
+                    courseList[ci]['lecSections'][li]['potentialStudents']) 
             del courseList[ci]['lecSections'][li]['potentialStudents'] 
             
     if 'tutSections' in c:
         for li in c['tutSections']:
-            courseList[ci]['tutSections'][li]['students'] = courseList[ci]['tutSections'][li]['potentialStudents'] 
+            courseList[ci]['tutSections'][li]['students'] = courseList[ci]['tutSections'][li]['students'].union(
+                    courseList[ci]['tutSections'][li]['potentialStudents'])
             del courseList[ci]['tutSections'][li]['potentialStudents'] 
 
     if 'labSections' in c:
         for li in c['labSections']:
-            courseList[ci]['labSections'][li]['students'] = courseList[ci]['labSections'][li]['potentialStudents'] 
+            courseList[ci]['labSections'][li]['students'] = courseList[ci]['labSections'][li]['students'].union(
+                    courseList[ci]['labSections'][li]['potentialStudents']) 
             del courseList[ci]['labSections'][li]['potentialStudents'] 
         
             
@@ -323,11 +326,12 @@ for sg in studentGroups:
         lunchInFourDaysXML = lunchInFourDaysXML + '<ConstraintMinDaysBetweenActivities>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Weight_Percentage>100</Weight_Percentage>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>\n'
-        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Number_of_Activities>4</Number_of_Activities>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Number_of_Activities>5</Number_of_Activities>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId)+'</Activity_Id>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+1)+'</Activity_Id>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+2)+'</Activity_Id>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+3)+'</Activity_Id>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+4)+'</Activity_Id>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<MinDays>1</MinDays>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Active>true</Active>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Comments></Comments>\n'
@@ -342,9 +346,9 @@ for sg in studentGroups:
         lXML = lXML + '\t<Activity_Tag></Activity_Tag>\n'
         lXML = lXML + '\t<Students>'+s+'</Students>\n'
         lXML = lXML + '\t<Duration>2</Duration>\n'
-        lXML = lXML + '\t<Total_Duration>8</Total_Duration>\n'
+        lXML = lXML + '\t<Total_Duration>10</Total_Duration>\n'
         
-        for i in range(4): # four activity for lunch on M, T, W, Fri. The lunch on Thursday is automatically in break hours
+        for i in range(5): # four activity for lunch on M, T, W, Fri. The lunch on Thursday is automatically in break hours
             if (i == 0):
                 lunchGroupId = lunchId
             lXMLi = lXML # each lunch period is a new actvity
@@ -546,19 +550,19 @@ tag = tag + '<ConstraintBreakTimes> \n\
 	<Number_of_Break_Times>8</Number_of_Break_Times> \n \
 	<Break_Time> \n \
 		<Day>Th</Day> \n \
-		<Hour>12:00</Hour> \n \
+		<Hour>15:00</Hour> \n \
 	</Break_Time> \n \
 	<Break_Time> \n \
 		<Day>Th</Day> \n \
-		<Hour>12:30</Hour> \n \
+		<Hour>15:30</Hour> \n \
 	</Break_Time> \n \
 	<Break_Time> \n \
 		<Day>Th</Day> \n \
-		<Hour>13:00</Hour> \n \
+		<Hour>16:00</Hour> \n \
 	</Break_Time> \n \
 	<Break_Time> \n \
 		<Day>Th</Day> \n \
-		<Hour>13:30</Hour> \n \
+		<Hour>16:30</Hour> \n \
 	</Break_Time> \n \
     <Break_Time> \n \
 		<Day>T</Day> \n \
@@ -580,7 +584,7 @@ tag = tag + '<ConstraintBreakTimes> \n\
 	<Comments></Comments> \n \
 </ConstraintBreakTimes>\n'
 
-from lunchXML import lunchConsTag
+from lunch5daysXML import lunchConsTag
 tag = tag + lunchConsTag
 
 # adding constraint of same lectures on diff days to be on same time

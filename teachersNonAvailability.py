@@ -49,11 +49,23 @@ genNonAvailability = {'M':['08:00', '08:30', '17:00', '17:30'],
                       'W':['08:00', '08:30', '17:00', '17:30'],
                       'Th':['08:00', '08:30', '17:00', '17:30'],
                       'F':['08:00', '08:30', '17:00', '17:30']}
+
+onCampusNonAvailability = {'M':['08:00', '08:30'],
+                      'T':['08:00', '08:30' ],
+                      'W':['08:00', '08:30'],
+                      'Th':['08:00', '08:30'],
+                      'F':['08:00', '08:30']}
         
 import copy
 x = ''
 for i in instructorSet:
+        
     iNonAvailability = copy.deepcopy(genNonAvailability)
+    
+    for j in instructorsOnCampus:
+        if j[-10:] == i[-10:]:
+            iNonAvailability = copy.deepcopy(onCampusNonAvailability)
+            continue
     
     # tweak iNonAvailability slots
     if i in teachersNotAvailalbeSlots:

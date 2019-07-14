@@ -208,7 +208,7 @@ def assignRooms(level = '1'):
 assignRooms(level = '1')
 
 # then assign higher level coureses to any rooms
-assignRooms(level = '23456789')
+assignRooms(level = '023456789')
 
 ##----------------------
 print('\n....')
@@ -243,7 +243,7 @@ for ci in roomNotAssigned:
             if roomAssigned:
                 break
         if  not roomAssigned:
-            print(ci,dayi, 'rooms not found')
+            print(ci,dayi, dayiSlots,'rooms not found')
             courses[ci]['lecSections']['LEC1']['room'] = 'TBA'
 
 

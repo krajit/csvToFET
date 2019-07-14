@@ -35,9 +35,32 @@ for i in range(1,sheet.nrows):
                 studentGroups[yeari].add(s[0:5])
             else:
                 studentGroups[yeari].add(s[0:5])
-        
-
+                
+                
+# create students subgroups for adding students in UWE courses
+studentSubGroups = dict()
+for i in range(1,sheet.nrows):
+    g = sheet.cell_value(i,2)
+    
+    if sheet.cell_type(i,3) == xlrd.XL_CELL_EMPTY:
+        sg = g
+        studentSubGroups[g] = sg
+        continue
+    
+    subg = sheet.cell_value(i,3).split(',')
+    sg = ''
+    for s in subg:
+        sg = sg+s[0:5]+','
+    sg = sg[0:-1]
+    studentSubGroups[g] = sg
+    
 import pickle
+with open('studentSubGroups.pickle', 'wb') as f:
+    pickle.dump(studentSubGroups, f)
+
+      
+#-----------------------------------------------------------------
+
 with open('studentGroups.pickle', 'wb') as f:
     pickle.dump(studentGroups, f)
 

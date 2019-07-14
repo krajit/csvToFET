@@ -131,18 +131,18 @@ for i in range(1,sheet.nrows):
 
     studentIdUWEs = []
     # uncomment to add UWEs
-#    for j in range(3):
-#        if (sheet.cell_type(i,uwe1col+j) != xlrd.XL_CELL_EMPTY):
-#            cellVal = sheet.cell_value(i,uwe1col+j)
-#            if 'None' not in cellVal:
-#                if (cellVal[0:3] in majorPool[sMajor]):
-#                    studentWhoSelectedUWEsFromTheirDept.add(studentEmail)
-#                else:
-#                    if 'Not a UWE' in cellVal:
-#                        studentWhoSelectedNonUWEasUWE.add(studentEmail)
-#                    else:
-#                        studentIdUWEs.append(cellVal[0:6])
-#                          
+    for j in range(3):
+        if (sheet.cell_type(i,uwe1col+j) != xlrd.XL_CELL_EMPTY):
+            cellVal = sheet.cell_value(i,uwe1col+j)
+            if 'None' not in cellVal:
+                if (cellVal[0:3] in majorPool[sMajor]):
+                    studentWhoSelectedUWEsFromTheirDept.add(studentEmail)
+                else:
+                    if 'Not a UWE' in cellVal:
+                        studentWhoSelectedNonUWEasUWE.add(studentEmail)
+                    else:
+                        studentIdUWEs.append(cellVal[0:6])
+                          
                         
     students[studentId]['UWEpreferences'] = studentIdUWEs
                     
