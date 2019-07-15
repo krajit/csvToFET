@@ -1,34 +1,3 @@
-
-- Seminar slots
-
-
-- check day duration for all students
-
-
-- fix overlapping courses in major electives
-
-- Add a lecture capacity column, so that two lecture sections need not be same size. 
-
-
-
-- Check the possibility adding extra course after a timetable is generated.
-
-
-DONE:
-- - fix rooms allottments with updated list from zia
-    - first year classes in biometric classes only
-
-
-- fix first year groupings - Manual entry in tut and practicals
-
-- First years to be removed from general CCC
-    - They do one EVS 
-    - and one another 
-
-- CCC704 (added) has to be scheduled for CSD1Yr, ECE1Yr, EEE1Yr and MED1Yr.  It is a 3:0:0 course.
-    - Put in the same CCC slot
-
-
-- large classes in the first half
-
-- teachers no gaps in one day
+- Seminar for maths
+- Seminar for phy
+- check for lunch scope for all

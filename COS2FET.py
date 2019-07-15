@@ -326,12 +326,11 @@ for sg in studentGroups:
         lunchInFourDaysXML = lunchInFourDaysXML + '<ConstraintMinDaysBetweenActivities>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Weight_Percentage>100</Weight_Percentage>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>\n'
-        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Number_of_Activities>5</Number_of_Activities>\n'
+        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Number_of_Activities>4</Number_of_Activities>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId)+'</Activity_Id>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+1)+'</Activity_Id>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+2)+'</Activity_Id>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+3)+'</Activity_Id>\n'
-        lunchInFourDaysXML = lunchInFourDaysXML + '\t<Activity_Id>'+str(lunchId+4)+'</Activity_Id>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<MinDays>1</MinDays>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Active>true</Active>\n'
         lunchInFourDaysXML = lunchInFourDaysXML + '\t<Comments></Comments>\n'
@@ -346,9 +345,9 @@ for sg in studentGroups:
         lXML = lXML + '\t<Activity_Tag></Activity_Tag>\n'
         lXML = lXML + '\t<Students>'+s+'</Students>\n'
         lXML = lXML + '\t<Duration>2</Duration>\n'
-        lXML = lXML + '\t<Total_Duration>10</Total_Duration>\n'
+        lXML = lXML + '\t<Total_Duration>8</Total_Duration>\n'
         
-        for i in range(5): # four activity for lunch on M, T, W, Fri. The lunch on Thursday is automatically in break hours
+        for i in range(4): # four activity for lunch on M, T, W, Fri. The lunch on Thursday is automatically in break hours
             if (i == 0):
                 lunchGroupId = lunchId
             lXMLi = lXML # each lunch period is a new actvity
@@ -544,47 +543,59 @@ tag = '<Time_Constraints_List>\n\
     <Comments></Comments>\n\
 </ConstraintBasicCompulsoryTime>\n'
 
+## add Th 12-2 break time
+#tag = tag + '<ConstraintBreakTimes> \n\
+#	<Weight_Percentage>100</Weight_Percentage> \n \
+#	<Number_of_Break_Times>4</Number_of_Break_Times> \n \
+#	<Break_Time> \n \
+#		<Day>Th</Day> \n \
+#		<Hour>12:00</Hour> \n \
+#	</Break_Time> \n \
+#	<Break_Time> \n \
+#		<Day>Th</Day> \n \
+#		<Hour>12:30</Hour> \n \
+#	</Break_Time> \n \
+#	<Break_Time> \n \
+#		<Day>Th</Day> \n \
+#		<Hour>13:00</Hour> \n \
+#	</Break_Time> \n \
+#    	<Break_Time> \n \
+#		<Day>Th</Day> \n \
+#		<Hour>13:30</Hour> \n \
+#	</Break_Time> \n \
+#	<Active>true</Active> \n \
+#	<Comments></Comments> \n \
+#</ConstraintBreakTimes>\n'
+
 # add Th 12-2 break time
 tag = tag + '<ConstraintBreakTimes> \n\
 	<Weight_Percentage>100</Weight_Percentage> \n \
-	<Number_of_Break_Times>8</Number_of_Break_Times> \n \
+	<Number_of_Break_Times>4</Number_of_Break_Times> \n \
 	<Break_Time> \n \
 		<Day>Th</Day> \n \
-		<Hour>15:00</Hour> \n \
-	</Break_Time> \n \
-	<Break_Time> \n \
-		<Day>Th</Day> \n \
-		<Hour>15:30</Hour> \n \
+		<Hour>12:00</Hour> \n \
 	</Break_Time> \n \
 	<Break_Time> \n \
 		<Day>Th</Day> \n \
-		<Hour>16:00</Hour> \n \
+		<Hour>12:30</Hour> \n \
 	</Break_Time> \n \
 	<Break_Time> \n \
 		<Day>Th</Day> \n \
-		<Hour>16:30</Hour> \n \
+		<Hour>13:00</Hour> \n \
 	</Break_Time> \n \
-    <Break_Time> \n \
-		<Day>T</Day> \n \
-		<Hour>15:00</Hour> \n \
-	</Break_Time> \n \
-    <Break_Time> \n \
-		<Day>T</Day> \n \
-		<Hour>15:30</Hour> \n \
-	</Break_Time> \n \
-	<Break_Time> \n \
-		<Day>T</Day> \n \
-		<Hour>16:00</Hour> \n \
-	</Break_Time> \n \
-	<Break_Time> \n \
-		<Day>T</Day> \n \
-		<Hour>16:30</Hour> \n \
+    	<Break_Time> \n \
+		<Day>Th</Day> \n \
+		<Hour>13:30</Hour> \n \
 	</Break_Time> \n \
 	<Active>true</Active> \n \
 	<Comments></Comments> \n \
 </ConstraintBreakTimes>\n'
 
-from lunch5daysXML import lunchConsTag
+
+
+#from lunch5daysXML import lunchConsTag
+from lunchXML import lunchConsTag
+
 tag = tag + lunchConsTag
 
 # adding constraint of same lectures on diff days to be on same time
@@ -625,14 +636,11 @@ tag = tag+ov.x
 
 
 tag = tag +ov.coursesOverlappingXML
-zeroGapCons = '<ConstraintTeachersMaxGapsPerDay>\n \
-	<Weight_Percentage>100</Weight_Percentage>\n\
-	<Max_Gaps>0</Max_Gaps>\n\
-	<Active>true</Active>\n\
-	<Comments></Comments>\n \
-</ConstraintTeachersMaxGapsPerDay>\n'
 
-tag = tag + zeroGapCons
+from minimalGapsForTeachers import globalMinGapXML
+
+
+tag = tag + globalMinGapXML
 
 # Ajit: Jul 10, students set not availability is ignored. Completely determined by faculty availability
 #import studentsNotAvailableSlots as sna
@@ -643,8 +651,8 @@ import teachersNonAvailability as tna
 tag = tag+tna.x
 
 # large lectures early constrints
-import lecturesPrefferedinEarlyslots as lecEarlyCons
-tag = tag + lecEarlyCons.LEC1early
+#import lecturesPrefferedinEarlyslots as lecEarlyCons
+#tag = tag + lecEarlyCons.LEC1early
 
 
 # teachers max hours continuously constraint
@@ -654,6 +662,12 @@ tag = tag + tMaxContinuous.consList
 # teachers max number of working day constraint
 import teachersMaxWorkingDay as teacherMaxDay
 tag = tag + teacherMaxDay.teacherMaxDayConsXML
+
+
+# courses with preferred slots 
+# USE IN RARE CASE
+from coursesPreferredSlots import prefSlotXml
+tag = tag + prefSlotXml
 
 
 # end of time constraint

@@ -205,10 +205,10 @@ def assignRooms(level = '1'):
                 courses[ci]['labSections'][li]['timings'] = lecTimes
                 
 # assign rooms to  first year coures first to biometric rooms
-assignRooms(level = '1')
+assignRooms(level = '01')
 
 # then assign higher level coureses to any rooms
-assignRooms(level = '023456789')
+assignRooms(level = '23456789')
 
 ##----------------------
 print('\n....')

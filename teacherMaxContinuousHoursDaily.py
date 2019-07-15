@@ -9,6 +9,9 @@ Created on Fri Jul 12 00:24:16 2019
 #----------------------------------------------------------------------
 insList = {
         'ENG240AND342Instructor':{'weight':100, 'numHours':5},
+        'J  Venkatramani[20500736]':{'weight':100, 'numHours':8},
+        'Sathi Rajesh Reddy[20500731]':{'weight':100, 'numHours':8},
+        'Shalini  Rankavat[20501010]':{'weight':100, 'numHours':8},
         }
 #----------------------------------------------------------------------
 
