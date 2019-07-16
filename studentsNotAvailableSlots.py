@@ -10,69 +10,38 @@ import pickle
 studentGroupsPickle = open('studentGroups.pickle','rb')
 studentGroups = pickle.load(studentGroupsPickle) 
 
-studentsNotAvailableAfter5Template = "<ConstraintStudentsSetNotAvailableTimes>\n\
+studentsFreeSlotTemplate = "<ConstraintStudentsSetNotAvailableTimes>\n\
 	<Weight_Percentage>100</Weight_Percentage>\n\
 	<Students>GROUPNAME</Students>\n\
-	<Number_of_Not_Available_Times>10</Number_of_Not_Available_Times>\n\
-	<Not_Available_Time>\n\
-		<Day>M</Day>\n\
-		<Hour>17:00</Hour>\n\
-	</Not_Available_Time>\n\
-	<Not_Available_Time>\n\
-		<Day>M</Day>\n\
-		<Hour>17:30</Hour>\n\
-	</Not_Available_Time>\n\
-	<Not_Available_Time>\n\
-		<Day>T</Day>\n\
-		<Hour>17:00</Hour>\n\
-	</Not_Available_Time>\n\
-	<Not_Available_Time>\n\
-		<Day>T</Day>\n\
-		<Hour>17:30</Hour>\n\
-	</Not_Available_Time>\n\
-	<Not_Available_Time>\n\
-		<Day>W</Day>\n\
-		<Hour>17:00</Hour>\n\
-	</Not_Available_Time>\n\
-	<Not_Available_Time>\n\
-		<Day>W</Day>\n\
-		<Hour>17:30</Hour>\n\
-	</Not_Available_Time>\n\
-	<Not_Available_Time>\n\
-		<Day>Th</Day>\n\
-		<Hour>17:00</Hour>\n\
-	</Not_Available_Time>\n\
-	<Not_Available_Time>\n\
-		<Day>Th</Day>\n\
-		<Hour>17:30</Hour>\n\
-	</Not_Available_Time>\n\
-	<Not_Available_Time>\n\
-		<Day>F</Day>\n\
-		<Hour>17:00</Hour>\n\
-	</Not_Available_Time>\n\
-	<Not_Available_Time>\n\
-		<Day>F</Day>\n\
-		<Hour>17:30</Hour>\n\
-	</Not_Available_Time>\n\
+	<Number_of_Not_Available_Times>NUMSLOTS</Number_of_Not_Available_Times>\n\
+	BREAKSLOTS\
 	<Active>true</Active>\n\
 	<Comments></Comments>\n\
 </ConstraintStudentsSetNotAvailableTimes>\n" 
 
-# only BIO1 needs to go beyond 5 pm
-studentsNotAvailalbeAfter5XML = ''
-for y in ['year2', 'year3', 'year4']:
-    xi = studentsNotAvailableAfter5Template
-    xi = xi.replace('GROUPNAME',y)
-    studentsNotAvailalbeAfter5XML = studentsNotAvailalbeAfter5XML + xi
-    
-for y in studentGroups['year1']:
-    if y != 'BIO1':
-        xi = studentsNotAvailableAfter5Template
-        xi = xi.replace('GROUPNAME',y)
-        studentsNotAvailalbeAfter5XML = studentsNotAvailalbeAfter5XML + xi
-    
-    
+studentsFreeSlot = {
+        'PHY4' :{'day': 'T', 'hours': {'15:00','15:30','16:00'}}
+        }
 
+
+studentsFreeTimeXML = ''
+
+for si in studentsFreeSlot:
+    siXML = studentsFreeSlotTemplate
+    siXML = siXML.replace('GROUPNAME',si)
+    siXML = siXML.replace('NUMSLOTS',str(len(studentsFreeSlot[si]['hours'])))
+    day = studentsFreeSlot[si]['day']
+    hours = studentsFreeSlot[si]['hours']    
+    siBreakTime = ''
+    for h in hours:
+        siBreakTime = siBreakTime +'<Not_Available_Time>\n\
+		<Day>'+day+'</Day>\n\
+		<Hour>'+h+'</Hour>\n\
+	</Not_Available_Time>\n'    
+    siXML = siXML.replace('BREAKSLOTS',siBreakTime)
+    
+    studentsFreeTimeXML = studentsFreeTimeXML + siXML
+    
     
     
 

@@ -23687,6 +23687,25 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeacherMaxGapsPerDay>
+<ConstraintStudentsSetNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>PHY4</Students>
+	<Number_of_Not_Available_Times>3</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>T</Day>
+		<Hour>15:00</Hour>
+	</Not_Available_Time>
+<Not_Available_Time>
+		<Day>T</Day>
+		<Hour>15:30</Hour>
+	</Not_Available_Time>
+<Not_Available_Time>
+		<Day>T</Day>
+		<Hour>16:00</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>LunchEEE3</Teacher>

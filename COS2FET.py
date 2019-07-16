@@ -643,8 +643,8 @@ from minimalGapsForTeachers import globalMinGapXML
 tag = tag + globalMinGapXML
 
 # Ajit: Jul 10, students set not availability is ignored. Completely determined by faculty availability
-#import studentsNotAvailableSlots as sna
-#tag = tag+ sna.studentsNotAvailalbeAfter5XML
+import studentsNotAvailableSlots as sna
+tag = tag+ sna.studentsFreeTimeXML
 
 #import teachersNotAvailableSlots as tna
 import teachersNonAvailabilityAndSeminars as tna
