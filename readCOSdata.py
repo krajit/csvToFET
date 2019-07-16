@@ -17,6 +17,7 @@ wb = xlrd.open_workbook(COSfilePath)
 sheet = wb.sheet_by_index(0) # get first sheet
 
 # column heading numbers
+deptCol = 1
 CourseCode	=	54
 CourseTitle	=	3
 CourseType	=	5
@@ -40,15 +41,24 @@ UWETutCol = 61
 UWEPracCol = 62
 
 courseList = dict()
+deptListOfInstructors = dict()
 
 for i in range(2,sheet.nrows):    
     cCode = sheet.cell_value(i,CourseCode)
+    
+    if (sheet.cell_type(i,deptCol) != xlrd.XL_CELL_EMPTY):
+        dept = sheet.cell_value(i,deptCol)
+    
+    if dept not in deptListOfInstructors:
+        deptListOfInstructors[dept] = set()
+        
     
     if cCode not in courseList:
         courseList[cCode] = dict()
         courseList[cCode]['Title'] = sheet.cell_value(i,CourseTitle)
         courseList[cCode]['CourseType'] = sheet.cell_value(i,CourseType)
         courseList[cCode]['CourseCapacity'] = int(sheet.cell_value(i,CourseCapacity))
+        courseList[cCode]['department'] = dept
        
         if (sheet.cell_type(i,LectureDuration) != xlrd.XL_CELL_EMPTY):
             courseList[cCode]['LectureDuration'] = int(2*float(sheet.cell_value(i,LectureDuration)))
@@ -79,6 +89,7 @@ for i in range(2,sheet.nrows):
         courseList[cCode]['lecSections'][seci] = dict()
         
         courseList[cCode]['lecSections'][seci]['instructors'] = sheet.cell_value(i,LectureInstructors).split(',\n')[:-1]
+        deptListOfInstructors[dept] = deptListOfInstructors[dept].union(courseList[cCode]['lecSections'][seci]['instructors'])
         courseList[cCode]['lecSections'][seci]['potentialStudents'] = set()
         if (sheet.cell_type(i,lecStudentsColumn) != xlrd.XL_CELL_EMPTY):        
             courseList[cCode]['lecSections'][seci]['potentialStudents'] = set(sheet.cell_value(i,lecStudentsColumn).split(','))
@@ -112,6 +123,8 @@ for i in range(2,sheet.nrows):
         seci = sheet.cell_value(i,TutorialSections)
         courseList[cCode]['tutSections'][seci] = dict()
         courseList[cCode]['tutSections'][seci]['instructors'] = sheet.cell_value(i,TutorialInstructors).split(',\n')[:-1]
+        deptListOfInstructors[dept] = deptListOfInstructors[dept].union(courseList[cCode]['tutSections'][seci]['instructors'])
+
         courseList[cCode]['tutSections'][seci]['potentialStudents'] = set()
         if (sheet.cell_type(i,tutStudentsColumn) != xlrd.XL_CELL_EMPTY):        
             courseList[cCode]['tutSections'][seci]['potentialStudents'] = set(sheet.cell_value(i,tutStudentsColumn).split(','))
@@ -136,6 +149,7 @@ for i in range(2,sheet.nrows):
         seci = sheet.cell_value(i,PracticalSections)
         courseList[cCode]['labSections'][seci] = dict()
         courseList[cCode]['labSections'][seci]['instructors'] = sheet.cell_value(i,PracticalInstructors).split(',\n')[:-1]
+        deptListOfInstructors[dept] = deptListOfInstructors[dept].union(courseList[cCode]['labSections'][seci]['instructors'])
         courseList[cCode]['labSections'][seci]['potentialStudents'] = set()
         if (sheet.cell_type(i,labStudentsColumn) != xlrd.XL_CELL_EMPTY):        
             courseList[cCode]['labSections'][seci]['potentialStudents'] = set(sheet.cell_value(i,labStudentsColumn).split(','))
@@ -153,3 +167,7 @@ for i in range(2,sheet.nrows):
                 ss = studentSet.union(set(studentSubGroups[s].split(',')))
                 courseList[cCode]['labSections'][seci]['students'] = courseList[cCode]['labSections'][seci]['students'].union(ss)
 
+
+# dump deptwise list of faculty
+with open('deptListOfInstructors.pickle', 'wb') as f:
+    pickle.dump(deptListOfInstructors, f)

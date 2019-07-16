@@ -26,17 +26,17 @@ for i in range(1,sheet.nrows):
 
         
 teachersNotAvailalbeSlots = {
-        'Divya  Shrivastava[20500160]':['08:00','08:30','09:00','09:30','17:00','17:30',],
-        'Ajit  Kumar[20500008]':['08:00','08:30','09:00','09:30','17:00','17:30'],
-        'Ranendra Narayan Biswas[20500321]': ['13:00','13:30'],
-        'Rohit  Singh[20501073]': ['13:00','13:30'],
-        'Upendra Kumar Pandey[20501071]': ['13:00','13:30'],
-        'Sonal  Singhal[20500080]': ['08:00','08:30','13:00','13:30','17:00','17:30'],
-        'Sumit Tiwari': ['13:00','13:30'],
-        'harpreet  Singh Grewal[20500440]':['08:00','08:30','09:00','09:30','17:00','17:30'],
-        'Rajeev Kumar Singh[20500026]':['08:00','08:30','13:00','13:30','17:00','17:30'],
-        'Gyan  Vikash[20500145]':['08:00','08:30','09:00','09:30','17:00','17:30'],
-        'Sri Krishna Jayadev Magani[20500054]': ['08:00','08:30','09:00','09:30','17:00','17:30'],
+        'Divya  Shrivastava[20500160]':{'09:00','09:30'},
+        'Ajit  Kumar[20500008]':{'09:00','09:30'},
+        'Ranendra Narayan Biswas[20500321]': {'13:00','13:30'},
+        'Rohit  Singh[20501073]': {'13:00','13:30'},
+        'Upendra Kumar Pandey[20501071]': {'13:00','13:30'},
+        'Sonal  Singhal[20500080]': {'13:00','13:30'},
+        'Sumit Tiwari': {'13:00','13:30'},
+        'harpreet  Singh Grewal[20500440]':{'08:00','09:00','09:00','09:30'},
+        'Rajeev Kumar Singh[20500026]':{'13:00','13:30'},
+        'Gyan  Vikash[20500145]':{'09:00','09:30'},
+        'Sri Krishna Jayadev Magani[20500054]': {'09:00','09:30'},
         }
 
 teachersNotAvailalbeDays = {
@@ -44,11 +44,11 @@ teachersNotAvailalbeDays = {
         'Jai Prakash Gupta[20500662]' : ['M'],
         }
 
-genNonAvailability = {'M':['08:00', '08:30', '17:00', '17:30'],
-                      'T':['08:00', '08:30', '17:00', '17:30'],
-                      'W':['08:00', '08:30', '17:00', '17:30'],
-                      'Th':['08:00', '08:30', '17:00', '17:30'],
-                      'F':['08:00', '08:30', '17:00', '17:30']}
+genNonAvailability = {'M':{'08:00', '08:30', '17:00', '17:30'},
+                      'T':{'08:00', '08:30', '17:00', '17:30'},
+                      'W':{'08:00', '08:30', '17:00', '17:30'},
+                      'Th':{'08:00', '08:30', '17:00', '17:30'},
+                      'F':{'08:00', '08:30', '17:00', '17:30'}}
 
 #onCampusNonAvailability = {'M':{'08:00', '08:30'},
 #                      'T':{'08:00', '08:30' },
@@ -56,11 +56,11 @@ genNonAvailability = {'M':['08:00', '08:30', '17:00', '17:30'],
 #                      'Th':{'08:00', '08:30'},
 #                      'F':{'08:00', '08:30'}}
         
-onCampusNonAvailability = {'M':{},
-                      'T':{ },
-                      'W':{},
-                      'Th':{},
-                      'F':{}}
+onCampusNonAvailability = {'M':set(),
+                      'T':set(),
+                      'W':set(),
+                      'Th':set(),
+                      'F':set()}
 
 
 # dept seminar slots
@@ -68,28 +68,51 @@ deptNonAvailability = {
         'School of Natural Sciences - Physics' : {'T':{'15:00','15:30','16:00'}}
         }
 
+deptListOfInstructorsPickle = open('deptListOfInstructors.pickle','rb')
+deptListOfInstructors = pickle.load(deptListOfInstructorsPickle)
 
 
 import copy
 x = ''
 for i in instructorSet:
-        
-    iNonAvailability = copy.deepcopy(genNonAvailability)
     
+    #check if person live on compus
+    iLiveOnCampus = False
     for j in instructorsOnCampus:
         if j[-10:] == i[-10:]:
-            iNonAvailability = copy.deepcopy(onCampusNonAvailability)
+            iLiveOnCampus = True
             continue
+        
+    if iLiveOnCampus:
+        iNonAvailability = copy.deepcopy(onCampusNonAvailability)
+    else:
+        iNonAvailability = copy.deepcopy(genNonAvailability)
+        
     
     # tweak iNonAvailability slots
     if i in teachersNotAvailalbeSlots:
         for d in ['M','T','W','Th','F']:
-            iNonAvailability[d] = teachersNotAvailalbeSlots[i]
+            iNonAvailability[d] = iNonAvailability[d].union(teachersNotAvailalbeSlots[i])
+
             
     # add whole slots on non availalbe days
     if i in teachersNotAvailalbeDays:
         for d in teachersNotAvailalbeDays[i]:
-            iNonAvailability[d] = slots
+            iNonAvailability[d] = set(slots)
+            
+    # check if i belong to any dept who wants a seminar slot
+    department = ''
+    for dept in deptListOfInstructors:
+        if i in deptListOfInstructors[dept]:
+            department = dept
+    
+    # expand non availability slots for the entire dept
+    if department in deptNonAvailability:
+        extraFreeSlot = deptNonAvailability[department]
+        for d in extraFreeSlot:
+            iNonAvailability[d] = iNonAvailability[d].union(extraFreeSlot[d])
+    
+   
             
     numSlots = 0
     slotsXML = ''

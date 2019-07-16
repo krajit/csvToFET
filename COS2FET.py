@@ -647,7 +647,7 @@ tag = tag + globalMinGapXML
 #tag = tag+ sna.studentsNotAvailalbeAfter5XML
 
 #import teachersNotAvailableSlots as tna
-import teachersNonAvailability as tna
+import teachersNonAvailabilityAndSeminars as tna
 tag = tag+tna.x
 
 # large lectures early constrints
