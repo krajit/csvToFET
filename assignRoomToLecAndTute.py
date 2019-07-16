@@ -11,8 +11,21 @@ import pickle
 coursesPickle = open('courses.pickle','rb')
 courses = pickle.load(coursesPickle) 
 
+# deflate instructor from CCC515
+courses['CCC515']['lecSections']['LEC1']['instructors'] = courses['CCC515']['lecSections']['LEC1']['instructors'][0:1]
+
+# copy CCC515 ids to all other CCC
+for c in courses['CCC515']['overlapsWith']:
+    courses[c]['lecSections']['LEC1']['ids'] = courses['CCC515']['lecSections']['LEC1']['ids']
+    
+
+
+
 slotsPickle = open('slots.pickle','rb')
 slots = pickle.load(slotsPickle)
+
+
+
 
 
 ##----------------------------------------
@@ -95,7 +108,7 @@ def assignRooms(level = '1'):
     for ci in courses:
         c = courses[ci]
         biometricRoomNeeded = False
-        if ci[3] == '1':
+        if (ci[3] == '1' or ci[3] == '0'):
             biometricRoomNeeded = True
             
         if ci[3] not in level:
@@ -316,6 +329,7 @@ def sortedDays(times, cCode):
     for d in days:
         if (times[d] != times[days[0]]):
             print(cCode, 'error', times)
+            return(str(x))
         D = D+d
     
     x = D+' '+hh

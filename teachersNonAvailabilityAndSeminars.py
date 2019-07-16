@@ -14,6 +14,7 @@ instructorSet = pickle.load(instructorSetPickle)
 slotsPickle = open('slots.pickle','rb')
 slots = pickle.load(slotsPickle)
 
+
 days = ['M','T','W','Th','F']
 
 import xlrd
@@ -34,9 +35,9 @@ teachersNotAvailalbeSlots = {
         'Sonal  Singhal[20500080]': {'13:00','13:30'},
         'Sumit Tiwari': {'13:00','13:30'},
         'harpreet  Singh Grewal[20500440]':{'08:00','09:00','09:00','09:30'},
-        'Rajeev Kumar Singh[20500026]':{'13:00','13:30'},
         'Gyan  Vikash[20500145]':{'09:00','09:30'},
         'Sri Krishna Jayadev Magani[20500054]': {'09:00','09:30'},
+        'Sandeep Sen': set(slots[12:])
         }
 
 teachersNotAvailalbeDays = {
@@ -111,8 +112,6 @@ for i in instructorSet:
         extraFreeSlot = deptNonAvailability[department]
         for d in extraFreeSlot:
             iNonAvailability[d] = iNonAvailability[d].union(extraFreeSlot[d])
-    
-   
             
     numSlots = 0
     slotsXML = ''

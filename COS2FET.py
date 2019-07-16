@@ -141,7 +141,21 @@ courseList['CCC515']['lecSections']['LEC1']['students'].add('year2')
 courseList['CCC515']['lecSections']['LEC1']['students'].add('year3')  
 courseList['CCC515']['lecSections']['LEC1']['students'].add('year4')  
 
-               
+## add other CCC instructors in CCC515
+## don't generate timetable for other CCC
+
+courseList['CCC515']['overlapsWith'] = dict()
+for ci in courseList:
+    c = courseList[ci]
+    
+    if 'CCC' not in ci:
+        continue
+    
+    if ci != 'CCC515':
+        courseList['CCC515']['overlapsWith'][ci] = c['lecSections']['LEC1']['instructors']
+        courseList['CCC515']['lecSections']['LEC1']['instructors'] = courseList['CCC515']['lecSections']['LEC1']['instructors'] + c['lecSections']['LEC1']['instructors']
+    
+                  
 ## map courses to activities
 tutDurationSet = set()
 activityTagSet= set()
@@ -174,6 +188,13 @@ activityListXML = '<Activities_List>\n'
 activityId = 0
 activityGroupId = 0
 for cIndex, c in courseList.items():
+    
+    #among CCC only map CCC515
+    if ('CCC' in cIndex) and (cIndex != 'CCC515'):
+        print(cIndex)
+        continue
+    
+    
     if 'lecSections' in c:
         for lIndex, l in c['lecSections'].items():
             activityXML = '<Activity>\n'
@@ -291,6 +312,8 @@ for cIndex, c in courseList.items():
                 print(cIndex + " abnormally high practical hours. Skipping")
                 continue
             splitDuration = totalDuration # no splitting of lab hours
+            if cIndex == 'CHD319': # split lab
+                splitDuration = '4+4'                
             activityXML = activityXML + '\t<Duration>'+splitDuration[0]+'</Duration>\n'
             activityXML = activityXML + '\t<Total_Duration>'+totalDuration+'</Total_Duration>\n'
             # add an acitivtyID for each contact session
@@ -631,8 +654,9 @@ for cIndex, c in courseList.items():
 tag = tag+ lunchInFourDaysXML
 
 # add CCC overlapping constratint
-import overlappingCCCstring as ov
-tag = tag+ov.x
+import CCCsameSlot as ov
+#import overlappingCCCstring as ov
+#tag = tag+ov.x
 
 
 tag = tag +ov.coursesOverlappingXML
