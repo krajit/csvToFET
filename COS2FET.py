@@ -191,7 +191,6 @@ for cIndex, c in courseList.items():
     
     #among CCC only map CCC515
     if ('CCC' in cIndex) and (cIndex != 'CCC515'):
-        print(cIndex)
         continue
     
     
@@ -408,7 +407,7 @@ with open('instructorSet.pickle', 'wb') as f:
 
 
 subjectListXML = '<Subjects_List>\n'
-for cIndex in courseList:
+for cIndex in sorted(courseList):
     subjectListXML = subjectListXML + '<Subject>\n'
     subjectListXML = subjectListXML + '\t<Name>'+cIndex+'</Name>\n'
     subjectListXML = subjectListXML + '\t<Comments></Comments>\n'
@@ -657,13 +656,9 @@ tag = tag+ lunchInFourDaysXML
 import CCCsameSlot as ov
 #import overlappingCCCstring as ov
 #tag = tag+ov.x
-
-
 tag = tag +ov.coursesOverlappingXML
 
 from minimalGapsForTeachers import globalMinGapXML
-
-
 tag = tag + globalMinGapXML
 
 # Ajit: Jul 10, students set not availability is ignored. Completely determined by faculty availability
@@ -707,7 +702,7 @@ formattedData = re.sub(
 
 
 teachersXML = '<Teachers_List>\n'
-for i in instructorSet:
+for i in sorted(instructorSet):
     teachersXML = teachersXML + '<Teacher>\n'
     teachersXML = teachersXML + '\t<Name>'+i+'</Name>\n'
     teachersXML = teachersXML + '\t<Target_Number_of_Hours>0</Target_Number_of_Hours>\n'
@@ -725,7 +720,7 @@ formattedData = re.sub(
 # write activity tags in fet
 activityTagListXML = '<Activity_Tags_List>\n'
 
-for a in activityTagSet:
+for a in sorted(activityTagSet):
     activityTagListXML = activityTagListXML + '<Activity_Tag>\n'
     activityTagListXML = activityTagListXML + '\t<Name>'+a+'</Name>\n'
     activityTagListXML = activityTagListXML + '\t<Printable>true</Printable>\n'

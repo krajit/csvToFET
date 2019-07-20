@@ -37,7 +37,10 @@ teachersNotAvailalbeSlots = {
         'harpreet  Singh Grewal[20500440]':{'08:00','09:00','09:00','09:30'},
         'Gyan  Vikash[20500145]':{'09:00','09:30'},
         'Sri Krishna Jayadev Magani[20500054]': {'09:00','09:30'},
-        'Sandeep Sen': set(slots[12:])
+        'Sandeep Sen': set(slots[12:]),
+        'Pooja  Malik[20500448]':{'13:00','13:30'},
+        'Amber  Habib[20500009]':{'13:00','13:30'},
+        'Lal Mohan Saha[20500014]':{'13:00','13:30'},
         }
 
 teachersNotAvailalbeDays = {
@@ -66,7 +69,8 @@ onCampusNonAvailability = {'M':set(),
 
 # dept seminar slots
 deptNonAvailability = {
-        'School of Natural Sciences - Physics' : {'T':{'15:00','15:30','16:00'}}
+        'School of Natural Sciences - Physics' : {'T':{'15:00','15:30','16:00'}},
+        'School of Natural Sciences - Mathematics': {'T':{'15:30','16:00','16:30'}}
         }
 
 deptListOfInstructorsPickle = open('deptListOfInstructors.pickle','rb')

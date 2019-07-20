@@ -31,7 +31,7 @@ slots = pickle.load(slotsPickle)
 ##----------------------------------------
 #read exported csv format of the latest timetable
 import csv
-with open('csv/snu-timetable/snu-timetable_timetable.csv', 'r') as ff:
+with open('csv/snu-timetable_mechanical/snu-timetable_mechanical_timetable.csv', 'r') as ff:
   reader = csv.reader(ff)
   activities = list(reader)
  
@@ -120,6 +120,11 @@ def assignRooms(level = '1'):
                 l = c['lecSections'][li]
                 lecIds = l['ids']
                 for i in lecIds:
+                    
+                    if str(i) not in activitiesTime:
+                        print('looks like', ci, 'has been removed from the FET data')
+                        continue
+                    
                     x = activitiesTime[str(i)]
                     for t in x:
                         lecTimes[t] = x[t]
@@ -286,7 +291,7 @@ def cleanInstructor(ins):
 # record popular choices
 # import xlsxwriter module 
 import xlsxwriter 
-workbook = xlsxwriter.Workbook('timeTable-SNU-Fall2019.xlsx') 
+workbook = xlsxwriter.Workbook('new-timeTable-SNU-Fall2019.xlsx') 
 worksheet = workbook.add_worksheet()
 
 row = 0

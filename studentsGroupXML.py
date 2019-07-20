@@ -72,7 +72,7 @@ for si in studentGroups:
     studentsListXML = studentsListXML + '\t<Number_of_Students>'+str(len(studentGroups[si]))+'</Number_of_Students>\n'
     studentsListXML = studentsListXML + '\t<Comments></Comments>\n' 
     
-    for gr in studentGroups[si]:
+    for gr in sorted(studentGroups[si]):
         studentsListXML = studentsListXML + '\t<Group>\n'
         studentsListXML = studentsListXML + '\t\t<Name>'+gr+'</Name>\n'
         studentsListXML = studentsListXML + '\t\t<Number_of_Students>1</Number_of_Students>\n'

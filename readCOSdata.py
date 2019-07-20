@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -21,6 +22,7 @@ deptCol = 1
 CourseCode	=	54
 CourseTitle	=	3
 CourseType	=	5
+OpenAsUWE = 6
 CourseCapacity	=	18
 LectureHoursPerWeek	=	19
 TutorialHoursPerWeek	=	20
@@ -59,6 +61,7 @@ for i in range(2,sheet.nrows):
         courseList[cCode]['CourseType'] = sheet.cell_value(i,CourseType)
         courseList[cCode]['CourseCapacity'] = int(sheet.cell_value(i,CourseCapacity))
         courseList[cCode]['department'] = dept
+        courseList[cCode]['openAsUWE'] = sheet.cell_value(i,OpenAsUWE)
        
         if (sheet.cell_type(i,LectureDuration) != xlrd.XL_CELL_EMPTY):
             courseList[cCode]['LectureDuration'] = int(2*float(sheet.cell_value(i,LectureDuration)))

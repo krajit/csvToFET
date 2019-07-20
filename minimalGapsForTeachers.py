@@ -23,7 +23,7 @@ globalMinGapXML = ''
 generalGap = 1
 
 specialInstructorsGaps = {
-        'Sudeepto  Bhattacharya[20500090]' : 10,        
+        'Sudeepto  Bhattacharya[20500090]' : 10,      
         }
 
 for i in instructorSet:
