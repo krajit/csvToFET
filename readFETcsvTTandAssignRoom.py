@@ -102,7 +102,7 @@ for c in courses['CCC515']['overlapsWith']:
     newCoursDict[c]['lecSections']['LEC1']['timings'] =  newCoursDict['CCC515']['lecSections']['LEC1']['timings']
     
    
-    
+coursesBackUp = courses
     
 courses = newCoursDict
 
@@ -271,6 +271,9 @@ assignRooms(level = '01')
 # then assign higher level coureses to any rooms
 assignRooms(level = '23456789')
 
+#
+courses['ECO101']['lecCapacity'] = 90
+
 print('\n....')
 print('Some rooms have not been assigned rooms. For these course, different days are getting mapped to different rooms...')
 for ci in roomNotAssigned:
@@ -377,6 +380,8 @@ timeCol = 2
 instructorCol = 3
 studentCol = 4
 roomCol = 5
+capacityCol = 6
+uweCol = 7
 
 # header row
 worksheet.write(row, codeCol, 'cCode')
@@ -385,6 +390,10 @@ worksheet.write(row, timeCol, 'Time')
 worksheet.write(row, instructorCol, 'Instructor')
 worksheet.write(row, studentCol, 'Students')
 worksheet.write(row, roomCol, 'Room')
+worksheet.write(row, capacityCol, 'Course Capacity')
+worksheet.write(row, uweCol, 'UWE?')
+
+
 row = row+1
 
 def sortedDays(times, cCode):
@@ -417,7 +426,7 @@ def sortedDays(times, cCode):
     return(x)
         
 
-
+courses['ECO101']['CourseCapacity'] = '150,L1(90),L2(60)'
     
 for ci in courses:
     c = courses[ci]
@@ -443,12 +452,21 @@ for ci in courses:
                     
                 studentSet = studentSet[0:-1]
                 
-                worksheet.write(row, codeCol, ci)
+                cCapacity = c['CourseCapacity']
+                
+                if 'CSD320' in ci:
+                    worksheet.write(row, codeCol, ci+'(new code CSD316)')
+                else:
+                    worksheet.write(row, codeCol, ci)
+                    
+                    
                 worksheet.write(row, meetingType, li)
                 worksheet.write(row, timeCol, time)
                 worksheet.write(row, instructorCol, instructor)
                 worksheet.write(row, studentCol, studentSet)
                 worksheet.write(row, roomCol, room)
+                worksheet.write(row, capacityCol, cCapacity)
+                worksheet.write(row,uweCol,coursesBackUp[ci]['openAsUWE'])
                 
                 row = row+1
                 
@@ -646,7 +664,6 @@ for s in sorted(studentsTimeSet):
             studentsTimeSet[s]['conflictFreeCourses'].add(cCode)
             if 'Yes' in courseList[cCode]['openAsUWE']:
                 if cCode[0:3] != major(s[0:3]):
-                    print(cCode[0:3],s)
                     studentsTimeSet[s]['conflictFreeUWECourses'].add(cCode)
                 
             
