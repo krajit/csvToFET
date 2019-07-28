@@ -1,0 +1,48 @@
+﻿Conflicts of snu-timetable_chd2InMED101.fet
+Warning! Only 983 out of 1001 activities placed!
+Generated with FET 5.37.5 on 7/25/19 1:10 AM
+
+Number of broken constraints: 37
+Total conflicts: 360000.95
+
+Conflicts list (in decreasing order):
+
+Time constraint basic compulsory broken: unallocated activity with id=110 (T:Karan  Gupta[20500945], S:CHD210, AT:TUT1, St:CHD2) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=113 (T:Sanjeev  Yadav[20500213], S:CHD214, AT:TUT1, St:CHD2) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=337 (T:MAT103TA12, S:MAT103, AT:TUT12, St:CHD1,CED1) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=403 (T:Sumit Tiwari, S:MED315, AT:LEC1,LargeClass, St:MED41,MED42,MED43) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=404 (T:Sumit Tiwari, S:MED315, AT:LEC1,LargeClass, St:MED41,MED42,MED43) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=405 (T:Sumit Tiwari, S:MED315, AT:LEC1,LargeClass, St:MED41,MED42,MED43) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=406 (T:Sumit Tiwari, S:MED315, AT:A001, St:MED41) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=408 (T:Sumit Tiwari, S:MED315, AT:A001, St:MED43) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=443 (T:Sumit Tiwari, S:MED101, AT:C005, St:MED11,MED12) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=609 (T:PHY101TA12, S:PHY101, AT:TUT12, St:CHD1,CED1) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=704 (T:LunchCHD1, S:Lunch, St:CHD1) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=705 (T:LunchCHD1, S:Lunch, St:CHD1) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=706 (T:LunchCHD1, S:Lunch, St:CHD1) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=707 (T:LunchCHD1, S:Lunch, St:CHD1) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=788 (T:LunchCHD2, S:Lunch, St:CHD2) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=789 (T:LunchCHD2, S:Lunch, St:CHD2) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=790 (T:LunchCHD2, S:Lunch, St:CHD2) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=791 (T:LunchCHD2, S:Lunch, St:CHD2) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=110 (T:Karan  Gupta[20500945], S:CHD210, AT:TUT1, St:CHD2) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=113 (T:Sanjeev  Yadav[20500213], S:CHD214, AT:TUT1, St:CHD2) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=337 (T:MAT103TA12, S:MAT103, AT:TUT12, St:CHD1,CED1) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=403 (T:Sumit Tiwari, S:MED315, AT:LEC1,LargeClass, St:MED41,MED42,MED43) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=404 (T:Sumit Tiwari, S:MED315, AT:LEC1,LargeClass, St:MED41,MED42,MED43) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=405 (T:Sumit Tiwari, S:MED315, AT:LEC1,LargeClass, St:MED41,MED42,MED43) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=406 (T:Sumit Tiwari, S:MED315, AT:A001, St:MED41) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=408 (T:Sumit Tiwari, S:MED315, AT:A001, St:MED43) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=443 (T:Sumit Tiwari, S:MED101, AT:C005, St:MED11,MED12) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=609 (T:PHY101TA12, S:PHY101, AT:TUT12, St:CHD1,CED1) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=704 (T:LunchCHD1, S:Lunch, St:CHD1) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=705 (T:LunchCHD1, S:Lunch, St:CHD1) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=706 (T:LunchCHD1, S:Lunch, St:CHD1) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=707 (T:LunchCHD1, S:Lunch, St:CHD1) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=788 (T:LunchCHD2, S:Lunch, St:CHD2) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=789 (T:LunchCHD2, S:Lunch, St:CHD2) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=790 (T:LunchCHD2, S:Lunch, St:CHD2) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=791 (T:LunchCHD2, S:Lunch, St:CHD2) - this increases the conflicts total by 10000
+Time constraint teacher max 6 hours continuously broken for teacher Ranendra Narayan Biswas[20500321], on day Th, length=8. This increases the conflicts total by 0.95
+
+End of file.

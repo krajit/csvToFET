@@ -19,8 +19,12 @@ for c in courses['CCC515']['overlapsWith']:
     courses[c]['lecSections']['LEC1']['ids'] = courses['CCC515']['lecSections']['LEC1']['ids']
 
 
-slotsPickle = open('slots.pickle','rb')
-slots = pickle.load(slotsPickle)
+slots = [
+        '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00',
+         '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30',
+         '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', 
+         '18:00', '18:30', '19:00', '19:30',
+         ]
 
 
 ##----------------------------------------
@@ -106,6 +110,8 @@ coursesBackUp = courses
     
 courses = newCoursDict
 
+
+
 # set lecture capacity for each lecture sections
 for c in courses:
     if 'lecSections' in courses[c]:
@@ -113,6 +119,8 @@ for c in courses:
     else:
         courses[c]['lecCapacity'] = courses[c]['CourseCapacity']
     
+courses['ECO101']['lecCapacity'] = 90    
+
 # sort according to capacity 
 # gives list
 coursesList = sorted(courses.items(), key = lambda x: x[1]['lecCapacity'], reverse=True)    
@@ -141,7 +149,7 @@ for i in range(1,sheet.nrows):
         rooms[r]['isBiometric'] = False
     
     rooms[r]['slots'] = dict()    
-    days = ['M', 'T', 'W', 'Th', 'F']
+    days = ['M', 'T', 'W', 'Th', 'F','S']
     for d in days:
         rooms[r]['slots'][d] = dict()
         for s in slots:
@@ -712,7 +720,9 @@ workbook.close()
     
     
          
-            
+#save the instructor set for creating their non available slots
+with open('roomsAvailability.pickle', 'wb') as f:
+    pickle.dump(rooms, f)
 
         
     

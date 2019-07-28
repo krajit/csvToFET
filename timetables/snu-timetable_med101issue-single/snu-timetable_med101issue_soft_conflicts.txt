@@ -1,0 +1,16 @@
+﻿Conflicts of snu-timetable_med101issue.fet
+Warning! Only 999 out of 1001 activities placed!
+Generated with FET 5.37.5 on 7/25/19 3:42 PM
+
+Number of broken constraints: 5
+Total conflicts: 40000.95
+
+Conflicts list (in decreasing order):
+
+Time constraint basic compulsory broken: unallocated activity with id=443 (T:Sumit Tiwari, S:MED101, AT:C005, St:) - this increases the conflicts total by 10000
+Time constraint basic compulsory broken: unallocated activity with id=996 (T:Sumit Tiwari, S:MED101, AT:C005, St:MED11,MED12) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=443 (T:Sumit Tiwari, S:MED101, AT:C005, St:) - this increases the conflicts total by 10000
+Space constraint basic compulsory broken: unallocated activity with id=996 (T:Sumit Tiwari, S:MED101, AT:C005, St:MED11,MED12) - this increases the conflicts total by 10000
+Time constraint teacher max 6 hours continuously broken for teacher Ranendra Narayan Biswas[20500321], on day Th, length=8. This increases the conflicts total by 0.95
+
+End of file.

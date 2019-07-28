@@ -168,31 +168,31 @@
 "BIO3+CHY2","CHY213","Debdas  Ray[20500191]+Parthapratim  Munshi[20500205]+Gouriprasanna  Roy[20500138]","B214",6,"6",,,
 "CHY3","CHY323","Basab Bijayi Dhar[20500431]","LEC1",4,"2+2",2,100,1
 "CED2","CED202","Susant Kumar  Padhi[20501001]","LEC1",6,"2+2+2",2,100,1
-"CED2","CED202","Susant Kumar  Padhi[20501001]","C009",4,"4",,,
-"","CED202","Susant Kumar  Padhi[20501001]","C009",4,"4",,,
-"ECO3","ECO415","ECO213Instructor","LEC1",6,"3+3",2,100,1
-"ECO2+MAT4+MED32+CED4+MED31","ECO301","Dhritiman Gupta","LEC1",6,"3+3",2,100,1
+"CED2+chd319DummyStudent","CED202","Susant Kumar  Padhi[20501001]","C009",4,"4",,,
+"chd319DummyStudent","CED202","Susant Kumar  Padhi[20501001]","C009",4,"4",,,
+"ECO3","ECO415","ECO213Instructor","LEC1+ECOclass",6,"3+3",2,100,1
+"ECO2+MAT4+MED32+CED4+MED31","ECO301","Dhritiman Gupta","LEC1+ECOclass",6,"3+3",2,100,1
 "MAT3+ECO2+MAT4+MED32+CED4+MED31","ECO301","Dhritiman Gupta","TUT1",2,"2",,,
-"ECE31+ECE32","ECO213","ECO213Instructor","LEC1",6,"3+3",2,100,1
-"ECE31+ECE32","ECO213","ECO213Instructor","TUT1",2,"2",,,
-"","ECO213","ECO213Instructor","TUT2",2,"2",,,
-"ECO1+SOC1+ENG1+INT1+HIS1","ECO108","ECO108Instructor","LEC1",6,"3+3",2,100,1
-"ECO1","ECO108","ECO108Instructor","TUT1",2,"2",,,
-"SOC1+ENG1","ECO108","ECO108Instructor","TUT2",2,"2",,,
+"ECE31+ECE32","ECO213","ECO213Instructor","LEC1+ECOclass",6,"3+3",2,100,1
+"ECE31+ECE32","ECO213","ECO213Instructor","TUT1+ECOclass",2,"2",,,
+"","ECO213","ECO213Instructor","TUT2+ECOclass",2,"2",,,
+"ECO1+SOC1+ENG1+INT1+HIS1","ECO108","ECO108Instructor","LEC1+ECOclass",6,"3+3",2,100,1
+"ECO1","ECO108","ECO108Instructor","TUT1+ECOclass",2,"2",,,
+"SOC1+ENG1","ECO108","ECO108Instructor","TUT2+ECOclass",2,"2",,,
 "INT1+HIS1","ECO108","","TUT3",2,"2",,,
 "CED2","CED206","Shalini  Rankavat[20501010]","LEC1",6,"3+3",2,100,1
 "CED2","CED206","Shalini  Rankavat[20501010]","C109",4,"4",,,
 "","CED206","Shalini  Rankavat[20501010]","C109",4,"4",,,
-"","ECO102","Kshitiz Mishra","LEC1",6,"3+3",2,100,1
-"","ECO102","Kshitiz Mishra","TUT1",2,"2",,,
+"","ECO102","Kshitiz Mishra","LEC1+ECOclass",6,"3+3",2,100,1
+"","ECO102","Kshitiz Mishra","TUT1+ECOclass",2,"2",,,
 "CED3","CED301","Ghanshyam  Pal[20500891]","LEC1",6,"3+3",2,100,1
 "CED3","CED302","Gyan  Vikash[20500145]","LEC1",6,"2+2+2",2,100,1
 "CED3","CED302","Gyan  Vikash[20500145]","C014",4,"4",,,
 "","CED302","Gyan  Vikash[20500145]","C014",4,"4",,,
-"EEE4+CHD2+MED43+MED41+MED42+ECO1+CSE32+MED2+CSE31","ECO101","Subhra K Bhattacharya[20500089]","LEC1+LargeClass",6,"3+3",2,100,1
-"ECO1","ECO101","Eco101TA1","TUT1",2,"2",,,
-"CSE32+MED2+CSE31+CHD2","ECO101","Eco101TA2","TUT2",2,"2",,,
-"MED41+MED42+EEE4+MED43","ECO101","Eco101TA3","TUT3",2,"2",,,
+"EEE4+CHD2+MED43+MED41+MED42+ECO1+CSE32+MED2+CSE31","ECO101","Subhra K Bhattacharya[20500089]","LEC1+LargeClass+ECOclass",6,"3+3",2,100,1
+"ECO1","ECO101","Eco101TA1","TUT1+ECOclass",2,"2",,,
+"CSE32+MED2+CSE31+CHD2","ECO101","Eco101TA2","TUT2+ECOclass",2,"2",,,
+"MED41+MED42+EEE4+MED43","ECO101","Eco101TA3","TUT3+ECOclass",2,"2",,,
 "CED3","CED303","Gopal Das Singhal[20500079]","LEC1",6,"3+3",2,100,1
 "CED3","CED305","Sumedha  Moharana[20500215]","LEC1",6,"3+3",2,100,1
 "CED3","CED304","Shalini  Rankavat[20501010]","LEC1",6,"3+3",2,100,1
@@ -259,14 +259,14 @@
 "MED31","MED314","Ankit  Gupta[20501013]+Ganeshthangaraj  Ponniah[20500265]","D018",4,"4",,,
 "MED32","MED314","Ankit  Gupta[20501013]+Ganeshthangaraj  Ponniah[20500265]","D018",4,"4",,,
 "MED31+CHD3+MED32","MED303","Abhishek  Tewari[20501061]","LEC1",6,"2+2+2",2,100,1
-"MED31","MED303","Abhishek  Tewari[20501061]","D004",4,"4",,,
-"CHD3+MED32","MED303","Abhishek  Tewari[20501061]","D004",4,"4",,,
+"MED31+chd319DummyStudent","MED303","Abhishek  Tewari[20501061]","D004",4,"4",,,
+"CHD3+MED32+chd319DummyStudent","MED303","Abhishek  Tewari[20501061]","D004",4,"4",,,
 "MED32+MED31","MED301","Santanu  Mitra[20500178]+Sathi Rajesh Reddy[20500731]","LEC1",4,"2+2",2,100,1
 "MED31","MED301","Santanu  Mitra[20500178]+Sathi Rajesh Reddy[20500731]","TUT1",2,"2",,,
 "MED32","MED301","Santanu  Mitra[20500178]+Sathi Rajesh Reddy[20500731]","TUT2",2,"2",,,
 "MED2","MED211","Sathi Rajesh Reddy[20500731]","LEC1",6,"2+2+2",2,100,1
-"MED2","MED211","Sathi Rajesh Reddy[20500731]","C009",4,"4",,,
-"","MED211","Sathi Rajesh Reddy[20500731]","C009",4,"4",,,
+"MED2+chd319DummyStudent","MED211","Sathi Rajesh Reddy[20500731]","C009",4,"4",,,
+"chd319DummyStudent","MED211","Sathi Rajesh Reddy[20500731]","C009",4,"4",,,
 "MED2","MED208","Harpreet Singh Arora[20500396]","LEC1",6,"2+2+2",2,100,1
 "MED2","MED208","Harpreet Singh Arora[20500396]","C005",4,"4",,,
 "","MED208","Harpreet Singh Arora[20500396]","C005",4,"4",,,
@@ -286,7 +286,7 @@
 "CHD3","CHD313","Karan  Gupta[20500945]","TUT1",2,"2",,,
 "CHD3","CHD317","Sanjeev  Yadav[20500213]","LEC1",6,"2+2+2",2,100,1
 "CHD3","CHD317","Sanjeev  Yadav[20500213]","TUT1",2,"2",,,
-"CHD3","CHD319","V.M  Rajesh[20500329]+Priyanka  .[20500950]","D004",8,"4+4",,,
+"CHD3+chd319DummyStudent","CHD319","V.M  Rajesh[20500329]+Priyanka  .[20500950]","D004",8,"4+4",,,
 "CSE4","CSD402","Dolly Sharma","LEC1+LargeClass",6,"2+2+2",2,100,1
 "CSE4","CSD402","Dolly Sharma","D313",4,"4",,,
 "CSE4","CSD429","Rajeev Kumar Singh[20500026]","LEC1+LargeClass",8,"4+4",2,100,1
@@ -416,11 +416,11 @@
 "CSE4+MAT3+MAT4","MAT494","Niteesh  Sahni[20500011]","D313",4,"4",,,
 "CSE4","CSD337","Divya  Lohani[20500325]","LEC1",4,"2+2",2,100,1
 "CSE4","CSD337","Divya  Lohani[20500325]","C307",4,"4",,,
-"","ECO221","Anup Pramanik[20501062]","LEC1",6,"3+3",2,100,1
-"","ECO221","Anup Pramanik[20501062]","TUT1",2,"2",,,
-"ECO3+ECO4","ECO402","Kurt Horner+Partha  Chatterjee[20500194]","LEC1",6,"3+3",2,100,1
-"ECO3+ECO4","ECO403","Arka Roy Chaudhuri","LEC1",6,"3+3",2,100,1
-"ECO3+ECO4","ECO422","Kurt Horner","LEC1",6,"3+3",2,100,1
+"","ECO221","Anup Pramanik[20501062]","LEC1+ECOclass",6,"3+3",2,100,1
+"","ECO221","Anup Pramanik[20501062]","TUT1+ECOclass",2,"2",,,
+"ECO3+ECO4","ECO402","Kurt Horner+Partha  Chatterjee[20500194]","LEC1+ECOclass",6,"3+3",2,100,1
+"ECO3+ECO4","ECO403","Arka Roy Chaudhuri","LEC1+ECOclass",6,"3+3",2,100,1
+"ECO3+ECO4","ECO422","Kurt Horner","LEC1+ECOclass",6,"3+3",2,100,1
 "","CSD411","Sandeep Sen","LEC1",4,"4",,,
 "MED11+MED12","MED105","J  Venkatramani[20500736]","LEC1",6,"3+3",2,100,1
 "MED11","MED105","J  Venkatramani[20500736]","TUT1",2,"2",,,
@@ -512,5 +512,7 @@
 "CED1","MED104","Nishant  Mishra[20500056]","C117",6,"6",,,
 "","ECO101","ECO101TA4","TUT4",2,"2",,,
 "","ECO101","ECO101TA5","TUT5",2,"2",,,
-"","ECO101","Dhritiman Gupta","LEC2",6,"3+3",1,95,1
+"","ECO101","Dhritiman Gupta","LEC2+ECOclass",6,"3+3",1,95,1
 "CSE11+CSE12+CSE13+CSE14+MAT2","CSD101","Pooja  Malik[20500448]","LEC1+LargeClass",6,"2+2+2",1,100,1
+"chd319DummyStudent","Lunch","","",1,"",,,
+"","Lunch","Sathi Rajesh Reddy[20500731]","",8,"2+2+2+2",1,100,1
